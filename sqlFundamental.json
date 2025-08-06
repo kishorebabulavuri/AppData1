@@ -5,11 +5,20 @@
     "duration": "3h 20m",
     "lessons": [
       {
-        "id": "lesson-1",
-        "title": "Introduction to SQL",
-        "duration": "12 min",
-        "locked": false
-      },
+  "id": "lesson-1",
+  "title": "Introduction to SQL",
+  "description": "A beginner-friendly overview of what SQL is and why it matters.",
+  "query": "SELECT * FROM users;",
+  "explanation": "This query selects all columns from the 'users' table.",
+  "whyAndHow": "Understanding SELECT is fundamental because it’s the starting point for all queries.",
+  "steps": [
+    "Access the users table",
+    "Select all columns using *",
+    "Return all records in the table"
+  ],
+  "locked": false
+}
+,
       {
         "id": "lesson-2",
         "title": "SELECT Statements",
