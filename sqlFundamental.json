@@ -1,0 +1,21 @@
+{
+  "sqlFundamental": {
+    "title": "SQL Fundamentals",
+    "level": "Beginner",
+    "duration": "3h 20m",
+    "lessons": [
+      {
+        "id": "lesson-1",
+        "title": "Introduction to SQL",
+        "duration": "12 min",
+        "locked": false
+      },
+      {
+        "id": "lesson-2",
+        "title": "SELECT Statements",
+        "duration": "15 min",
+        "locked": true
+      }
+    ]
+  }
+}
