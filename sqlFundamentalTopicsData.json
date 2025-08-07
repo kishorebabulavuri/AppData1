@@ -58,5 +58,14 @@
     "sqlQuery": "CREATE TABLE Students (\n  StudentID INT PRIMARY KEY,\n  Name VARCHAR(100) NOT NULL,\n  Email VARCHAR(100) UNIQUE,\n  Age INT CHECK (Age >= 18),\n  Country VARCHAR(50) DEFAULT 'India'\n);",
     "queryResult": "Creates a Students table with multiple constraints.",
     "queryExplanation": "- PRIMARY KEY ensures StudentID is unique and not null.\n-  NOT NULL ensures Name cannot be empty.\n-  UNIQUE ensures each Email is different.\n-  CHECK ensures Age is 18 or more.\n-  DEFAULT sets 'India' as the country if one isn't provided."
-  }
+  },
+  {
+  "id": 7,
+  "title": "Overview of SQL Statements",
+  "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
+  "content": "SQL (Structured Query Language) consists of several types of statements that allow you to interact with relational databases. These statements can be categorized into five main groups:\n\n1. Data Query Language (DQL): Used to retrieve data from databases\n2. Data Manipulation Language (DML): Used to manage data within tables\n3. Data Definition Language (DDL): Used to define and modify database structures\n4. Data Control Language (DCL): Used to control access to data\n5. Transaction Control Language (TCL): Used to manage transactions\n\nEach category serves a specific purpose in database operations and management.",
+  "sqlQuery": "-- Example of different SQL statement types\n\n-- DDL: Create a table\nCREATE TABLE departments (\n  dept_id INT PRIMARY KEY,\n  dept_name VARCHAR(50) NOT NULL\n);\n\n-- DML: Insert data\nINSERT INTO departments (dept_id, dept_name) \nVALUES (1, 'Human Resources'), (2, 'Finance'), (3, 'IT');\n\n-- DQL: Retrieve data\nSELECT * FROM departments;\n\n-- DML: Update data\nUPDATE departments \nSET dept_name = 'Information Technology' \nWHERE dept_id = 3;\n\n-- DCL: Grant permission\nGRANT SELECT ON departments TO user_account;\n\n-- TCL: Commit transaction\nCOMMIT;",
+  "queryResult": "dept_id | dept_name\n--------|----------------------\n1       | Human Resources\n2       | Finance\n3       | Information Technology",
+  "queryExplanation": "This example demonstrates the main categories of SQL statements:\n\n1. DDL (Data Definition Language):\n   - CREATE TABLE: Defines a new table structure with columns and constraints\n\n2. DML (Data Manipulation Language):\n   - INSERT: Adds new rows to a table\n   - UPDATE: Modifies existing data in a table\n   - SELECT: Retrieves data from database (also considered DQL)\n\n3. DCL (Data Control Language):\n   - GRANT: Gives specific privileges to users or roles\n\n4. TCL (Transaction Control Language):\n   - COMMIT: Saves all changes made in the current transaction\n\nSQL statements work together to perform complete database operations. DDL statements define the structure, DML statements manage the data, DCL statements control access, and TCL statements ensure data integrity during transactions."
+}
 ]
