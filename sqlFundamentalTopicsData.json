@@ -60,7 +60,7 @@
     "queryExplanation": "- PRIMARY KEY ensures StudentID is unique and not null.\n-  NOT NULL ensures Name cannot be empty.\n-  UNIQUE ensures each Email is different.\n-  CHECK ensures Age is 18 or more.\n-  DEFAULT sets 'India' as the country if one isn't provided."
   },
   {
-  "id": 3,
+  "id": 7,
   "title": "Overview of SQL Statements",
   "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
   "content": "SQL (Structured Query Language) consists of several types of statements that allow you to interact with relational databases. These statements can be categorized into five main groups:\n\n1. Data Query Language (DQL): Used to retrieve data from databases\n2. Data Manipulation Language (DML): Used to manage data within tables\n3. Data Definition Language (DDL): Used to define and modify database structures\n4. Data Control Language (DCL): Used to control access to data\n5. Transaction Control Language (TCL): Used to manage transactions\n\nEach category serves a specific purpose in database operations and management.",
