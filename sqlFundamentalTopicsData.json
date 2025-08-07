@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Introduction to Database Concepts",
     "image": "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fblog_post_page%2F4084683%2Fcover_image%2Fregular_1708x683%2F0712-Bad_Practices_in_Database_Design_-_Are_You_Making_These_Mistakes_Dan_Newsletter-549c07a55cc276f4204263b6e6bef737.png",
-    "content": "What is DATA?\nData refers to raw facts and figures that have no context or meaning by themselves. It could be numbers, text, images, audio, etc...",
+    "content": "What is DATA?\nData refers to raw facts and figures without context. Example: 101, 'John', 'A+', 90.\n\nWhat are Attributes?\nAttributes are properties describing an entity. For a student, this would be Roll No, Name, Grade, and Marks.\n\nDATABASE:\nA Database is an organized, structured collection of data stored electronically. Example: A student database.\n\nDATABASE MANAGEMENT SYSTEM (DBMS):\nA DBMS is software for storing, retrieving, and managing data in a database. Examples include MySQL, Oracle, and MS Access.\n\nRELATIONAL DBMS (RDBMS):\nAn RDBMS is a DBMS that stores data in related tables and uses SQL for access. Examples include MySQL, PostgreSQL, and SQL Server.\n\nRELATIONAL MODEL:\nThis model represents data in tables (relations), with rows (tuples) and columns (attributes), ensuring data integrity and minimizing redundancy using keys.\n\nE.F. CODD'S RULES:\nThese are 12 rules that define a true relational database. Key rules include:\n- Information Rule: All data is in tables.\n- Guaranteed Access: Every piece of data is accessible with a table name, primary key, and column name.\n- Systematic Nulls: NULL values are treated consistently as 'missing' or 'inapplicable'.\n- Comprehensive Data Sub-language: A single language (like SQL) must be able to manage all aspects of the data.",
     "syntax": "Basic SQL Command Structure:\nCOMMAND [options] FROM table_name WHERE [condition];",
     "sqlQuery": "SELECT * FROM Student;",
     "queryResult": "Displays all rows and columns from the Student table.",
@@ -13,81 +13,80 @@
     "id": 2,
     "title": "SQL Data Types",
     "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
-    "content": "SQL Data Types define the type of data that can be stored in a column. Each column in a table must have a name and a data type...",
+    "content": "SQL Data Types define the kind of value that can be stored in a table's column. Choosing the correct data type is crucial for data integrity and performance.\n\nCommon Categories:\n\n1. Numeric Data Types:\n- `INT` or `INTEGER`: For whole numbers (e.g., 100, -25).\n- `DECIMAL(p,s)`: For exact numbers with a fixed precision (p) and scale (s). Ideal for currency.\n- `FLOAT`, `REAL`: For approximate floating-point numbers.\n\n2. String Data Types:\n- `CHAR(n)`: A fixed-length string. If the string is shorter than n, it's padded with spaces.\n- `VARCHAR(n)`: A variable-length string. More storage-efficient for text of varying lengths.\n- `TEXT`: For long-form text strings like articles or descriptions.\n\n3. Date and Time Data Types:\n- `DATE`: Stores date values (YYYY-MM-DD).\n- `TIME`: Stores time values (HH:MM:SS).\n- `DATETIME` or `TIMESTAMP`: Stores both date and time together.\n\n4. Boolean Data Type:\n- `BOOLEAN`: Stores TRUE or FALSE values. Some databases use `BIT` or `TINYINT(1)` to simulate this.",
     "syntax": "CREATE TABLE table_name (\n    column1 datatype [constraints],\n    column2 datatype [constraints],\n    ...\n);",
     "sqlQuery": "CREATE TABLE Student (\n  ID INT,\n  Name VARCHAR(50),\n  BirthDate DATE,\n  Marks DECIMAL(5,2),\n  IsPassed BOOLEAN\n);",
     "queryResult": "Table 'Student' created with columns for ID, Name, BirthDate, Marks, and IsPassed.",
-    "queryExplanation": "This query creates a table named 'Student' with various common data types."
+    "queryExplanation": "This query creates a table with various data types: INT for ID, VARCHAR for Name, DATE for BirthDate, DECIMAL for Marks, and BOOLEAN for pass/fail status."
   },
   {
     "id": 3,
     "title": "MySQL Data Types",
     "image": "https://i.imgur.com/v1S6SjC.png",
-    "content": "MySQL data types are categorized into several groups based on the kind of data they store:\n\n1. Numeric Data Types**:\n   - `INT`, `TINYINT`, `SMALLINT`, `MEDIUMINT`, `BIGINT`: For whole numbers.\n   - `DECIMAL(p,s)`, `FLOAT`, `DOUBLE`: For numbers with decimals.\n   - Used for IDs, prices, quantities, etc.\n\n2. **String Data Types :\n   - `CHAR(n)`: Fixed-length string.\n   - `VARCHAR(n)`: Variable-length string (most commonly used).\n   - `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`: Large text fields.\n   - `ENUM`, `SET`: For predefined string values.\n\n3.  Date and Time Data Types :\n   - `DATE`: 'YYYY-MM-DD'\n   - `DATETIME`: 'YYYY-MM-DD HH:MM:SS'\n   - `TIMESTAMP`: Stores timestamp values that auto-update.\n   - `TIME`, `YEAR`\n\n4. Binary Data Types :\n   - `BLOB`, `TINYBLOB`, `MEDIUMBLOB`, `LONGBLOB`: Used to store binary data such as images or files.\n\n5. **Boolean Type**:\n   - `BOOLEAN`: Stored as TINYINT(1); 0 = false, 1 = true.\n\nEach data type is selected based on storage efficiency and use case. For example, use `ENUM` for status fields with fixed values, or `BLOB` for file storage. Proper use of types ensures performance, reliability, and integrity of data in MySQL.",
+    "content": "MySQL supports various data types categorized as Numeric, String, and Date & Time.\n\n1. Numeric Types:\n- `TINYINT`, `SMALLINT`, `INT`, `BIGINT` for integers of various sizes.\n- `DECIMAL(p,s)` for exact financial calculations.\n- `FLOAT`, `DOUBLE` for approximate values.\n\n2. String Types:\n- `CHAR(n)` for fixed-length strings (e.g., state codes like 'CA').\n- `VARCHAR(n)` for variable-length strings (e.g., names, emails).\n- `TEXT` for long articles or comments.\n- `ENUM` for columns that must have one value from a predefined list (e.g., `ENUM('Low','Medium','High')`).\n\n3. Date and Time Types:\n- `DATE`: 'YYYY-MM-DD'\n- `DATETIME`: 'YYYY-MM-DD HH:MM:SS'\n- `TIMESTAMP`: Similar to DATETIME but auto-updates on row modification and is timezone-aware.\n\n4. Other Types:\n- `BOOLEAN`: An alias for `TINYINT(1)`.\n- `BLOB`: For storing binary data like images or files.",
     "syntax": "CREATE TABLE table_name (\n    column1 mysql_datatype,\n    ...\n);",
     "sqlQuery": "CREATE TABLE Orders (\n  OrderID INT,\n  OrderDate DATETIME,\n  Status ENUM('Pending', 'Shipped', 'Delivered'),\n  Receipt BLOB\n);",
     "queryResult": "Creates an Orders table with MySQL-specific data types including ENUM and BLOB.",
-    "queryExplanation": "The ENUM data type restricts values to specific options, and BLOB is used to store binary data like files in MySQL."
+    "queryExplanation": "The ENUM data type restricts the 'Status' column to one of three specific options, ensuring data integrity. BLOB is used to store binary data like a receipt file."
   },
   {
-  "id": 4,
-  "title": "PostgreSQL Data Types",
-  "image": "https://i.imgur.com/GscX8p3.png",
-  "content": "PostgreSQL is known for its extensive and advanced data type system. In addition to standard SQL types, it supports powerful custom and complex types. Key categories include:\n\n- **Textual Types**: `CHAR`, `VARCHAR`, `TEXT`\n- **Numeric Types**: `SMALLINT`, `INTEGER`, `BIGINT`, `DECIMAL`, `NUMERIC`, `REAL`, `DOUBLE PRECISION`\n- **Date/Time Types**: `DATE`, `TIME`, `TIMESTAMP`, `INTERVAL`\n- **Boolean Type**: `BOOLEAN`\n- **Array Types**: Can store arrays like `TEXT[]`, `INTEGER[]`\n- **JSON Types**: `JSON`, `JSONB` (binary optimized JSON)\n- **UUID**: Universally unique identifier\n- **Geometric Types**: `POINT`, `LINE`, `CIRCLE`, etc.\n- **Custom Types**: You can define your own composite or enumerated types\n\nThese rich types allow PostgreSQL to be used for a variety of complex applications involving semi-structured and structured data.",
-  "syntax": "CREATE TABLE table_name (\n    column1 postgres_datatype,\n    ...\n);",
-  "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
-  "queryResult": "Creates Employee table using PostgreSQL-specific types like ARRAY and JSONB.",
-  "queryExplanation": "TEXT[] stores a list of skills, and JSONB allows efficient querying and indexing of structured JSON data."
-}
-,
+    "id": 4,
+    "title": "PostgreSQL Data Types",
+    "image": "https://i.imgur.com/GscX8p3.png",
+    "content": "PostgreSQL is known for its rich, standards-compliant set of data types and strong support for custom types.\n\nKey Differentiators:\n- `TEXT`: In PostgreSQL, `TEXT` has no predefined length limit and performs similarly to `VARCHAR`.\n- `SERIAL`, `BIGSERIAL`: Auto-incrementing integers, often used for primary keys.\n- `ARRAY`: A column can be defined as an array of any other data type, such as `TEXT[]` for a list of tags or `INTEGER[]` for a set of IDs.\n- `JSON / JSONB`: Native support for storing JSON. `JSONB` is the preferred, binary-optimized version that allows for efficient indexing and querying of JSON fields.\n- `UUID`: A dedicated type for storing universally unique identifiers.\n- `TIMESTAMP WITH TIME ZONE`: A robust type for handling timestamps across different time zones.",
+    "syntax": "CREATE TABLE table_name (\n    column1 postgres_datatype,\n    ...\n);",
+    "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
+    "queryResult": "Creates Employee table using PostgreSQL-specific types like SERIAL, ARRAY, and JSONB.",
+    "queryExplanation": "`SERIAL` automatically creates a unique ID for each new employee. `TEXT[]` stores a list of skills, and `JSONB` allows storing and querying structured data within a single field."
+  },
   {
     "id": 5,
     "title": "Oracle SQL Data Types",
     "image": "https://i.imgur.com/b2r98C4.png",
-    "content": "Oracle Database uses a specific set of data types suited for enterprise-level systems...",
+    "content": "Oracle Database provides a robust set of data types designed for large-scale enterprise applications.\n\n1. Numeric Types:\n- `NUMBER(p,s)`: Oracle's versatile, all-purpose numeric type for both integers and decimals.\n- `INTEGER` is a subtype of `NUMBER`.\n\n2. String Types:\n- `CHAR(n)`: Fixed-length strings up to 2000 bytes.\n- `VARCHAR2(n)`: The standard for variable-length strings up to 4000 bytes. Note the '2'.\n- `CLOB`: Character Large Object, used for storing very large text data (up to several gigabytes).\n\n3. Date and Time Types:\n- `DATE`: Uniquely in Oracle, this type stores both date and time (down to the second).\n- `TIMESTAMP`: Provides fractional-second precision and optional time zone support.\n\n4. Boolean:\n- Oracle has no built-in `BOOLEAN` type. It is commonly simulated using `NUMBER(1)` where 0 is false and 1 is true, or `CHAR(1)` with 'Y' and 'N' values, enforced by a `CHECK` constraint.",
     "syntax": "CREATE TABLE table_name (\n    column1 oracle_datatype,\n    ...\n);",
     "sqlQuery": "CREATE TABLE Product (\n  ProductID NUMBER PRIMARY KEY,\n  Name VARCHAR2(100),\n  Description CLOB,\n  CreatedAt TIMESTAMP,\n  IsAvailable CHAR(1) CHECK (IsAvailable IN ('Y','N'))\n);",
     "queryResult": "Creates Product table with Oracle-specific types like CLOB and CHAR(1) used for BOOLEAN logic.",
-    "queryExplanation": "CLOB stores large descriptions, and CHAR(1) with a CHECK constraint is used in Oracle to simulate BOOLEAN values (Y/N)."
+    "queryExplanation": "`VARCHAR2` is the standard string type. `CLOB` stores large descriptions, and `CHAR(1)` with a `CHECK` constraint is the standard Oracle pattern for simulating a boolean value."
   },
   {
     "id": 6,
     "title": "Filtering Data with WHERE",
     "image": "https://i.imgur.com/jH6a2o1.png",
-    "content": "The `WHERE` clause is essential for filtering records to retrieve only the rows that meet a specific condition...",
+    "content": "The `WHERE` clause is used to extract only those records that fulfill a specified condition. It acts as a filter on the rows returned by a query.\n\nCommon Operators:\n- Comparison: `=`, `<>`, `!=`, `>`, `<`, `>=`, `<=`\n- Logical: `AND`, `OR`, `NOT`\n- `BETWEEN`: Checks if a value is within a range.\n- `LIKE`: Searches for a pattern in a string (e.g., `Name LIKE 'A%'`).\n- `IN`: Specifies multiple possible values for a column (e.g., `City IN ('London', 'Paris')`).",
     "syntax": "SELECT column1, column2, ...\nFROM table_name\nWHERE condition;",
-    "sqlQuery": "SELECT * FROM Artists WHERE Genre = 'Rock';",
-    "queryResult": "ArtistID | Name           | Genre\n---------|----------------|------\n1        | Led Zeppelin   | Rock",
-    "queryExplanation": "This query selects all columns (`*`) from the 'Artists' table, but only for the rows where the 'Genre' column is 'Rock'."
+    "sqlQuery": "SELECT * FROM Artists WHERE Genre = 'Rock' AND Year > 1970;",
+    "queryResult": "Returns all columns for artists from the Rock genre who were active after 1970.",
+    "queryExplanation": "This query uses the `WHERE` clause with an `AND` operator to apply two conditions: the genre must be 'Rock' AND the year must be greater than 1970."
   },
   {
     "id": 7,
     "title": "Sorting Results with ORDER BY",
     "image": "https://i.imgur.com/9s0lK3v.png",
-    "content": "The `ORDER BY` clause sorts the result set. The default order is ascending (`ASC`). To sort in the reverse order, use the `DESC` keyword.",
-    "syntax": "SELECT column1, column2, ...\nFROM table_name\nORDER BY column_name [ASC|DESC];",
-    "sqlQuery": "SELECT Name, Genre FROM Artists ORDER BY Name DESC;",
-    "queryResult": "Name              | Genre\n------------------|--------\nMichael Jackson   | Pop\nMiles Davis       | Jazz\nLed Zeppelin      | Rock",
-    "queryExplanation": "This query retrieves the 'Name' and 'Genre' for all artists and sorts the results by the 'Name' column in descending order."
+    "content": "The `ORDER BY` clause is used to sort the result-set in ascending or descending order.\n\n- `ASC` (Ascending): Sorts from lowest to highest (A-Z, 0-9). This is the default.\n- `DESC` (Descending): Sorts from highest to lowest (Z-A, 9-0).\n\nYou can also sort by multiple columns. The data is sorted by the first column mentioned, and then by the second column for any rows that had the same value in the first column.",
+    "syntax": "SELECT column1, column2, ...\nFROM table_name\nORDER BY column_name1 [ASC|DESC], column_name2 [ASC|DESC];",
+    "sqlQuery": "SELECT Name, Genre FROM Artists ORDER BY Genre ASC, Name DESC;",
+    "queryResult": "Returns artists sorted first by Genre alphabetically, and then by Name in reverse alphabetical order within each genre.",
+    "queryExplanation": "This multi-column sort organizes all artists by their genre. Within each genre group, it then sorts the artists' names from Z to A."
   },
   {
     "id": 8,
     "title": "Working with NULL Values",
     "image": "https://i.imgur.com/d5b9Y7W.png",
-    "content": "A `NULL` value in a database field means 'no value'. It is different from zero or an empty string...",
+    "content": "A `NULL` value in a database field represents missing or unknown data. It is not the same as an empty string (`''`) or the number `0`. Because `NULL` means 'unknown', you cannot use standard comparison operators like `=` or `<>` with it. `NULL = NULL` is false.\n\nTo handle `NULL` values, you must use:\n- `IS NULL`: To find rows where a column is empty.\n- `IS NOT NULL`: To find rows where a column has a value.\n\nMany databases also provide a `COALESCE` function, which returns the first non-NULL value from a list of arguments (e.g., `COALESCE(column, 'default_value')`).",
     "syntax": "SELECT column_name(s)\nFROM table_name\nWHERE column_name IS [NOT] NULL;",
-    "sqlQuery": "SELECT Name FROM Artists WHERE Genre IS NULL;",
-    "queryResult": "Name\n--------\nBeethoven",
-    "queryExplanation": "This query finds the names of any artists in the table for whom the 'Genre' field has been left empty (NULL)."
+    "sqlQuery": "SELECT Name, COALESCE(Genre, 'Uncategorized') FROM Artists;",
+    "queryResult": "Returns all artist names. If an artist's genre is NULL, it will display 'Uncategorized' instead.",
+    "queryExplanation": "This query uses the `COALESCE` function to provide a default value for any `NULL` entries in the 'Genre' column, making the result set more readable."
   },
   {
     "id": 9,
     "title": "Using Aggregate Functions",
     "image": "https://i.imgur.com/r3jK4gA.png",
-    "content": "Aggregate functions perform a calculation on a set of rows and return a single, summary value...",
+    "content": "Aggregate functions perform a calculation on a set of values and return a single summary value.\n\n- `COUNT()`: Counts the number of rows. `COUNT(*)` counts all rows, while `COUNT(column)` counts non-NULL values in that column.\n- `SUM()`: Calculates the sum of a numeric column.\n- `AVG()`: Calculates the average of a numeric column.\n- `MIN()`: Returns the minimum value in a column.\n- `MAX()`: Returns the maximum value in a column.\n\nThese functions are often used with the `GROUP BY` clause to perform calculations on specific groups of data.",
     "syntax": "SELECT AGGREGATE_FUNCTION(column_name)\nFROM table_name\nWHERE condition;",
-    "sqlQuery": "SELECT COUNT(*) FROM Artists;",
-    "queryResult": "COUNT(*)\n----------\n4",
-    "queryExplanation": "This query uses the `COUNT(*)` function to count the total number of rows in the 'Artists' table..."
+    "sqlQuery": "SELECT AVG(Price) AS AveragePrice FROM Products;",
+    "queryResult": "Calculates the average price of all items in the 'Products' table and returns it in a column named 'AveragePrice'.",
+    "queryExplanation": "This query uses the `AVG()` function to compute the average of all values in the 'Price' column. The `AS` keyword is used to give the resulting column a descriptive name."
   }
 ]
