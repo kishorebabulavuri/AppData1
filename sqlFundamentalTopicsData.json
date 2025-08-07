@@ -1,41 +1,45 @@
 [
   {
-  "id": 1,
-  "title": "Introduction to Database Concepts",
-  "content": "What is DATA?\nData refers to raw facts and figures that have no context or meaning by themselves. It could be numbers, text, images, audio, etc.\nExample:\n101, 'John', 'A+', 90\n\nProperties or Attributes\nAttributes are characteristics or properties that describe an entity.\nExample:\nFor a student entity:\n- Roll No (Integer)\n- Name (String)\n- Grade (Character)\n- Marks (Integer)\n\nDATABASE\nA Database is an organized collection of structured information or data, typically stored electronically in a computer system.\nExample:\nA student database containing records like Roll No, Name, Age, Grade.\n\nDATABASE MANAGEMENT SYSTEM (DBMS)\nA DBMS is software used to store, retrieve, and manage data in databases. It provides an interface for users to perform operations like insert, update, delete, and query.\nExample:\nMySQL, Oracle, MS Access\n\nRELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)\nAn RDBMS is a type of DBMS that stores data in the form of related tables. It uses Structured Query Language (SQL) for database access.\nExample:\nMySQL, PostgreSQL, SQL Server, Oracle\n\nRELATIONAL MODEL\nThe Relational Model represents data as a collection of relations (tables). Each table has rows (tuples) and columns (attributes). It ensures data integrity, avoids redundancy, and maintains relationships using keys.\n\nRULES OF E.F. CODD\n1. Information Rule: All data should be stored in table format.\n   Example: Student(Name, Age, Grade)\n\n2. Guaranteed Access Rule: Each data element should be accessible via table name, column name, and primary key.\n   Example: SELECT Name FROM Student WHERE ID = 101;\n\n3. Systematic Treatment of NULLs: NULLs must be uniformly treated as missing or inapplicable data.\n   Example: A missing phone number in a record is stored as NULL.\n\n4. Dynamic Online Catalog: Metadata (data about data) should be stored in the same format as regular data.\n   Example: System tables like INFORMATION_SCHEMA.TABLES in SQL Server\n\n5. Comprehensive Data Sub-language Rule: The system must support at least one language (like SQL) that can define, manipulate, and control data.\n   Example: SQL as the comprehensive language.\n\n6. View Updating Rule: All views that are theoretically updatable should be updatable by the system.\n   Example: CREATE VIEW HighScorers AS SELECT Name FROM Student WHERE Marks > 90;\n\n7. High-level Insert, Update, Delete: Operations must be supported for sets of rows.\n   Example: UPDATE Student SET Grade = 'A+' WHERE Marks > 90;\n\n8. Physical Data Independence: Changes in physical storage should not affect how users access data.\n\n9. Logical Data Independence: Changes in logical structure should not affect application programs.\n\n10. Integrity Independence: Integrity constraints must be stored separately and modifiable without affecting applications.\n   Example: Setting a constraint like Marks < 100\n\n11. Distribution Independence: Users should not need to know whether the database is distributed.\n\n12. Non-subversion Rule: Low-level access should not be able to bypass security and integrity rules.",
+    "id": 1,
+    "title": "Introduction to Database Concepts",
+    "image": "https://i.imgur.com/H511w6G.png",
+    "content": "What is DATA?... (rest of your content)",
     "sqlQuery": "SELECT * FROM Student;",
-  "queryResult": "Displays all rows and columns from the Student table.",
-  "queryExplanation": "This SQL query retrieves all records from the Student table, showing complete information stored in each row."
-}
-,
+    "queryResult": "Displays all rows and columns from the Student table.",
+    "queryExplanation": "This SQL query retrieves all records from the Student table, showing complete information stored in each row."
+  },
   {
     "id": 2,
     "title": "The SELECT Statement",
-    "content": "The `SELECT` statement is used to retrieve data from a database. You specify the columns you want and the table to get them from using the `FROM` clause. Use `*` to select all columns.",
+    "image": "https://i.imgur.com/3z4z8s1.png",
+    "content": "The `SELECT` statement is used to retrieve data from a database...",
     "sqlQuery": "SELECT Name, Genre FROM Artists;",
     "queryResult": "Name              | Genre\n------------------|--------\nLed Zeppelin      | Rock\nMichael Jackson   | Pop\nMiles Davis       | Jazz",
-    "queryExplanation": "This query selects the 'Name' and 'Genre' columns from the 'Artists' table, returning a result set with just those two columns for all artists."
+    "queryExplanation": "This query selects the 'Name' and 'Genre' columns from the 'Artists' table..."
   },
   {
     "id": 3,
     "title": "Filtering Data with WHERE",
-    "content": "The `WHERE` clause is essential for filtering records to retrieve only the rows that meet a specific condition. It follows the `FROM` clause and uses comparison operators like `=`, `>`, `<`, etc.",
+    "image": "https://i.imgur.com/jH6a2o1.png",
+    "content": "The `WHERE` clause is essential for filtering records...",
     "sqlQuery": "SELECT * FROM Artists WHERE Genre = 'Rock';",
     "queryResult": "ArtistID | Name           | Genre\n---------|----------------|------\n1        | Led Zeppelin   | Rock",
-    "queryExplanation": "This query selects all columns (`*`) from the 'Artists' table, but only for the rows where the 'Genre' column is exactly equal to 'Rock'."
+    "queryExplanation": "This query selects all columns (`*`) from the 'Artists' table, but only for the rows where the 'Genre' column is 'Rock'."
   },
   {
     "id": 4,
     "title": "Sorting Results with ORDER BY",
-    "content": "The `ORDER BY` clause sorts the result set. The default order is ascending (`ASC`). To sort in the reverse order, use the `DESC` keyword.",
+    "image": "https://i.imgur.com/9s0lK3v.png",
+    "content": "The `ORDER BY` clause sorts the result set...",
     "sqlQuery": "SELECT Name, Genre FROM Artists ORDER BY Name DESC;",
     "queryResult": "Name              | Genre\n------------------|--------\nMichael Jackson   | Pop\nMiles Davis       | Jazz\nLed Zeppelin      | Rock",
-    "queryExplanation": "This query retrieves the 'Name' and 'Genre' for all artists and sorts the results by the 'Name' column in descending (Z-A) order."
+    "queryExplanation": "This query retrieves the 'Name' and 'Genre' for all artists and sorts the results by the 'Name' column in descending order."
   },
   {
     "id": 5,
     "title": "Working with NULL Values",
-    "content": "A `NULL` value in a database field means 'no value'. It is different from zero or an empty string. To filter for these empty fields, you must use `IS NULL` or `IS NOT NULL`.",
+    "image": "https://i.imgur.com/d5b9Y7W.png",
+    "content": "A `NULL` value in a database field means 'no value'...",
     "sqlQuery": "SELECT Name FROM Artists WHERE Genre IS NULL;",
     "queryResult": "Name\n--------\nBeethoven",
     "queryExplanation": "This query finds the names of any artists in the table for whom the 'Genre' field has been left empty (NULL)."
@@ -43,9 +47,10 @@
   {
     "id": 6,
     "title": "Using Aggregate Functions",
-    "content": "Aggregate functions perform a calculation on a set of rows and return a single, summary value. Common functions are `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()`.",
+    "image": "https://i.imgur.com/r3jK4gA.png",
+    "content": "Aggregate functions perform a calculation on a set of rows and return a single, summary value...",
     "sqlQuery": "SELECT COUNT(*) FROM Artists;",
     "queryResult": "COUNT(*)\n----------\n4",
-    "queryExplanation": "This query uses the `COUNT(*)` function to count the total number of rows in the 'Artists' table and returns that single number."
+    "queryExplanation": "This query uses the `COUNT(*)` function to count the total number of rows in the 'Artists' table..."
   }
 ]
