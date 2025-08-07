@@ -5,7 +5,7 @@
   { "id": 4, "title": "OVERVIEW OF SQL STATEMENTS", "time": "30 min", "type": "Theory" },
   { "id": 5, "title": "DATA QUERY LANGUAGE ( DQL _)", "time": "22 min", "type": "Theory" },
   { "id": 6, "title": "SELECT", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 6, "title": "PROJECTION ", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 6, "title": "SELECTION", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 6, "title": "JOIN", "time": "20 min", "type": "Theory & Practical" }
+   { "id": 7, "title": "PROJECTION ", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 8, "title": "SELECTION", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 9, "title": "JOIN", "time": "20 min", "type": "Theory & Practical" }
 ]
