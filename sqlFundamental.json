@@ -1,53 +1,8 @@
 [
-  {
-    "id": "lesson-1",
-    "title": "Introduction to SQL",
-    "duration": "12 min",
-    "locked": false,
-    "description": "Learn the basics of SQL and how it forms the foundation of working with databases.",
-    "query": "SELECT * FROM users;",
-    "queryExplanation": "This query selects all columns from the 'users' table.",
-    "executionSteps": [
-      "Open your SQL editor or DBMS",
-      "Connect to your database",
-      "Type the query: SELECT * FROM users;",
-      "Run/Execute the query",
-      "View all rows and columns in the result"
-    ],
-    "dos": [
-      "Use proper indentation for readability",
-      "Always specify the table name in SELECT statements",
-      "Test queries on sample data first"
-    ],
-    "donts": [
-      "Don’t use SELECT * in production if not needed",
-      "Avoid querying large tables without LIMIT or WHERE clause",
-      "Don’t forget semicolons in multi-statement queries"
-    ],
-    "proTips": "Use SELECT column_name instead of * for better performance and clarity."
-  },
-  {
-    "id": "lesson-2",
-    "title": "Using WHERE Clause",
-    "duration": "10 min",
-    "locked": true,
-    "description": "Filter records using the WHERE clause in SQL.",
-    "query": "SELECT * FROM users WHERE age > 25;",
-    "queryExplanation": "Returns only the users whose age is greater than 25.",
-    "executionSteps": [
-      "Understand the structure of your table",
-      "Write the SELECT statement",
-      "Add a WHERE clause to filter based on condition",
-      "Execute and analyze the result"
-    ],
-    "dos": [
-      "Use WHERE to limit results",
-      "Combine with AND/OR for multiple conditions"
-    ],
-    "donts": [
-      "Don’t forget to test boundary conditions (e.g., =, <, >)",
-      "Don’t use WHERE with incorrect column names"
-    ],
-    "proTips": "Use indexes on columns used in WHERE for faster results."
-  }
+  { "id": 1, "title": "Intro to Databases", "time": "15 min", "type": "Theory" },
+  { "id": 2, "title": "Basic SELECT", "time": "25 min", "type": "Practical" },
+  { "id": 3, "title": "WHERE Clause", "time": "20 min", "type": "Practical" },
+  { "id": 4, "title": "ORDER BY", "time": "18 min", "type": "Practical" },
+  { "id": 5, "title": "Aggregate Functions", "time": "22 min", "type": "Practical" },
+  { "id": 6, "title": "Practice Quiz", "time": "15 min", "type": "Quiz" }
 ]
