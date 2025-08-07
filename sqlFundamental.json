@@ -1,7 +1,7 @@
 [
   { "id": 1, "title": "Intro to Databases", "time": "15 min", "type": "Theory" },
   { "id": 2, "title": "Datatypes in SQL", "time": "25 min", "type": "Theory" },
-  { "id": 3, "title": "CONSTRAINTS :", "time": "30 min", "type": "Theory" },
+  { "id": 3, "title": "CONSTRAINTS", "time": "30 min", "type": "Theory" },
   { "id": 4, "title": "OVERVIEW OF SQL STATEMENTS", "time": "30 min", "type": "Theory" },
   { "id": 5, "title": "DATA QUERY LANGUAGE ( DQL _)", "time": "22 min", "type": "Theory" },
   { "id": 6, "title": "SELECT", "time": "20 min", "type": "Theory & Practical" },
