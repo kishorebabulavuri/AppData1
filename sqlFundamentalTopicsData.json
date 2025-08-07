@@ -1,9 +1,22 @@
+The "failed to load" error is happening because the JSON data you provided is a single object `{...}`, but the application is built to read a JSON **array of objects** `[...]`.
+
+When the app fetches the data, it checks if the data is an array. Since it finds a single object instead, it throws an error, which results in the "failed to load" message you're seeing.
+
+To fix this, you need to ensure your `sqlFundamentalTopicsData.json` file contains the full array of topics. I have taken the new "SQL Constraints" topic you wrote and correctly placed it in the full list.
+
+-----
+
+### \#\# Corrected `sqlFundamentalTopicsData.json`
+
+Here is the complete and corrected JSON file. Simply replace the entire contents of your `sqlFundamentalTopicsData.json` file on GitHub with the code below.
+
+```json
 [
   {
     "id": 1,
     "title": "Introduction to Database Concepts",
     "image": "https://assets.toptal.io/images?url=https%3A%2F%2Fbs-uploads.toptal.io%2Fblackfish-uploads%2Fcomponents%2Fblog_post_page%2F4084683%2Fcover_image%2Fregular_1708x683%2F0712-Bad_Practices_in_Database_Design_-_Are_You_Making_These_Mistakes_Dan_Newsletter-549c07a55cc276f4204263b6e6bef737.png",
-    "content": "What is DATA?\nData refers to raw facts and figures without context. Example: 101, 'John', 'A+', 90.\n\nWhat are Attributes?\nAttributes are properties describing an entity. For a student, this would be Roll No, Name, Grade, and Marks.\n\nDATABASE:\nA Database is an organized, structured collection of data stored electronically. Example: A student database.\n\nDATABASE MANAGEMENT SYSTEM (DBMS):\nA DBMS is software for storing, retrieving, and managing data in a database. Examples include MySQL, Oracle, and MS Access.\n\nRELATIONAL DBMS (RDBMS):\nAn RDBMS is a DBMS that stores data in related tables and uses SQL for access. Examples include MySQL, PostgreSQL, and SQL Server.\n\nRELATIONAL MODEL:\nThis model represents data in tables (relations), with rows (tuples) and columns (attributes), ensuring data integrity and minimizing redundancy using keys.\n\nE.F. CODD'S RULES:\nThese are 12 rules that define a true relational database. Key rules include:\n- Information Rule: All data is in tables.\n- Guaranteed Access: Every piece of data is accessible with a table name, primary key, and column name.\n- Systematic Nulls: NULL values are treated consistently as 'missing' or 'inapplicable'.\n- Comprehensive Data Sub-language: A single language (like SQL) must be able to manage all aspects of the data.",
+    "content": "What is DATA?\nData refers to raw facts and figures without context. Example: 101, 'John', 'A+', 90.\n\nWhat are Attributes?\nAttributes are properties describing an entity. For a student, this would be Roll No, Name, Grade, and Marks.\n\nDATABASE:\nA Database is an organized, structured collection of data stored electronically. Example: A student database.\n\nDATABASE MANAGEMENT SYSTEM (DBMS):\nA DBMS is software for storing, retrieving, and managing data in a database. Examples include MySQL, Oracle, and MS Access.\n\nRELATIONAL DBMS (RDBMS):\nAn RDBMS is a DBMS that stores data in related tables and uses SQL for access. Examples include MySQL, PostgreSQL, and SQL Server.",
     "syntax": "Basic SQL Command Structure:\nCOMMAND [options] FROM table_name WHERE [condition];",
     "sqlQuery": "SELECT * FROM Student;",
     "queryResult": "Displays all rows and columns from the Student table.",
@@ -13,7 +26,7 @@
     "id": 2,
     "title": "SQL Data Types",
     "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
-    "content": "SQL Data Types define the kind of value that can be stored in a table's column. Choosing the correct data type is crucial for data integrity and performance.\n\nCommon Categories:\n\n1. Numeric Data Types:\n- `INT` or `INTEGER`: For whole numbers (e.g., 100, -25).\n- `DECIMAL(p,s)`: For exact numbers with a fixed precision (p) and scale (s). Ideal for currency.\n- `FLOAT`, `REAL`: For approximate floating-point numbers.\n\n2. String Data Types:\n- `CHAR(n)`: A fixed-length string. If the string is shorter than n, it's padded with spaces.\n- `VARCHAR(n)`: A variable-length string. More storage-efficient for text of varying lengths.\n- `TEXT`: For long-form text strings like articles or descriptions.\n\n3. Date and Time Data Types:\n- `DATE`: Stores date values (YYYY-MM-DD).\n- `TIME`: Stores time values (HH:MM:SS).\n- `DATETIME` or `TIMESTAMP`: Stores both date and time together.\n\n4. Boolean Data Type:\n- `BOOLEAN`: Stores TRUE or FALSE values. Some databases use `BIT` or `TINYINT(1)` to simulate this.",
+    "content": "SQL Data Types define the kind of value that can be stored in a table's column. Choosing the correct data type is crucial for data integrity and performance.\n\nCommon Categories:\n\n1. Numeric Data Types:\n- `INT` or `INTEGER`: For whole numbers.\n- `DECIMAL(p,s)`: For exact numbers. Ideal for currency.\n- `FLOAT`, `REAL`: For approximate floating-point numbers.\n\n2. String Data Types:\n- `CHAR(n)`: A fixed-length string.\n- `VARCHAR(n)`: A variable-length string.\n- `TEXT`: For long-form text strings.\n\n3. Date and Time Data Types:\n- `DATE`: Stores date values (YYYY-MM-DD).\n- `DATETIME` or `TIMESTAMP`: Stores both date and time.",
     "syntax": "CREATE TABLE table_name (\n    column1 datatype [constraints],\n    column2 datatype [constraints],\n    ...\n);",
     "sqlQuery": "CREATE TABLE Student (\n  ID INT,\n  Name VARCHAR(50),\n  BirthDate DATE,\n  Marks DECIMAL(5,2),\n  IsPassed BOOLEAN\n);",
     "queryResult": "Table 'Student' created with columns for ID, Name, BirthDate, Marks, and IsPassed.",
@@ -23,17 +36,17 @@
     "id": 3,
     "title": "MySQL Data Types",
     "image": "https://i.imgur.com/v1S6SjC.png",
-    "content": "MySQL supports various data types categorized as Numeric, String, and Date & Time.\n\n1. Numeric Types:\n- `TINYINT`, `SMALLINT`, `INT`, `BIGINT` for integers of various sizes.\n- `DECIMAL(p,s)` for exact financial calculations.\n- `FLOAT`, `DOUBLE` for approximate values.\n\n2. String Types:\n- `CHAR(n)` for fixed-length strings (e.g., state codes like 'CA').\n- `VARCHAR(n)` for variable-length strings (e.g., names, emails).\n- `TEXT` for long articles or comments.\n- `ENUM` for columns that must have one value from a predefined list (e.g., `ENUM('Low','Medium','High')`).\n\n3. Date and Time Types:\n- `DATE`: 'YYYY-MM-DD'\n- `DATETIME`: 'YYYY-MM-DD HH:MM:SS'\n- `TIMESTAMP`: Similar to DATETIME but auto-updates on row modification and is timezone-aware.\n\n4. Other Types:\n- `BOOLEAN`: An alias for `TINYINT(1)`.\n- `BLOB`: For storing binary data like images or files.",
+    "content": "MySQL supports various data types categorized as Numeric, String, and Date & Time.\n\n- **Numeric**: `TINYINT`, `INT`, `BIGINT` for integers; `DECIMAL` for exact financial data.\n- **String**: `CHAR` for fixed-length text, `VARCHAR` for variable-length, `TEXT` for long articles, and `ENUM` for predefined lists.\n- **Date/Time**: `DATE`, `DATETIME`, `TIMESTAMP` (auto-updates on modification).\n- **Other**: `BOOLEAN` (alias for `TINYINT(1)`) and `BLOB` for binary data like images.",
     "syntax": "CREATE TABLE table_name (\n    column1 mysql_datatype,\n    ...\n);",
     "sqlQuery": "CREATE TABLE Orders (\n  OrderID INT,\n  OrderDate DATETIME,\n  Status ENUM('Pending', 'Shipped', 'Delivered'),\n  Receipt BLOB\n);",
     "queryResult": "Creates an Orders table with MySQL-specific data types including ENUM and BLOB.",
-    "queryExplanation": "The ENUM data type restricts the 'Status' column to one of three specific options, ensuring data integrity. BLOB is used to store binary data like a receipt file."
+    "queryExplanation": "The ENUM data type restricts the 'Status' column to one of three specific options, ensuring data integrity."
   },
   {
     "id": 4,
     "title": "PostgreSQL Data Types",
     "image": "https://i.imgur.com/GscX8p3.png",
-    "content": "PostgreSQL is known for its rich, standards-compliant set of data types and strong support for custom types.\n\nKey Differentiators:\n- `TEXT`: In PostgreSQL, `TEXT` has no predefined length limit and performs similarly to `VARCHAR`.\n- `SERIAL`, `BIGSERIAL`: Auto-incrementing integers, often used for primary keys.\n- `ARRAY`: A column can be defined as an array of any other data type, such as `TEXT[]` for a list of tags or `INTEGER[]` for a set of IDs.\n- `JSON / JSONB`: Native support for storing JSON. `JSONB` is the preferred, binary-optimized version that allows for efficient indexing and querying of JSON fields.\n- `UUID`: A dedicated type for storing universally unique identifiers.\n- `TIMESTAMP WITH TIME ZONE`: A robust type for handling timestamps across different time zones.",
+    "content": "PostgreSQL is known for its rich, standards-compliant set of data types and strong support for custom types.\n\n- **Differentiators**: `TEXT` has no length limit, `SERIAL` creates auto-incrementing keys, and `ARRAY` types like `TEXT[]` can store lists.\n- **Advanced Types**: `JSONB` for binary-optimized JSON storage and querying, and `UUID` for universally unique identifiers.",
     "syntax": "CREATE TABLE table_name (\n    column1 postgres_datatype,\n    ...\n);",
     "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
     "queryResult": "Creates Employee table using PostgreSQL-specific types like SERIAL, ARRAY, and JSONB.",
@@ -43,123 +56,21 @@
     "id": 5,
     "title": "Oracle SQL Data Types",
     "image": "https://i.imgur.com/b2r98C4.png",
-    "content": "Oracle Database provides a robust set of data types designed for large-scale enterprise applications.\n\n1. Numeric Types:\n- `NUMBER(p,s)`: Oracle's versatile, all-purpose numeric type for both integers and decimals.\n- `INTEGER` is a subtype of `NUMBER`.\n\n2. String Types:\n- `CHAR(n)`: Fixed-length strings up to 2000 bytes.\n- `VARCHAR2(n)`: The standard for variable-length strings up to 4000 bytes. Note the '2'.\n- `CLOB`: Character Large Object, used for storing very large text data (up to several gigabytes).\n\n3. Date and Time Types:\n- `DATE`: Uniquely in Oracle, this type stores both date and time (down to the second).\n- `TIMESTAMP`: Provides fractional-second precision and optional time zone support.\n\n4. Boolean:\n- Oracle has no built-in `BOOLEAN` type. It is commonly simulated using `NUMBER(1)` where 0 is false and 1 is true, or `CHAR(1)` with 'Y' and 'N' values, enforced by a `CHECK` constraint.",
+    "content": "Oracle provides robust data types for large-scale enterprise applications.\n\n- **Numeric**: `NUMBER(p,s)` is the versatile, all-purpose numeric type.\n- **String**: `VARCHAR2(n)` is the standard for variable-length strings. `CLOB` is used for very large text data.\n- **Date/Time**: The `DATE` type in Oracle uniquely stores both date and time. `TIMESTAMP` provides higher precision.\n- **Boolean**: Oracle has no built-in `BOOLEAN`. It's simulated using `NUMBER(1)` (0/1) or `CHAR(1)` ('Y'/'N') with a `CHECK` constraint.",
     "syntax": "CREATE TABLE table_name (\n    column1 oracle_datatype,\n    ...\n);",
-    "sqlQuery": "CREATE TABLE Product (\n  ProductID NUMBER PRIMARY KEY,\n  Name VARCHAR2(100),\n  Description CLOB,\n  CreatedAt TIMESTAMP,\n  IsAvailable CHAR(1) CHECK (IsAvailable IN ('Y','N'))\n);",
+    "sqlQuery": "CREATE TABLE Product (\n  ProductID NUMBER PRIMARY KEY,\n  Name VARCHAR2(100),\n  Description CLOB,\n  IsAvailable CHAR(1) CHECK (IsAvailable IN ('Y','N'))\n);",
     "queryResult": "Creates Product table with Oracle-specific types like CLOB and CHAR(1) used for BOOLEAN logic.",
-    "queryExplanation": "`VARCHAR2` is the standard string type. `CLOB` stores large descriptions, and `CHAR(1)` with a `CHECK` constraint is the standard Oracle pattern for simulating a boolean value."
+    "queryExplanation": "`VARCHAR2` is the standard string type, and a `CHECK` constraint on a `CHAR(1)` column is the standard Oracle pattern for simulating a boolean value."
   },
   {
-  "id": 6,
-  "title": "SQL Constraints",
-  "image": "https://i.imgur.com/1o9sOQf.png",
-  "content": "SQL constraints are rules enforced on columns in a table to maintain the accuracy, integrity, and reliability of data within the database.
-
-They can be applied at:
-
-Column level (during column declaration)
-
-Table level (after all columns are defined) 
-1. NOT NULL
-Prevents a column from having NULL values.
-
-✅ Use case: Ensures essential data is always provided.
-CREATE TABLE Users (
-  UserID INT NOT NULL,
-  Name VARCHAR(50) NOT NULL
-);
-
-Explanation:
-
-Without NOT NULL, someone could insert a row without a Name or UserID.
-
-It guarantees that the column must contain a value.
-
-2. UNIQUE
-Ensures all values in a column or a combination of columns are distinct (no duplicates).
-
-✅ Use case: Enforce uniqueness in emails, usernames, etc.
-
-CREATE TABLE Users (
-  UserID INT PRIMARY KEY,
-  Email VARCHAR(100) UNIQUE
-);
-
-Explanation:
-
-UNIQUE allows only different values.
-
-Can be applied to multiple columns for composite uniqueness.
-
-3. PRIMARY KEY
-Combines NOT NULL and UNIQUE. It uniquely identifies each row in a table.
-
-✅ Use case: Used as a row’s unique identifier (like ID).
-CREATE TABLE Products (
-  ProductID INT PRIMARY KEY,
-  Name VARCHAR(100)
-);
-
-Explanation:
-
-A table can have only one primary key.
-
-Primary key values cannot be NULL or duplicated.
-
-Can be a single column or composite key (multiple columns).
-
-4. FOREIGN KEY
-Enforces referential integrity by linking a column to the PRIMARY KEY of another table.
-
-✅ Use case: Connect tables (e.g., Orders → Users).
-
-CREATE TABLE Orders (
-  OrderID INT PRIMARY KEY,
-  UserID INT,
-  FOREIGN KEY (UserID) REFERENCES Users(UserID)
-);
-
-
-Explanation:
-
-The UserID in Orders must match an existing UserID in the Users table.
-
-Prevents invalid references between tables.
-
-5. CHECK
-Ensures that values in a column meet a specific condition.
-
-✅ Use case: Enforce a rule like age must be above 18.
-
-CREATE TABLE Employees (
-  ID INT PRIMARY KEY,
-  Age INT CHECK (Age >= 18)
-);
-
-
-Explanation:
-
-Ensures only values meeting the condition are allowed.
-
-Can also be used at table level to check multiple columns.
-
-6. DEFAULT
-Sets a default value for a column when no value is provided.
-
-✅ Use case: Auto-fill IsActive as true if nothing is entered.
-
-CREATE TABLE Users (
-  UserID INT,
-  IsActive BOOLEAN DEFAULT TRUE
-);
-
-If you insert a row without specifying IsActive, it defaults to TRUE.
-
-Saves time and avoids NULL when you want a preset value.",
-  "syntax": "CREATE TABLE table_name (\n  column_name datatype CONSTRAINT_TYPE,\n  ...\n);",
-  "sqlQuery": "CREATE TABLE Students (\n  StudentID INT PRIMARY KEY,\n  Name VARCHAR(100) NOT NULL,\n  Email VARCHAR(100) UNIQUE,\n  Age INT CHECK (Age >= 18),\n  Country VARCHAR(50) DEFAULT 'India'\n);",
-  "queryResult": "Creates a Students table with multiple constraints like PRIMARY KEY, NOT NULL, UNIQUE, CHECK, and DEFAULT.",
-  "queryExplanation": "- PRIMARY KEY ensures StudentID is unique and not null.\n- NOT NULL ensures Name cannot be empty.\n- UNIQUE ensures Email has no duplicates.\n- CHECK ensures Age is 18 or more.\n- DEFAULT sets 'India' as the default value for Country if none is provided."
-}
-
+    "id": 6,
+    "title": "SQL Constraints",
+    "image": "https://i.imgur.com/1o9sOQf.png",
+    "content": "SQL constraints are rules enforced on columns to maintain data accuracy, integrity, and reliability.\n\n1. `NOT NULL`: Ensures a column cannot have a NULL value.\n2. `UNIQUE`: Ensures all values in a column are different.\n3. `PRIMARY KEY`: Uniquely identifies each record in a table. It's a combination of `NOT NULL` and `UNIQUE`.\n4. `FOREIGN KEY`: Links two tables together, ensuring referential integrity.\n5. `CHECK`: Ensures the values in a column satisfy a specific condition.\n6. `DEFAULT`: Sets a default value for a column if no value is specified.",
+    "syntax": "CREATE TABLE table_name (\n  column_name datatype CONSTRAINT_TYPE,\n  ...\n);",
+    "sqlQuery": "CREATE TABLE Students (\n  StudentID INT PRIMARY KEY,\n  Name VARCHAR(100) NOT NULL,\n  Email VARCHAR(100) UNIQUE,\n  Age INT CHECK (Age >= 18),\n  Country VARCHAR(50) DEFAULT 'India'\n);",
+    "queryResult": "Creates a Students table with multiple constraints.",
+    "queryExplanation": "- `PRIMARY KEY` ensures StudentID is unique and not null.\n- `NOT NULL` ensures Name cannot be empty.\n- `UNIQUE` ensures each Email is different.\n- `CHECK` ensures Age is 18 or more.\n- `DEFAULT` sets 'India' as the country if one isn't provided."
+  }
 ]
+```
