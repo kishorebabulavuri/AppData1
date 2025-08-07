@@ -1,11 +1,12 @@
 [
   { "id": 1, "title": "Intro to Databases", "time": "15 min", "type": "Theory" },
   { "id": 2, "title": "Datatypes in SQL", "time": "25 min", "type": "Theory" },
-  { "id": 3, "title": "CONSTRAINTS", "time": "30 min", "type": "Theory" },
-  { "id": 4, "title": "OVERVIEW OF SQL STATEMENTS", "time": "30 min", "type": "Theory" },
-  { "id": 5, "title": "DATA QUERY LANGUAGE ( DQL _)", "time": "22 min", "type": "Theory" },
-  { "id": 6, "title": "SELECT", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 7, "title": "PROJECTION ", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 8, "title": "SELECTION", "time": "20 min", "type": "Theory & Practical" },
-   { "id": 9, "title": "JOIN", "time": "20 min", "type": "Theory & Practical" }
+  { "id": 3, "title": "MySQL Data Types", "time": "10 min", "type": "Theory" },
+  { "id": 4, "title": "PostgreSQL Data Types", "time": "10 min", "type": "Theory" },
+  { "id": 5, "title": "Oracle SQL Data Types", "time": "10 min", "type": "Theory" },
+  { "id": 6, "title": "CONSTRAINTS", "time": "30 min", "type": "Theory" },
+  { "id": 7, "title": "OVERVIEW OF SQL STATEMENTS", "time": "30 min", "type": "Theory" },
+  { "id": 8, "title": "DATA QUERY LANGUAGE ( DQL _)", "time": "22 min", "type": "Theory" },
+  { "id": 9, "title": "SELECT", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 10, "title": "PROJECTION ", "time": "20 min", "type": "Theory & Practical" }
 ]
