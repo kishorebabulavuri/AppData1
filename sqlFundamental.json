@@ -4,5 +4,5 @@
   { "id": 3, "title": "WHERE Clause", "time": "20 min", "type": "Practical" },
   { "id": 4, "title": "ORDER BY", "time": "18 min", "type": "Practical" },
   { "id": 5, "title": "Aggregate Functions", "time": "22 min", "type": "Practical" },
-  { "id": 12, "title": "Advanced Quiz", "time": "20 min", "type": "Quiz" }
+  { "id": 6, "title": "Advanced Quiz", "time": "20 min", "type": "Quiz" }
 ]
