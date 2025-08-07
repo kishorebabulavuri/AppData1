@@ -2,31 +2,49 @@
   {
     "id": 1,
     "title": "Introduction to SQL",
-    "content": "SQL, which stands for Structured Query Language, is the standard language for managing and manipulating relational databases. A relational database stores information in tables, which are composed of rows and columns.\n\nWith SQL, you can perform tasks such as retrieving data, inserting new records, updating existing data, and deleting records. It's a powerful declarative language, meaning you describe what you want to do, and the database engine figures out how to do it. Key concepts to remember are tables (like a spreadsheet), columns (attributes like 'name' or 'age'), and rows (a single record)."
+    "content": "SQL (Structured Query Language) is the standard for managing data in relational databases. It allows you to query, insert, update, and delete data. Databases store information in tables made of columns (attributes) and rows (records).",
+    "sqlQuery": "/* This is a comment. SQL comments start with two dashes or are enclosed in /* ... */. There's no query to run for an introduction. */\n-- Let's imagine we have a table called 'Artists'.",
+    "queryResult": "No result to display.",
+    "queryExplanation": "This is just a comment to illustrate what they look like in SQL. Comments are ignored by the database engine and are used for documentation."
   },
   {
     "id": 2,
     "title": "The SELECT Statement",
-    "content": "The cornerstone of retrieving data in SQL is the `SELECT` statement. It allows you to specify which columns you want to retrieve from a table.\n\nThe basic syntax is `SELECT column1, column2, ... FROM table_name;`.\n\nIf you want to retrieve all columns without listing them individually, you can use the asterisk wildcard (`*`), like this: `SELECT * FROM table_name;`.\n\nFor example, to get the names and cities of all customers from a 'Customers' table, you would write: `SELECT CustomerName, City FROM Customers;`"
+    "content": "The `SELECT` statement is used to retrieve data from a database. You specify the columns you want and the table to get them from using the `FROM` clause. Use `*` to select all columns.",
+    "sqlQuery": "SELECT Name, Genre FROM Artists;",
+    "queryResult": "Name              | Genre\n------------------|--------\nLed Zeppelin      | Rock\nMichael Jackson   | Pop\nMiles Davis       | Jazz",
+    "queryExplanation": "This query selects the 'Name' and 'Genre' columns from the 'Artists' table, returning a result set with just those two columns for all artists."
   },
   {
     "id": 3,
     "title": "Filtering Data with WHERE",
-    "content": "Often, you don't want all the records from a table—you want only the ones that meet certain criteria. The `WHERE` clause is used to filter records.\n\nIt is included after the `FROM` clause: `SELECT column1, column2 FROM table_name WHERE condition;`.\n\nThe condition can use various comparison operators such as `=` (equal), `<>` or `!=` (not equal), `>` (greater than), `<` (less than), `>=` (greater than or equal), and `<=` (less than or equal).\n\nFor example, to select only the customers from the city of London, the query would be: `SELECT * FROM Customers WHERE City = 'London';`\n\nYou can also combine multiple conditions using the `AND` and `OR` operators."
+    "content": "The `WHERE` clause is essential for filtering records to retrieve only the rows that meet a specific condition. It follows the `FROM` clause and uses comparison operators like `=`, `>`, `<`, etc.",
+    "sqlQuery": "SELECT * FROM Artists WHERE Genre = 'Rock';",
+    "queryResult": "ArtistID | Name           | Genre\n---------|----------------|------\n1        | Led Zeppelin   | Rock",
+    "queryExplanation": "This query selects all columns (`*`) from the 'Artists' table, but only for the rows where the 'Genre' column is exactly equal to 'Rock'."
   },
   {
     "id": 4,
     "title": "Sorting Results with ORDER BY",
-    "content": "To sort the records in your result set, you use the `ORDER BY` clause. By default, it sorts the records in ascending order (A to Z, 0 to 9).\n\nTo specify the sort order, you use the `ASC` (ascending) or `DESC` (descending) keywords.\n\nSyntax: `SELECT column1, column2 FROM table_name ORDER BY column1 ASC, column2 DESC;`\n\nFor example, to get a list of all customers sorted by their country in alphabetical order, you would use: `SELECT * FROM Customers ORDER BY Country ASC;`"
+    "content": "The `ORDER BY` clause sorts the result set. The default order is ascending (`ASC`). To sort in the reverse order, use the `DESC` keyword.",
+    "sqlQuery": "SELECT Name, Genre FROM Artists ORDER BY Name DESC;",
+    "queryResult": "Name              | Genre\n------------------|--------\nMichael Jackson   | Pop\nMiles Davis       | Jazz\nLed Zeppelin      | Rock",
+    "queryExplanation": "This query retrieves the 'Name' and 'Genre' for all artists and sorts the results by the 'Name' column in descending (Z-A) order."
   },
   {
     "id": 5,
     "title": "Working with NULL Values",
-    "content": "In SQL, a `NULL` value represents a field with no value. It is different from an empty string ('') or the number 0. A field that is `NULL` is one that has been left blank during record creation.\n\nTo check for `NULL` values, you cannot use comparison operators like `=`. Instead, you must use the `IS NULL` or `IS NOT NULL` operators.\n\nFor example, to find all customers who do not have an address listed, you would write: `SELECT CustomerName FROM Customers WHERE Address IS NULL;`"
+    "content": "A `NULL` value in a database field means 'no value'. It is different from zero or an empty string. To filter for these empty fields, you must use `IS NULL` or `IS NOT NULL`.",
+    "sqlQuery": "SELECT Name FROM Artists WHERE Genre IS NULL;",
+    "queryResult": "Name\n--------\nBeethoven",
+    "queryExplanation": "This query finds the names of any artists in the table for whom the 'Genre' field has been left empty (NULL)."
   },
   {
     "id": 6,
     "title": "Using Aggregate Functions",
-    "content": "Aggregate functions perform a calculation on a set of values and return a single value. Common aggregate functions include:\n\n- `COUNT()`: Returns the number of rows.\n- `SUM()`: Returns the total sum of a numeric column.\n- `AVG()`: Returns the average value of a numeric column.\n- `MIN()`: Returns the smallest value in a column.\n- `MAX()`: Returns the largest value in a column.\n\nFor example, to find the number of products in a 'Products' table, you would use: `SELECT COUNT(ProductID) FROM Products;`"
+    "content": "Aggregate functions perform a calculation on a set of rows and return a single, summary value. Common functions are `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()`.",
+    "sqlQuery": "SELECT COUNT(*) FROM Artists;",
+    "queryResult": "COUNT(*)\n----------\n4",
+    "queryExplanation": "This query uses the `COUNT(*)` function to count the total number of rows in the 'Artists' table and returns that single number."
   }
 ]
