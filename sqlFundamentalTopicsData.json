@@ -17,9 +17,33 @@
   "queryResult": "Table 'Student' created with columns ID, Name, BirthDate, Marks, and IsPassed having appropriate data types.",
   "queryExplanation": "This query creates a table named 'Student' with various data types: INT for ID, VARCHAR for Name, DATE for BirthDate, DECIMAL for Marks with precision 5 and scale 2, and BOOLEAN to store pass/fail status."
 }
+,{
+  "id": 3,
+  "title": "MySQL Data Types",
+  "content": "MySQL supports various data types categorized as Numeric, String, Date & Time, and others.\n\n1. Numeric Types\n- TINYINT (1 byte): -128 to 127\n- SMALLINT (2 bytes): -32,768 to 32,767\n- INT / INTEGER (4 bytes): -2 billion to +2 billion\n- BIGINT (8 bytes): Very large integers\n- DECIMAL(p,s): Exact numeric data (e.g., DECIMAL(8,2))\n- FLOAT, DOUBLE: Approximate values for scientific calculations\n\n2. String Types\n- CHAR(n): Fixed length (e.g., CHAR(10))\n- VARCHAR(n): Variable length (e.g., VARCHAR(100))\n- TEXT: Long text up to 65,535 characters\n- ENUM: A set of allowed values (e.g., ENUM('Low','Medium','High'))\n- SET: A set of multiple values from a list\n\n3. Date and Time Types\n- DATE: 'YYYY-MM-DD'\n- DATETIME: 'YYYY-MM-DD HH:MM:SS'\n- TIMESTAMP: Same as DATETIME but auto-updates\n- TIME: 'HH:MM:SS'\n- YEAR: 'YYYY'\n\n4. Other Types\n- BOOLEAN: Alias for TINYINT(1), values are 0 (FALSE) or 1 (TRUE)\n- BLOB: Binary data like files or images",
+  "sqlQuery": "CREATE TABLE Orders (\n  OrderID INT,\n  OrderDate DATETIME,\n  Status ENUM('Pending', 'Shipped', 'Delivered'),\n  Receipt BLOB\n);",
+  "queryResult": "Creates an Orders table with MySQL-specific data types including ENUM and BLOB.",
+  "queryExplanation": "The ENUM data type restricts values to specific options, and BLOB is used to store binary data like files in MySQL."
+}
+,{
+  "id": 4,
+  "title": "PostgreSQL Data Types",
+  "content": "PostgreSQL is known for its rich set of data types and custom types support.\n\n1. Numeric Types\n- SMALLINT: 2 bytes\n- INTEGER / INT: 4 bytes\n- BIGINT: 8 bytes\n- NUMERIC(p,s): Exact decimal precision\n- REAL (FLOAT4), DOUBLE PRECISION (FLOAT8): Approximate float values\n\n2. String Types\n- CHAR(n): Fixed length\n- VARCHAR(n): Variable length\n- TEXT: Unlimited-length text (no limit)\n\n3. Date and Time Types\n- DATE: Calendar date\n- TIME [WITHOUT TIME ZONE]: Time of day\n- TIMESTAMP [WITH TIME ZONE]: Timestamp with timezone support\n- INTERVAL: Period of time (e.g., '3 days')\n\n4. Boolean Type\n- BOOLEAN: TRUE, FALSE, NULL\n\n5. Other Types\n- BYTEA: Binary data\n- ENUM: Must be defined before use (custom defined ENUM)\n- ARRAY: Array of any type (e.g., TEXT[])\n- JSON / JSONB: For storing JSON data (JSONB is binary-optimized)",
+  "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
+  "queryResult": "Creates Employee table using PostgreSQL-specific types like ARRAY and JSONB.",
+  "queryExplanation": "TEXT[] stores a list of skills, and JSONB allows efficient querying and indexing of structured JSON data."
+}
+,{
+  "id": 5,
+  "title": "Oracle SQL Data Types",
+  "content": "Oracle Database uses a specific set of data types suited for enterprise-level systems.\n\n1. Numeric Types\n- NUMBER(p,s): General numeric data (e.g., NUMBER(5,2))\n- INTEGER / INT: Synonym for NUMBER(38)\n- FLOAT: Approximate numeric (binary float)\n\n2. String Types\n- CHAR(n): Fixed length up to 2000 bytes\n- VARCHAR2(n): Variable length up to 4000 bytes\n- CLOB: Character Large Object (large text)\n\n3. Date and Time Types\n- DATE: Includes both date and time (YYYY-MM-DD HH:MI:SS)\n- TIMESTAMP: Higher precision date & time\n- INTERVAL YEAR TO MONTH / INTERVAL DAY TO SECOND: Time intervals\n\n4. Boolean\n- No native BOOLEAN type in Oracle SQL (use CHAR(1), NUMBER(1), or custom check constraint)\n\n5. Other Types\n- BLOB: Binary Large Object\n- BFILE: Pointer to external file\n- RAW / LONG RAW: Binary data\n- ROWID / UROWID: Unique address for rows",
+  "sqlQuery": "CREATE TABLE Product (\n  ProductID NUMBER PRIMARY KEY,\n  Name VARCHAR2(100),\n  Description CLOB,\n  CreatedAt TIMESTAMP,\n  IsAvailable CHAR(1) CHECK (IsAvailable IN ('Y','N'))\n);",
+  "queryResult": "Creates Product table with Oracle-specific types like CLOB and CHAR(1) used for BOOLEAN logic.",
+  "queryExplanation": "CLOB stores large descriptions, and CHAR(1) with a CHECK constraint is used in Oracle to simulate BOOLEAN values (Y/N)."
+}
 ,
   {
-    "id": 3,
+    "id": 6,
     "title": "Filtering Data with WHERE",
     "image": "https://i.imgur.com/jH6a2o1.png",
     "content": "The `WHERE` clause is essential for filtering records...",
@@ -28,7 +52,7 @@
     "queryExplanation": "This query selects all columns (`*`) from the 'Artists' table, but only for the rows where the 'Genre' column is 'Rock'."
   },
   {
-    "id": 4,
+    "id": 7,
     "title": "Sorting Results with ORDER BY",
     "image": "https://i.imgur.com/9s0lK3v.png",
     "content": "The `ORDER BY` clause sorts the result set...",
@@ -37,7 +61,7 @@
     "queryExplanation": "This query retrieves the 'Name' and 'Genre' for all artists and sorts the results by the 'Name' column in descending order."
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "Working with NULL Values",
     "image": "https://i.imgur.com/d5b9Y7W.png",
     "content": "A `NULL` value in a database field means 'no value'...",
@@ -46,7 +70,7 @@
     "queryExplanation": "This query finds the names of any artists in the table for whom the 'Genre' field has been left empty (NULL)."
   },
   {
-    "id": 6,
+    "id": 9,
     "title": "Using Aggregate Functions",
     "image": "https://i.imgur.com/r3jK4gA.png",
     "content": "Aggregate functions perform a calculation on a set of rows and return a single, summary value...",
