@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which SQL statement is used to extract data from a database?",
+    "options": ["SELECT", "GET", "EXTRACT", "OPEN"],
+    "correctAnswer": "SELECT"
+  },
+  {
+    "question": "Which SQL statement is used to update data in a database?",
+    "options": ["MODIFY", "UPDATE", "SAVE", "CHANGE"],
+    "correctAnswer": "UPDATE"
+  },
+  {
+    "question": "Which SQL statement is used to delete data from a database?",
+    "options": ["REMOVE", "DELETE", "COLLAPSE", "ERASE"],
+    "correctAnswer": "DELETE"
+  },
+  {
+    "question": "Which SQL statement is used to insert new data in a database?",
+    "options": ["ADD NEW", "INSERT INTO", "INSERT NEW", "ADD RECORD"],
+    "correctAnswer": "INSERT INTO"
+  },
+  {
+    "question": "With SQL, how do you select all the records from a table named 'Persons'?",
+    "options": ["SELECT * FROM Persons", "SELECT All FROM Persons", "SELECT *.Persons", "SELECT Persons"],
+    "correctAnswer": "SELECT * FROM Persons"
+  },
+  {
+    "question": "With SQL, how do you select all the columns from a table named 'Persons'?",
+    "options": ["SELECT * FROM Persons", "SELECT [all] FROM Persons", "SELECT All FROM Persons", "SELECT Persons.*"],
+    "correctAnswer": "SELECT * FROM Persons"
+  },
+  {
+    "question": "With SQL, how do you select a column named 'FirstName' from a table named 'Persons'?",
+    "options": ["SELECT FirstName FROM Persons", "EXTRACT FirstName FROM Persons", "SELECT Persons.FirstName", "GET FirstName FROM Persons"],
+    "correctAnswer": "SELECT FirstName FROM Persons"
+  },
+  {
+    "question": "With SQL, how do you select all the records from a table named 'Persons' where the value of the column 'FirstName' is 'Peter'?",
+    "options": ["SELECT * FROM Persons WHERE FirstName='Peter'", "SELECT [all] FROM Persons WHERE FirstName='Peter'", "SELECT * FROM Persons WHERE FirstName<>'Peter'", "SELECT [all] FROM Persons WHERE FirstName LIKE 'Peter'"],
+    "correctAnswer": "SELECT * FROM Persons WHERE FirstName='Peter'"
+  },
+  {
+    "question": "With SQL, how do you select all the records from a table named 'Persons' where the value of the column 'FirstName' starts with an 'a'?",
+    "options": ["SELECT * FROM Persons WHERE FirstName LIKE 'a%'", "SELECT * FROM Persons WHERE FirstName='a'", "SELECT * FROM Persons WHERE FirstName LIKE '%a'", "SELECT * FROM Persons WHERE FirstName='*a*'"],
+    "correctAnswer": "SELECT * FROM Persons WHERE FirstName LIKE 'a%'"
+  },
+  {
+    "question": "Which SQL keyword is used to sort the result-set?",
+    "options": ["ORDER BY", "SORT", "ORDER", "SORT BY"],
+    "correctAnswer": "ORDER BY"
+  },
+  {
+    "question": "With SQL, how can you return all the records from a table named 'Persons' sorted descending by 'FirstName'?",
+    "options": ["SELECT * FROM Persons ORDER BY FirstName DESC", "SELECT * FROM Persons SORT BY 'FirstName' DESC", "SELECT * FROM Persons ORDER FirstName DESC", "SELECT * FROM Persons SORT 'FirstName' DESC"],
+    "correctAnswer": "SELECT * FROM Persons ORDER BY FirstName DESC"
+  },
+  {
+    "question": "With SQL, how can you insert a new record into the 'Persons' table?",
+    "options": ["INSERT INTO Persons (FirstName, LastName) VALUES ('Jimmy', 'Jackson')", "INSERT ('Jimmy', 'Jackson') INTO Persons", "INSERT VALUES ('Jimmy', 'Jackson') INTO Persons", "INSERT ('Jimmy', 'Jackson') INTO Persons (FirstName, LastName)"],
+    "correctAnswer": "INSERT INTO Persons (FirstName, LastName) VALUES ('Jimmy', 'Jackson')"
+  },
+  {
+    "question": "With SQL, how can you change 'Hansen' into 'Nilsen' in the 'LastName' column in the Persons table?",
+    "options": ["UPDATE Persons SET LastName='Nilsen' WHERE LastName='Hansen'", "MODIFY Persons SET LastName='Nilsen' WHERE LastName='Hansen'", "UPDATE Persons SET LastName='Hansen' INTO LastName='Nilsen'", "UPDATE Persons.LastName='Nilsen' WHERE Persons.LastName='Hansen'"],
+    "correctAnswer": "UPDATE Persons SET LastName='Nilsen' WHERE LastName='Hansen'"
+  },
+  {
+    "question": "With SQL, how can you delete the records where the 'FirstName' is 'Peter' in the Persons Table?",
+    "options": ["DELETE FROM Persons WHERE FirstName = 'Peter'", "DELETE FirstName='Peter' FROM Persons", "DELETE ROW FirstName='Peter' FROM Persons", "REMOVE FROM Persons WHERE FirstName = 'Peter'"],
+    "correctAnswer": "DELETE FROM Persons WHERE FirstName = 'Peter'"
+  },
+  {
+    "question": "Which SQL function is used to count the number of rows in a SQL query?",
+    "options": ["COUNT()", "NUMBER()", "SUM()", "GET()"],
+    "correctAnswer": "COUNT()"
+  },
+  {
+    "question": "What is the most common type of join?",
+    "options": ["INNER JOIN", "JOIN", "INSIDE JOIN", "OUTER JOIN"],
+    "correctAnswer": "INNER JOIN"
+  },
+  {
+    "question": "Which operator is used to select values within a range?",
+    "options": ["BETWEEN", "RANGE", "WITHIN", "IN"],
+    "correctAnswer": "BETWEEN"
+  },
+  {
+    "question": "The OR operator displays a record if ANY conditions are TRUE. The AND operator displays a record if ALL of the conditions are TRUE.",
+    "options": ["True", "False"],
+    "correctAnswer": "True"
+  },
+  {
+    "question": "Which operator is used to search for a specified pattern in a column?",
+    "options": ["LIKE", "GET", "SEARCH", "FROM"],
+    "correctAnswer": "LIKE"
+  },
+  {
+    "question": "Which SQL statement is used to return only different values?",
+    "options": ["SELECT DISTINCT", "SELECT UNIQUE", "SELECT DIFFERENT", "SELECT ALL"],
+    "correctAnswer": "SELECT DISTINCT"
+  }
+]
