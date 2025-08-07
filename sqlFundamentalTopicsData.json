@@ -50,43 +50,14 @@
     "queryExplanation": "`VARCHAR2` is the standard string type. `CLOB` stores large descriptions, and `CHAR(1)` with a `CHECK` constraint is the standard Oracle pattern for simulating a boolean value."
   },
   {
-    "id": 6,
-    "title": "Filtering Data with WHERE",
-    "image": "https://i.imgur.com/jH6a2o1.png",
-    "content": "The `WHERE` clause is used to extract only those records that fulfill a specified condition. It acts as a filter on the rows returned by a query.\n\nCommon Operators:\n- Comparison: `=`, `<>`, `!=`, `>`, `<`, `>=`, `<=`\n- Logical: `AND`, `OR`, `NOT`\n- `BETWEEN`: Checks if a value is within a range.\n- `LIKE`: Searches for a pattern in a string (e.g., `Name LIKE 'A%'`).\n- `IN`: Specifies multiple possible values for a column (e.g., `City IN ('London', 'Paris')`).",
-    "syntax": "SELECT column1, column2, ...\nFROM table_name\nWHERE condition;",
-    "sqlQuery": "SELECT * FROM Artists WHERE Genre = 'Rock' AND Year > 1970;",
-    "queryResult": "Returns all columns for artists from the Rock genre who were active after 1970.",
-    "queryExplanation": "This query uses the `WHERE` clause with an `AND` operator to apply two conditions: the genre must be 'Rock' AND the year must be greater than 1970."
-  },
-  {
-    "id": 7,
-    "title": "Sorting Results with ORDER BY",
-    "image": "https://i.imgur.com/9s0lK3v.png",
-    "content": "The `ORDER BY` clause is used to sort the result-set in ascending or descending order.\n\n- `ASC` (Ascending): Sorts from lowest to highest (A-Z, 0-9). This is the default.\n- `DESC` (Descending): Sorts from highest to lowest (Z-A, 9-0).\n\nYou can also sort by multiple columns. The data is sorted by the first column mentioned, and then by the second column for any rows that had the same value in the first column.",
-    "syntax": "SELECT column1, column2, ...\nFROM table_name\nORDER BY column_name1 [ASC|DESC], column_name2 [ASC|DESC];",
-    "sqlQuery": "SELECT Name, Genre FROM Artists ORDER BY Genre ASC, Name DESC;",
-    "queryResult": "Returns artists sorted first by Genre alphabetically, and then by Name in reverse alphabetical order within each genre.",
-    "queryExplanation": "This multi-column sort organizes all artists by their genre. Within each genre group, it then sorts the artists' names from Z to A."
-  },
-  {
-    "id": 8,
-    "title": "Working with NULL Values",
-    "image": "https://i.imgur.com/d5b9Y7W.png",
-    "content": "A `NULL` value in a database field represents missing or unknown data. It is not the same as an empty string (`''`) or the number `0`. Because `NULL` means 'unknown', you cannot use standard comparison operators like `=` or `<>` with it. `NULL = NULL` is false.\n\nTo handle `NULL` values, you must use:\n- `IS NULL`: To find rows where a column is empty.\n- `IS NOT NULL`: To find rows where a column has a value.\n\nMany databases also provide a `COALESCE` function, which returns the first non-NULL value from a list of arguments (e.g., `COALESCE(column, 'default_value')`).",
-    "syntax": "SELECT column_name(s)\nFROM table_name\nWHERE column_name IS [NOT] NULL;",
-    "sqlQuery": "SELECT Name, COALESCE(Genre, 'Uncategorized') FROM Artists;",
-    "queryResult": "Returns all artist names. If an artist's genre is NULL, it will display 'Uncategorized' instead.",
-    "queryExplanation": "This query uses the `COALESCE` function to provide a default value for any `NULL` entries in the 'Genre' column, making the result set more readable."
-  },
-  {
-    "id": 9,
-    "title": "Using Aggregate Functions",
-    "image": "https://i.imgur.com/r3jK4gA.png",
-    "content": "Aggregate functions perform a calculation on a set of values and return a single summary value.\n\n- `COUNT()`: Counts the number of rows. `COUNT(*)` counts all rows, while `COUNT(column)` counts non-NULL values in that column.\n- `SUM()`: Calculates the sum of a numeric column.\n- `AVG()`: Calculates the average of a numeric column.\n- `MIN()`: Returns the minimum value in a column.\n- `MAX()`: Returns the maximum value in a column.\n\nThese functions are often used with the `GROUP BY` clause to perform calculations on specific groups of data.",
-    "syntax": "SELECT AGGREGATE_FUNCTION(column_name)\nFROM table_name\nWHERE condition;",
-    "sqlQuery": "SELECT AVG(Price) AS AveragePrice FROM Products;",
-    "queryResult": "Calculates the average price of all items in the 'Products' table and returns it in a column named 'AveragePrice'.",
-    "queryExplanation": "This query uses the `AVG()` function to compute the average of all values in the 'Price' column. The `AS` keyword is used to give the resulting column a descriptive name."
-  }
+  "id": 5,
+  "title": "SQL Constraints",
+  "image": "https://i.imgur.com/1o9sOQf.png",
+  "content": "Constraints are rules enforced on data in tables. They help maintain accuracy and integrity of the data. Common constraints include NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, and DEFAULT. These can be applied at the column or table level.",
+  "syntax": "CREATE TABLE table_name (\n  column_name datatype CONSTRAINT_TYPE,\n  ...\n);",
+  "sqlQuery": "CREATE TABLE Students (\n  StudentID INT PRIMARY KEY,\n  Name VARCHAR(100) NOT NULL,\n  Email VARCHAR(100) UNIQUE,\n  Age INT CHECK (Age >= 18),\n  Country VARCHAR(50) DEFAULT 'India'\n);",
+  "queryResult": "Creates a Students table with multiple constraints like PRIMARY KEY, NOT NULL, UNIQUE, CHECK, and DEFAULT.",
+  "queryExplanation": "- PRIMARY KEY ensures StudentID is unique and not null.\n- NOT NULL ensures Name cannot be empty.\n- UNIQUE ensures Email has no duplicates.\n- CHECK ensures Age is 18 or more.\n- DEFAULT sets 'India' as the default value for Country if none is provided."
+}
+
 ]
