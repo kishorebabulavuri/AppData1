@@ -1,8 +1,11 @@
 [
   { "id": 1, "title": "Intro to Databases", "time": "15 min", "type": "Theory" },
-  { "id": 2, "title": "Basic SELECT", "time": "25 min", "type": "Practical" },
-  { "id": 3, "title": "WHERE Clause", "time": "20 min", "type": "Practical" },
-  { "id": 4, "title": "ORDER BY", "time": "18 min", "type": "Practical" },
-  { "id": 5, "title": "Aggregate Functions", "time": "22 min", "type": "Practical" },
-  { "id": 6, "title": "Advanced Quiz", "time": "20 min", "type": "Quiz" }
+  { "id": 2, "title": "Datatypes in SQL", "time": "25 min", "type": "Theory" },
+  { "id": 3, "title": "CONSTRAINTS :", "time": "30 min", "type": "Theory" },
+  { "id": 4, "title": "OVERVIEW OF SQL STATEMENTS", "time": "30 min", "type": "Theory" },
+  { "id": 5, "title": "DATA QUERY LANGUAGE ( DQL _)", "time": "22 min", "type": "Theory" },
+  { "id": 6, "title": "SELECT", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 6, "title": "PROJECTION ", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 6, "title": "SELECTION", "time": "20 min", "type": "Theory & Practical" },
+   { "id": 6, "title": "JOIN", "time": "20 min", "type": "Theory & Practical" }
 ]
