@@ -10,13 +10,13 @@
   },
   {
   "id": 2,
-  "title": "Datatypes in SQL",
-  "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
-  "content": "SQL data types define the kind of data that can be stored in a table column. Choosing the right data type is crucial for data integrity, storage efficiency, and query performance. Common categories include numeric types (INT, DECIMAL), string types (VARCHAR, TEXT), date/time types (DATE, TIMESTAMP), boolean types (BOOLEAN), and specialized types (JSON, UUID). Each database system has its own variations and implementations of these data types.",
-  "sqlQuery": "CREATE TABLE employees (\n  employee_id INT PRIMARY KEY,\n  first_name VARCHAR(50) NOT NULL,\n  last_name VARCHAR(50) NOT NULL,\n  birth_date DATE,\n  hire_date TIMESTAMP,\n  salary DECIMAL(10,2),\n  is_active BOOLEAN DEFAULT TRUE,\n  department_id INT,\n  skills JSON\n);",
-  "queryResult": "Query executed successfully. Table 'employees' created with the following columns:\n- employee_id (INT, Primary Key)\n- first_name (VARCHAR(50), Not Null)\n- last_name (VARCHAR(50), Not Null)\n- birth_date (DATE)\n- hire_date (TIMESTAMP)\n- salary (DECIMAL(10,2))\n- is_active (BOOLEAN, Default: TRUE)\n- department_id (INT)\n- skills (JSON)",
-  "queryExplanation": "This CREATE TABLE statement demonstrates various SQL data types:\n1. INT: Used for employee_id and department_id to store whole numbers\n2. VARCHAR(50): Used for first_name and last_name to store variable-length strings up to 50 characters\n3. DATE: Used for birth_date to store date values (YYYY-MM-DD)\n4. TIMESTAMP: Used for hire_date to store date and time values\n5. DECIMAL(10,2): Used for salary to store fixed-point numbers with 10 total digits and 2 decimal places\n6. BOOLEAN: Used for is_active to store true/false values with a default of TRUE\n7. JSON: Used for skills to store flexible JSON data\n\nChoosing appropriate data types ensures data integrity and optimizes storage and performance."
-},
+  "title": "SQL Data Types",
+  "content": "SQL Data Types define the type of data that can be stored in a column. Each column in a table must have a name and a data type.\n\n1. Numeric Data Types\n- INT / INTEGER: Whole numbers (e.g., 100, -25)\n- SMALLINT: Smaller range of integers\n- BIGINT: Larger range of integers\n- DECIMAL(p,s) or NUMERIC(p,s): Exact numeric values with precision and scale (e.g., DECIMAL(5,2) → 999.99)\n- FLOAT / REAL / DOUBLE: Approximate floating-point numbers\n\n2. String Data Types\n- CHAR(n): Fixed-length character string (e.g., CHAR(5) stores 'Kishore' as 'Kisho')\n- VARCHAR(n): Variable-length character string (e.g., VARCHAR(50))\n- TEXT: Large text data (may vary by DBMS)\n\n3. Date and Time Data Types\n- DATE: Stores date values (format: YYYY-MM-DD)\n- TIME: Stores time (HH:MM:SS)\n- DATETIME: Stores both date and time (YYYY-MM-DD HH:MM:SS)\n- TIMESTAMP: Auto-generates current timestamp on insert/update\n\n4. Boolean Data Type\n- BOOLEAN: Stores TRUE or FALSE values (some DBMS use TINYINT 0/1)\n\n5. Binary Data Types\n- BINARY / VARBINARY: Store binary data like images, files, etc.\n- BLOB: Binary Large Object, used for storing large binary data\n\n6. Miscellaneous\n- ENUM: A list of predefined values\n- SET: A collection of predefined values that can be stored together\n\nChoosing the correct data type ensures:\n- Efficient storage\n- Accurate data\n- Better performance",
+  "sqlQuery": "CREATE TABLE Student (\n  ID INT,\n  Name VARCHAR(50),\n  BirthDate DATE,\n  Marks DECIMAL(5,2),\n  IsPassed BOOLEAN\n);",
+  "queryResult": "Table 'Student' created with columns ID, Name, BirthDate, Marks, and IsPassed having appropriate data types.",
+  "queryExplanation": "This query creates a table named 'Student' with various data types: INT for ID, VARCHAR for Name, DATE for BirthDate, DECIMAL for Marks with precision 5 and scale 2, and BOOLEAN to store pass/fail status."
+}
+,
   {
     "id": 3,
     "title": "Filtering Data with WHERE",
