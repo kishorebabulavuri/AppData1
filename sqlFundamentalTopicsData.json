@@ -50,7 +50,7 @@
     "queryExplanation": "`VARCHAR2` is the standard string type. `CLOB` stores large descriptions, and `CHAR(1)` with a `CHECK` constraint is the standard Oracle pattern for simulating a boolean value."
   },
   {
-  "id": 5,
+  "id": 6,
   "title": "SQL Constraints",
   "image": "https://i.imgur.com/1o9sOQf.png",
   "content": "Constraints are rules enforced on data in tables. They help maintain accuracy and integrity of the data. Common constraints include NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, and DEFAULT. These can be applied at the column or table level.",
