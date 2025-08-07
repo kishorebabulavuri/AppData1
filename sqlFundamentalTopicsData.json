@@ -53,7 +53,109 @@
   "id": 6,
   "title": "SQL Constraints",
   "image": "https://i.imgur.com/1o9sOQf.png",
-  "content": "Constraints are rules enforced on data in tables. They help maintain accuracy and integrity of the data. Common constraints include NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, and DEFAULT. These can be applied at the column or table level.",
+  "content": "SQL constraints are rules enforced on columns in a table to maintain the accuracy, integrity, and reliability of data within the database.
+
+They can be applied at:
+
+Column level (during column declaration)
+
+Table level (after all columns are defined) 
+1. NOT NULL
+Prevents a column from having NULL values.
+
+✅ Use case: Ensures essential data is always provided.
+CREATE TABLE Users (
+  UserID INT NOT NULL,
+  Name VARCHAR(50) NOT NULL
+);
+
+Explanation:
+
+Without NOT NULL, someone could insert a row without a Name or UserID.
+
+It guarantees that the column must contain a value.
+
+2. UNIQUE
+Ensures all values in a column or a combination of columns are distinct (no duplicates).
+
+✅ Use case: Enforce uniqueness in emails, usernames, etc.
+
+CREATE TABLE Users (
+  UserID INT PRIMARY KEY,
+  Email VARCHAR(100) UNIQUE
+);
+
+Explanation:
+
+UNIQUE allows only different values.
+
+Can be applied to multiple columns for composite uniqueness.
+
+3. PRIMARY KEY
+Combines NOT NULL and UNIQUE. It uniquely identifies each row in a table.
+
+✅ Use case: Used as a row’s unique identifier (like ID).
+CREATE TABLE Products (
+  ProductID INT PRIMARY KEY,
+  Name VARCHAR(100)
+);
+
+Explanation:
+
+A table can have only one primary key.
+
+Primary key values cannot be NULL or duplicated.
+
+Can be a single column or composite key (multiple columns).
+
+4. FOREIGN KEY
+Enforces referential integrity by linking a column to the PRIMARY KEY of another table.
+
+✅ Use case: Connect tables (e.g., Orders → Users).
+
+CREATE TABLE Orders (
+  OrderID INT PRIMARY KEY,
+  UserID INT,
+  FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+
+Explanation:
+
+The UserID in Orders must match an existing UserID in the Users table.
+
+Prevents invalid references between tables.
+
+5. CHECK
+Ensures that values in a column meet a specific condition.
+
+✅ Use case: Enforce a rule like age must be above 18.
+
+CREATE TABLE Employees (
+  ID INT PRIMARY KEY,
+  Age INT CHECK (Age >= 18)
+);
+
+
+Explanation:
+
+Ensures only values meeting the condition are allowed.
+
+Can also be used at table level to check multiple columns.
+
+6. DEFAULT
+Sets a default value for a column when no value is provided.
+
+✅ Use case: Auto-fill IsActive as true if nothing is entered.
+
+CREATE TABLE Users (
+  UserID INT,
+  IsActive BOOLEAN DEFAULT TRUE
+);
+
+If you insert a row without specifying IsActive, it defaults to TRUE.
+
+Saves time and avoids NULL when you want a preset value.",
   "syntax": "CREATE TABLE table_name (\n  column_name datatype CONSTRAINT_TYPE,\n  ...\n);",
   "sqlQuery": "CREATE TABLE Students (\n  StudentID INT PRIMARY KEY,\n  Name VARCHAR(100) NOT NULL,\n  Email VARCHAR(100) UNIQUE,\n  Age INT CHECK (Age >= 18),\n  Country VARCHAR(50) DEFAULT 'India'\n);",
   "queryResult": "Creates a Students table with multiple constraints like PRIMARY KEY, NOT NULL, UNIQUE, CHECK, and DEFAULT.",
