@@ -9,14 +9,14 @@
     "queryExplanation": "This SQL query retrieves all records from the Student table, showing complete information stored in each row."
   },
   {
-    "id": 2,
-    "title": "The SELECT Statement",
-    "image": "https://i.imgur.com/3z4z8s1.png",
-    "content": "The `SELECT` statement is used to retrieve data from a database...",
-    "sqlQuery": "SELECT Name, Genre FROM Artists;",
-    "queryResult": "Name              | Genre\n------------------|--------\nLed Zeppelin      | Rock\nMichael Jackson   | Pop\nMiles Davis       | Jazz",
-    "queryExplanation": "This query selects the 'Name' and 'Genre' columns from the 'Artists' table..."
-  },
+  "id": 2,
+  "title": "Datatypes in SQL",
+  "image": "https://i.postimg.cc/3Nb7RY7m/hierarchy.png",
+  "content": "SQL data types define the kind of data that can be stored in a table column. Choosing the right data type is crucial for data integrity, storage efficiency, and query performance. Common categories include numeric types (INT, DECIMAL), string types (VARCHAR, TEXT), date/time types (DATE, TIMESTAMP), boolean types (BOOLEAN), and specialized types (JSON, UUID). Each database system has its own variations and implementations of these data types.",
+  "sqlQuery": "CREATE TABLE employees (\n  employee_id INT PRIMARY KEY,\n  first_name VARCHAR(50) NOT NULL,\n  last_name VARCHAR(50) NOT NULL,\n  birth_date DATE,\n  hire_date TIMESTAMP,\n  salary DECIMAL(10,2),\n  is_active BOOLEAN DEFAULT TRUE,\n  department_id INT,\n  skills JSON\n);",
+  "queryResult": "Query executed successfully. Table 'employees' created with the following columns:\n- employee_id (INT, Primary Key)\n- first_name (VARCHAR(50), Not Null)\n- last_name (VARCHAR(50), Not Null)\n- birth_date (DATE)\n- hire_date (TIMESTAMP)\n- salary (DECIMAL(10,2))\n- is_active (BOOLEAN, Default: TRUE)\n- department_id (INT)\n- skills (JSON)",
+  "queryExplanation": "This CREATE TABLE statement demonstrates various SQL data types:\n1. INT: Used for employee_id and department_id to store whole numbers\n2. VARCHAR(50): Used for first_name and last_name to store variable-length strings up to 50 characters\n3. DATE: Used for birth_date to store date values (YYYY-MM-DD)\n4. TIMESTAMP: Used for hire_date to store date and time values\n5. DECIMAL(10,2): Used for salary to store fixed-point numbers with 10 total digits and 2 decimal places\n6. BOOLEAN: Used for is_active to store true/false values with a default of TRUE\n7. JSON: Used for skills to store flexible JSON data\n\nChoosing appropriate data types ensures data integrity and optimizes storage and performance."
+},
   {
     "id": 3,
     "title": "Filtering Data with WHERE",
