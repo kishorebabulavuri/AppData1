@@ -23,22 +23,23 @@
     "id": 3,
     "title": "MySQL Data Types",
     "image": "https://i.imgur.com/v1S6SjC.png",
-    "content": "MySQL supports various data types categorized as Numeric, String, Date & Time, and others...",
+    "content": "MySQL data types are categorized into several groups based on the kind of data they store:\n\n1. **Numeric Data Types**:\n   - `INT`, `TINYINT`, `SMALLINT`, `MEDIUMINT`, `BIGINT`: For whole numbers.\n   - `DECIMAL(p,s)`, `FLOAT`, `DOUBLE`: For numbers with decimals.\n   - Used for IDs, prices, quantities, etc.\n\n2. **String Data Types**:\n   - `CHAR(n)`: Fixed-length string.\n   - `VARCHAR(n)`: Variable-length string (most commonly used).\n   - `TEXT`, `TINYTEXT`, `MEDIUMTEXT`, `LONGTEXT`: Large text fields.\n   - `ENUM`, `SET`: For predefined string values.\n\n3. **Date and Time Data Types**:\n   - `DATE`: 'YYYY-MM-DD'\n   - `DATETIME`: 'YYYY-MM-DD HH:MM:SS'\n   - `TIMESTAMP`: Stores timestamp values that auto-update.\n   - `TIME`, `YEAR`\n\n4. **Binary Data Types**:\n   - `BLOB`, `TINYBLOB`, `MEDIUMBLOB`, `LONGBLOB`: Used to store binary data such as images or files.\n\n5. **Boolean Type**:\n   - `BOOLEAN`: Stored as TINYINT(1); 0 = false, 1 = true.\n\nEach data type is selected based on storage efficiency and use case. For example, use `ENUM` for status fields with fixed values, or `BLOB` for file storage. Proper use of types ensures performance, reliability, and integrity of data in MySQL.",
     "syntax": "CREATE TABLE table_name (\n    column1 mysql_datatype,\n    ...\n);",
     "sqlQuery": "CREATE TABLE Orders (\n  OrderID INT,\n  OrderDate DATETIME,\n  Status ENUM('Pending', 'Shipped', 'Delivered'),\n  Receipt BLOB\n);",
     "queryResult": "Creates an Orders table with MySQL-specific data types including ENUM and BLOB.",
     "queryExplanation": "The ENUM data type restricts values to specific options, and BLOB is used to store binary data like files in MySQL."
   },
   {
-    "id": 4,
-    "title": "PostgreSQL Data Types",
-    "image": "https://i.imgur.com/GscX8p3.png",
-    "content": "PostgreSQL is known for its rich set of data types and custom types support...",
-    "syntax": "CREATE TABLE table_name (\n    column1 postgres_datatype,\n    ...\n);",
-    "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
-    "queryResult": "Creates Employee table using PostgreSQL-specific types like ARRAY and JSONB.",
-    "queryExplanation": "TEXT[] stores a list of skills, and JSONB allows efficient querying and indexing of structured JSON data."
-  },
+  "id": 4,
+  "title": "PostgreSQL Data Types",
+  "image": "https://i.imgur.com/GscX8p3.png",
+  "content": "PostgreSQL is known for its extensive and advanced data type system. In addition to standard SQL types, it supports powerful custom and complex types. Key categories include:\n\n- **Textual Types**: `CHAR`, `VARCHAR`, `TEXT`\n- **Numeric Types**: `SMALLINT`, `INTEGER`, `BIGINT`, `DECIMAL`, `NUMERIC`, `REAL`, `DOUBLE PRECISION`\n- **Date/Time Types**: `DATE`, `TIME`, `TIMESTAMP`, `INTERVAL`\n- **Boolean Type**: `BOOLEAN`\n- **Array Types**: Can store arrays like `TEXT[]`, `INTEGER[]`\n- **JSON Types**: `JSON`, `JSONB` (binary optimized JSON)\n- **UUID**: Universally unique identifier\n- **Geometric Types**: `POINT`, `LINE`, `CIRCLE`, etc.\n- **Custom Types**: You can define your own composite or enumerated types\n\nThese rich types allow PostgreSQL to be used for a variety of complex applications involving semi-structured and structured data.",
+  "syntax": "CREATE TABLE table_name (\n    column1 postgres_datatype,\n    ...\n);",
+  "sqlQuery": "CREATE TABLE Employee (\n  ID SERIAL PRIMARY KEY,\n  Name VARCHAR(100),\n  Skills TEXT[],\n  Profile JSONB,\n  IsActive BOOLEAN\n);",
+  "queryResult": "Creates Employee table using PostgreSQL-specific types like ARRAY and JSONB.",
+  "queryExplanation": "TEXT[] stores a list of skills, and JSONB allows efficient querying and indexing of structured JSON data."
+}
+,
   {
     "id": 5,
     "title": "Oracle SQL Data Types",
