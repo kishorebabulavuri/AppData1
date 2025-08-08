@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "What is the difference between WHERE and HAVING clauses?",
+    "tags": ["Beginner", "Basic SQL"],
+    "buttons": ["WHERE", "HAVING", "GROUP BY"],
+    "askedAt": ["Google", "Microsoft", "Amazon"],
+    "likes": 324,
+    "comments": 45,
+    "answer": "The WHERE clause is used to filter records before any groupings are made, while the HAVING clause is used to filter values after they have been grouped. WHERE is applied to individual rows, whereas HAVING is applied to groups."
+  },
+  {
+    "id": "2",
+    "title": "Explain the concept of database normalization",
+    "tags": ["Intermediate", "Database Design"],
+    "buttons": ["Normalization", "1NF", "2NF", "3NF"],
+    "askedAt": ["Facebook", "Apple", "Netflix"],
+    "likes": 287,
+    "comments": 32,
+    "answer": "Database normalization is the process of structuring a relational database in accordance with a series of so-called normal forms to reduce data redundancy and improve data integrity."
+  },
+  {
+    "id": "3",
+    "title": "How do you optimize SQL queries?",
+    "tags": ["Advanced", "Performance"],
+    "buttons": ["Indexing", "Query Plan", "EXPLAIN"],
+    "askedAt": ["Tesla", "Adobe", "Salesforce"],
+    "likes": 412,
+    "comments": 58,
+    "answer": "SQL query optimization involves several techniques: using appropriate indexes, avoiding SELECT *, using JOIN instead of subqueries, limiting the result set with LIMIT, and analyzing query execution plans."
+  }
+]
