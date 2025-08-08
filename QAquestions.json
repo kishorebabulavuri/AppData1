@@ -498,7 +498,7 @@
   "likes": 428,
   "comments": 18,
   "answer": "EXISTS checks if a subquery returns any rows. Returns TRUE if subquery results exist, FALSE otherwise. Example: SELECT * FROM customers c WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.id);"
-}
+},
 {
     "id": "51",
     "title": "How to fetch the top 5 employees with the highest salaries?",
