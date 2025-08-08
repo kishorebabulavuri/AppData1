@@ -1,0 +1,206 @@
+[
+  {
+    "term": "PRIMARY KEY",
+    "definition": "A column (or combination of columns) that uniquely identifies each row in a table. Cannot contain NULLs or duplicates."
+  },
+  {
+    "term": "FOREIGN KEY",
+    "definition": "A column in one table that refers to the PRIMARY KEY in another table, creating a relationship between the two tables."
+  },
+  {
+    "term": "UNIQUE CONSTRAINT",
+    "definition": "Ensures all values in a column are unique across the table, but unlike PRIMARY KEY, it can accept one NULL."
+  },
+  {
+    "term": "NOT NULL",
+    "definition": "Prevents a column from having NULL values, enforcing that every row must have a value for this column."
+  },
+  {
+    "term": "CHECK CONSTRAINT",
+    "definition": "Limits the values in a column using a condition. Example: salary > 0 ensures salary is always positive."
+  },
+  {
+    "term": "DEFAULT",
+    "definition": "Sets a default value for a column if no value is provided during INSERT. Example: DEFAULT 'India'."
+  },
+  {
+    "term": "CREATE TABLE",
+    "definition": "SQL command to define a new table structure. Includes column names, data types, and constraints."
+  },
+  {
+    "term": "ALTER TABLE",
+    "definition": "Used to modify an existing table — add/remove columns, or add/change constraints."
+  },
+  {
+    "term": "DROP TABLE",
+    "definition": "Deletes an entire table and all of its data permanently from the database."
+  },
+  {
+    "term": "TRUNCATE TABLE",
+    "definition": "Removes all records from a table but keeps the table structure for future use."
+  },
+  {
+    "term": "COMPOSITE KEY",
+    "definition": "A primary key made up of two or more columns used together to uniquely identify rows."
+  },
+  {
+    "term": "CANDIDATE KEY",
+    "definition": "All possible columns that can uniquely identify rows. One becomes the primary key."
+  },
+  {
+    "term": "SUPER KEY",
+    "definition": "Any combination of columns that can uniquely identify rows. A superset of candidate keys."
+  },
+  {
+    "term": "ENTITY RELATIONSHIP DIAGRAM (ERD)",
+    "definition": "A visual representation of tables, their columns, and relationships in a database system."
+  },
+  {
+    "term": "ONE-TO-MANY RELATIONSHIP",
+    "definition": "A relationship where one record in Table A can be related to many records in Table B."
+  },
+  {
+    "term": "ONE-TO-ONE RELATIONSHIP",
+    "definition": "Each record in one table is related to one and only one record in another table."
+  },
+  {
+    "term": "MANY-TO-MANY RELATIONSHIP",
+    "definition": "Many records in one table can relate to many in another, often using a junction (bridge) table."
+  },
+  {
+    "term": "INDEX",
+    "definition": "Improves the speed of data retrieval operations on a table by creating pointers to rows."
+  },
+  {
+    "term": "UNIQUE INDEX",
+    "definition": "Prevents duplicate values in the indexed column(s) to ensure data integrity."
+  },
+  {
+    "term": "CLUSTERED INDEX",
+    "definition": "Sorts and stores the data rows of the table based on the indexed column. Only one per table."
+  },
+  {
+    "term": "NON-CLUSTERED INDEX",
+    "definition": "Creates a separate structure from the data rows. There can be many non-clustered indexes."
+  },
+  {
+    "term": "NORMALIZATION",
+    "definition": "Process of organizing data to reduce redundancy and improve integrity."
+  },
+  {
+    "term": "1NF (First Normal Form)",
+    "definition": "Eliminates repeating groups by ensuring each column contains atomic (indivisible) values."
+  },
+  {
+    "term": "2NF (Second Normal Form)",
+    "definition": "Achieved when 1NF is met and all non-key columns are fully dependent on the primary key."
+  },
+  {
+    "term": "3NF (Third Normal Form)",
+    "definition": "Achieved when 2NF is met and there is no transitive dependency on the primary key."
+  },
+  {
+    "term": "BCNF (Boyce-Codd Normal Form)",
+    "definition": "A stricter version of 3NF where every determinant is a candidate key."
+  },
+  {
+    "term": "DENORMALIZATION",
+    "definition": "Introducing redundancy into a database for faster read performance at the cost of write efficiency."
+  },
+  {
+    "term": "SCHEMA",
+    "definition": "The structure of a database defined by tables, fields, relationships, views, indexes, etc."
+  },
+  {
+    "term": "DATABASE",
+    "definition": "A collection of structured data stored in tables, supporting operations like insert, update, delete, query."
+  },
+  {
+    "term": "SURROGATE KEY",
+    "definition": "An artificial, system-generated key (like auto-increment ID) used as a unique identifier."
+  },
+  {
+    "term": "NATURAL KEY",
+    "definition": "A key derived from real-world data (e.g., email, SSN) that uniquely identifies a record."
+  },
+  {
+    "term": "AUTO_INCREMENT",
+    "definition": "Automatically generates a unique value for new rows, commonly used for primary keys."
+  },
+  {
+    "term": "REFERENTIAL INTEGRITY",
+    "definition": "Ensures foreign key values match primary key values in the referenced table."
+  },
+  {
+    "term": "CASCADE DELETE",
+    "definition": "Automatically deletes related rows in child table when a parent row is deleted."
+  },
+  {
+    "term": "CASCADE UPDATE",
+    "definition": "Automatically updates foreign key values in child tables when parent primary key changes."
+  },
+  {
+    "term": "NULLABLE FIELD",
+    "definition": "A column that allows storing NULL, meaning absence of a value."
+  },
+  {
+    "term": "DATA REDUNDANCY",
+    "definition": "Storing the same data in multiple places, often addressed through normalization."
+  },
+  {
+    "term": "DATA INTEGRITY",
+    "definition": "Ensuring accuracy and consistency of data using constraints, relationships, and keys."
+  },
+  {
+    "term": "DATA TYPE",
+    "definition": "Defines the kind of value a column can hold — e.g., INT, VARCHAR, DATE, BOOLEAN, etc."
+  },
+  {
+    "term": "VARCHAR(n)",
+    "definition": "Stores variable-length strings up to 'n' characters."
+  },
+  {
+    "term": "CHAR(n)",
+    "definition": "Stores fixed-length strings of exactly 'n' characters, padded if shorter."
+  },
+  {
+    "term": "BOOLEAN",
+    "definition": "Stores TRUE or FALSE values, often represented as 1 or 0."
+  },
+  {
+    "term": "ENUM",
+    "definition": "Restricts a column to have only one value from a predefined list. Example: ENUM('Male','Female')"
+  },
+  {
+    "term": "INDEX SELECTIVITY",
+    "definition": "A measure of how many distinct values an index contains — higher selectivity = better performance."
+  },
+  {
+    "term": "VIEW",
+    "definition": "A virtual table based on the result of an SQL query. Used for abstraction and security."
+  },
+  {
+    "term": "MATERIALIZED VIEW",
+    "definition": "A view that stores the actual result set physically and can be refreshed periodically."
+  },
+  {
+    "term": "PARTITIONING",
+    "definition": "Splitting a large table into smaller, manageable parts for performance or maintenance."
+  },
+  {
+    "term": "SEQUENCE",
+    "definition": "A database object that generates a sequence of unique numeric values, often used for IDs."
+  },
+  {
+    "term": "SCALABILITY",
+    "definition": "Database design principle that ensures performance under increased data volume or users."
+  },
+  {
+    "term": "ENTITY",
+    "definition": "A real-world object represented by a table in a relational database (e.g., Employee, Department)."
+  },
+  {
+    "term": "ATTRIBUTE",
+    "definition": "A property or characteristic of an entity, represented as a column in a table."
+  }
+]
