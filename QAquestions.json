@@ -28,5 +28,55 @@
     "likes": 412,
     "comments": 58,
     "answer": "SQL query optimization involves several techniques: using appropriate indexes, avoiding SELECT *, using JOIN instead of subqueries, limiting the result set with LIMIT, and analyzing query execution plans."
+  },
+  {
+    "id": "4",
+    "title": "What is the difference between INNER JOIN and LEFT JOIN?",
+    "tags": ["Beginner", "Joins"],
+    "buttons": ["INNER JOIN", "LEFT JOIN", "JOIN Types"],
+    "askedAt": ["Amazon", "Walmart", "Oracle"],
+    "likes": 375,
+    "comments": 40,
+    "answer": "INNER JOIN returns only the rows with matching values in both tables, whereas LEFT JOIN returns all rows from the left table and matched rows from the right table. If no match is found, NULLs are returned for right table columns."
+  },
+  {
+    "id": "5",
+    "title": "What are indexes in SQL and how do they work?",
+    "tags": ["Intermediate", "Performance"],
+    "buttons": ["Index", "B-Tree", "Performance"],
+    "askedAt": ["Google", "Uber", "Flipkart"],
+    "likes": 296,
+    "comments": 29,
+    "answer": "Indexes are data structures that improve the speed of data retrieval operations on a database table. They work like a book’s index, allowing faster lookup of rows. Common types include B-tree and hash indexes."
+  },
+  {
+    "id": "6",
+    "title": "What is a correlated subquery?",
+    "tags": ["Advanced", "Subqueries"],
+    "buttons": ["Subquery", "Correlated", "Nested Queries"],
+    "askedAt": ["Microsoft", "LinkedIn", "Zomato"],
+    "likes": 348,
+    "comments": 37,
+    "answer": "A correlated subquery is a subquery that uses values from the outer query. It runs once for each row selected by the outer query, making it less efficient but useful for complex filtering."
+  },
+  {
+    "id": "7",
+    "title": "Explain ACID properties in a database.",
+    "tags": ["Intermediate", "Database Theory"],
+    "buttons": ["ACID", "Transactions", "Atomicity"],
+    "askedAt": ["Infosys", "Capgemini", "TCS"],
+    "likes": 332,
+    "comments": 41,
+    "answer": "ACID stands for Atomicity, Consistency, Isolation, and Durability. These properties ensure reliable transaction processing by maintaining data integrity even in cases of failures or concurrent access."
+  },
+  {
+    "id": "8",
+    "title": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "tags": ["Beginner", "Data Manipulation"],
+    "buttons": ["DELETE", "TRUNCATE", "DROP"],
+    "askedAt": ["HCL", "Wipro", "Google"],
+    "likes": 409,
+    "comments": 53,
+    "answer": "DELETE removes specified rows and can be rolled back. TRUNCATE removes all rows without logging individual row deletions and cannot be rolled back. DROP removes the entire table structure and data."
   }
 ]
