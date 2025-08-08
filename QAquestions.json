@@ -78,5 +78,105 @@
     "likes": 409,
     "comments": 53,
     "answer": "DELETE removes specified rows and can be rolled back. TRUNCATE removes all rows without logging individual row deletions and cannot be rolled back. DROP removes the entire table structure and data."
+  },
+  {
+    "id": "9",
+    "title": "What is a primary key and how is it different from a unique key?",
+    "tags": ["Beginner", "Constraints"],
+    "buttons": ["Primary Key", "Unique Key", "Constraints"],
+    "askedAt": ["Amazon", "Zoho", "TCS"],
+    "likes": 301,
+    "comments": 34,
+    "answer": "A primary key uniquely identifies each record in a table and does not allow NULL values. A unique key also ensures uniqueness but can accept a single NULL value per column."
+  },
+  {
+    "id": "10",
+    "title": "What is a foreign key and why is it used?",
+    "tags": ["Beginner", "Constraints"],
+    "buttons": ["Foreign Key", "Referential Integrity", "Relationships"],
+    "askedAt": ["Infosys", "Cognizant", "Capgemini"],
+    "likes": 289,
+    "comments": 28,
+    "answer": "A foreign key is a field in one table that refers to the primary key in another table. It is used to maintain referential integrity between related tables."
+  },
+  {
+    "id": "11",
+    "title": "What is the difference between UNION and UNION ALL?",
+    "tags": ["Intermediate", "Set Operations"],
+    "buttons": ["UNION", "UNION ALL", "Set Operators"],
+    "askedAt": ["Walmart", "Oracle", "Salesforce"],
+    "likes": 323,
+    "comments": 39,
+    "answer": "UNION removes duplicate records between two SELECT statements, while UNION ALL includes all records, even duplicates. UNION is slower due to the de-duplication step."
+  },
+  {
+    "id": "12",
+    "title": "What is a view in SQL and how is it useful?",
+    "tags": ["Intermediate", "Database Objects"],
+    "buttons": ["View", "Virtual Table", "SELECT"],
+    "askedAt": ["Google", "Adobe", "Accenture"],
+    "likes": 278,
+    "comments": 30,
+    "answer": "A view is a virtual table created using a SELECT query. It allows you to simplify complex queries, improve security, and present data in a specific format without storing it physically."
+  },
+  {
+    "id": "13",
+    "title": "Explain the difference between clustered and non-clustered indexes.",
+    "tags": ["Advanced", "Indexing"],
+    "buttons": ["Clustered", "Non-clustered", "Indexing"],
+    "askedAt": ["Facebook", "Oracle", "Flipkart"],
+    "likes": 345,
+    "comments": 42,
+    "answer": "A clustered index determines the physical order of rows in a table and each table can have only one. A non-clustered index creates a separate structure for indexing and allows multiple indexes per table."
+  },
+  {
+    "id": "14",
+    "title": "What are SQL aggregate functions?",
+    "tags": ["Beginner", "Functions"],
+    "buttons": ["COUNT", "SUM", "AVG", "MIN", "MAX"],
+    "askedAt": ["IBM", "SAP", "TCS"],
+    "likes": 310,
+    "comments": 25,
+    "answer": "Aggregate functions perform calculations on multiple rows and return a single value. Common ones include COUNT, SUM, AVG, MIN, and MAX."
+  },
+  {
+    "id": "15",
+    "title": "What is the use of the DISTINCT keyword in SQL?",
+    "tags": ["Beginner", "Query Optimization"],
+    "buttons": ["DISTINCT", "SELECT", "Duplicates"],
+    "askedAt": ["Google", "Paytm", "Freshworks"],
+    "likes": 284,
+    "comments": 24,
+    "answer": "DISTINCT is used in a SELECT statement to return only unique values and remove duplicates from the result set."
+  },
+  {
+    "id": "16",
+    "title": "What is a self join in SQL?",
+    "tags": ["Intermediate", "Joins"],
+    "buttons": ["Self Join", "Alias", "Relationships"],
+    "askedAt": ["LinkedIn", "Intel", "Zoho"],
+    "likes": 318,
+    "comments": 29,
+    "answer": "A self join is a regular join but the table is joined with itself. It’s useful for comparing rows within the same table using table aliases."
+  },
+  {
+    "id": "17",
+    "title": "What are constraints in SQL and name a few common types?",
+    "tags": ["Beginner", "Database Integrity"],
+    "buttons": ["Constraints", "Primary Key", "Foreign Key", "Check"],
+    "askedAt": ["HCL", "Cognizant", "Mindtree"],
+    "likes": 297,
+    "comments": 31,
+    "answer": "Constraints enforce rules at the table level to ensure data integrity. Common types include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, and CHECK."
+  },
+  {
+    "id": "18",
+    "title": "What is the use of the CASE statement in SQL?",
+    "tags": ["Intermediate", "Conditional Logic"],
+    "buttons": ["CASE", "IF ELSE", "Conditions"],
+    "askedAt": ["Amazon", "Swiggy", "PhonePe"],
+    "likes": 325,
+    "comments": 33,
+    "answer": "The CASE statement adds conditional logic to SQL queries. It works like an IF-THEN-ELSE and is often used in SELECT, UPDATE, or ORDER BY clauses."
   }
 ]
