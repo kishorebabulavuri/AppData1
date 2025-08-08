@@ -178,5 +178,1745 @@
     "likes": 325,
     "comments": 33,
     "answer": "The CASE statement adds conditional logic to SQL queries. It works like an IF-THEN-ELSE and is often used in SELECT, UPDATE, or ORDER BY clauses."
+  },
+  {
+    "id": "19",
+    "title": "How to retrieve the second-highest salary of an employee?",
+    "tags": ["Basic SQL"],
+    "buttons": ["MAX", "Subquery", "Salary"],
+    "askedAt": ["Amazon", "Microsoft", "Infosys"],
+    "likes": 391,
+    "comments": 47,
+    "answer": "You can retrieve the second-highest salary by using a subquery to find the maximum salary less than the highest salary. Example: SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);"
+  },
+  {
+    "id": "20",
+    "title": "What is a self join in SQL?",
+    "tags": ["Joins"],
+    "buttons": ["Self Join", "Alias", "Relationships"],
+    "askedAt": ["LinkedIn", "Intel", "Zoho"],
+    "likes": 318,
+    "comments": 29,
+    "answer": "A self join is a regular join but the table is joined with itself. It’s useful for comparing rows within the same table using table aliases."
+  },
+  {
+    "id": "21",
+    "title": "How does indexing improve performance in SQL?",
+    "tags": ["Performance"],
+    "buttons": ["Index", "Query Speed", "Performance"],
+    "askedAt": ["Google", "Adobe", "Cognizant"],
+    "likes": 363,
+    "comments": 40,
+    "answer": "Indexing creates quick lookup paths for data, reducing the number of rows scanned during a query. This significantly improves read performance, especially on large datasets."
+  },
+  {
+    "id": "22",
+    "title": "What is a database schema and why is it important?",
+    "tags": ["Database Design"],
+    "buttons": ["Schema", "Design", "Structure"],
+    "askedAt": ["Oracle", "Salesforce", "Wipro"],
+    "likes": 281,
+    "comments": 26,
+    "answer": "A database schema defines the logical structure of a database, including tables, columns, and relationships. It ensures consistency and helps in organizing data efficiently."
+  },
+  {
+    "id": "23",
+    "title": "Explain 1NF, 2NF, and 3NF in normalization.",
+    "tags": ["Normalization"],
+    "buttons": ["1NF", "2NF", "3NF", "Normalization"],
+    "askedAt": ["Meta", "IBM", "Mindtree"],
+    "likes": 342,
+    "comments": 31,
+    "answer": "1NF removes repeating groups, 2NF removes partial dependencies, and 3NF removes transitive dependencies. These steps help reduce redundancy and improve data integrity in databases."
+  },
+  {
+    "id": "24",
+    "title": "What is a transaction in SQL?",
+    "tags": ["Transactions"],
+    "buttons": ["Transaction", "COMMIT", "ROLLBACK"],
+    "askedAt": ["Capgemini", "TCS", "Paytm"],
+    "likes": 309,
+    "comments": 28,
+    "answer": "A transaction is a sequence of one or more SQL operations treated as a single unit. It ensures data consistency using COMMIT to save and ROLLBACK to undo changes in case of errors."
+  },
+  {
+    "id": "25",
+    "title": "What is the use of COMMIT and ROLLBACK?",
+    "tags": ["Transactions"],
+    "buttons": ["COMMIT", "ROLLBACK", "SQL Commands"],
+    "askedAt": ["Wipro", "Zoho", "Amazon"],
+    "likes": 321,
+    "comments": 30,
+    "answer": "COMMIT is used to save all the changes made during the transaction, while ROLLBACK undoes changes since the last COMMIT. Both are essential to maintain data integrity."
+  },
+  {
+    "id": "26",
+    "title": "What is denormalization and when should it be used?",
+    "tags": ["Normalization", "Performance"],
+    "buttons": ["Denormalization", "Performance", "Redundancy"],
+    "askedAt": ["Netflix", "Google", "SAP"],
+    "likes": 294,
+    "comments": 33,
+    "answer": "Denormalization is the process of combining tables to reduce the need for joins and improve read performance. It’s used when performance is prioritized over data redundancy."
+  },
+  {
+    "id": "27",
+    "title": "How to find duplicate rows in a SQL table?",
+    "tags": ["Basic SQL"],
+    "buttons": ["GROUP BY", "HAVING", "Duplicates"],
+    "askedAt": ["Oracle", "Microsoft", "TCS"],
+    "likes": 338,
+    "comments": 36,
+    "answer": "You can find duplicates using GROUP BY and HAVING. Example: SELECT column_name, COUNT(*) FROM table GROUP BY column_name HAVING COUNT(*) > 1;"
+  },
+  {
+    "id": "28",
+    "title": "What is a CROSS JOIN and when is it used?",
+    "tags": ["Joins"],
+    "buttons": ["CROSS JOIN", "Cartesian Product", "Join Types"],
+    "askedAt": ["Adobe", "Facebook", "PayPal"],
+    "likes": 277,
+    "comments": 22,
+    "answer": "A CROSS JOIN returns the Cartesian product of two tables, combining all rows from the first table with all rows of the second. It’s rarely used but can be useful for generating test data."
+  },
+  {
+  "id": "29",
+  "title": "How to get the nth highest salary in SQL?",
+  "tags": ["Intermediate", "Basic SQL"],
+  "buttons": ["DENSE_RANK", "Window Function", "Salary"],
+  "askedAt": ["Amazon", "Google", "Accenture"],
+  "likes": 417,
+  "comments": 52,
+  "answer": "You can use the DENSE_RANK() window function to assign ranks to salaries and then filter by rank = N. Example: SELECT salary FROM (SELECT salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rank FROM employees) AS ranked_salaries WHERE rank = N;"
+},
+{
+  "id": "30",
+  "title": "How do you fetch all employees whose salary is greater than the average salary?",
+  "tags": ["Intermediate", "Basic SQL"],
+  "buttons": ["AVG", "Subquery", "Comparison"],
+  "askedAt": ["Google", "TCS", "Zoho"],
+  "likes": 364,
+  "comments": 38,
+  "answer": "To fetch employees earning more than the average salary, use a subquery with the AVG function: SELECT * FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);"
+},
+{
+  "id": "31",
+  "title": "How do you display the current date and time in SQL?",
+  "tags": ["Basic SQL"],
+  "buttons": ["CURRENT_TIMESTAMP", "Date Functions", "NOW"],
+  "askedAt": ["TCS", "Wipro", "Oracle"],
+  "likes": 289,
+  "comments": 25,
+  "answer": "You can display the current date and time using: SELECT CURRENT_TIMESTAMP; This function returns the current date and time of the database system."
+},
+{
+  "id": "32",
+  "title": "How to find duplicate records in a table?",
+  "tags": ["Basic SQL"],
+  "buttons": ["GROUP BY", "HAVING", "Duplicates"],
+  "askedAt": ["Amazon", "Microsoft", "Infosys"],
+  "likes": 355,
+  "comments": 43,
+  "answer": "To find duplicates, use GROUP BY on the target column(s) and filter with HAVING COUNT(*) > 1. Example: SELECT column_name, COUNT(*) FROM table_name GROUP BY column_name HAVING COUNT(*) > 1;"
+},
+{
+  "id": "33",
+  "title": "How can you delete duplicate rows in SQL?",
+  "tags": ["Intermediate", "Basic SQL"],
+  "buttons": ["ROW_NUMBER", "CTE", "Delete Duplicates"],
+  "askedAt": ["Capgemini", "Infosys", "Amazon"],
+  "likes": 389,
+  "comments": 44,
+  "answer": "You can use a Common Table Expression (CTE) with ROW_NUMBER() to identify and delete duplicate rows. Example: WITH CTE AS (SELECT column_name, ROW_NUMBER() OVER (PARTITION BY column_name ORDER BY column_name) AS row_num FROM table_name) DELETE FROM CTE WHERE row_num > 1;"
+},
+{
+  "id": "34",
+  "title": "How to get the common records from two tables?",
+  "tags": ["Basic SQL"],
+  "buttons": ["INTERSECT", "Set Operations", "Common Records"],
+  "askedAt": ["Oracle", "TCS", "Microsoft"],
+  "likes": 342,
+  "comments": 36,
+  "answer": "To get common records from two tables, use the INTERSECT operator. It returns only the rows that exist in both SELECT statements. Example: SELECT * FROM table1 INTERSECT SELECT * FROM table2;"
+},
+{
+  "id": "35",
+  "title": "How to retrieve the last 10 records from a table?",
+  "tags": ["Basic SQL"],
+  "buttons": ["LIMIT", "ORDER BY", "Pagination"],
+  "askedAt": ["Google", "Flipkart", "Zoho"],
+  "likes": 371,
+  "comments": 39,
+  "answer": "To get the last 10 records, order the table by a unique column in descending order and apply LIMIT. Example: SELECT * FROM employees ORDER BY employee_id DESC LIMIT 10;"
+},
+{
+  "id": "36",
+  "title": "How do you fetch the top 5 employees with the highest salaries?",
+  "tags": ["Basic SQL", "Sorting", "LIMIT"],
+  "buttons": ["ORDER BY", "LIMIT", "Top N Records"],
+  "askedAt": ["TCS", "Wipro", "Capgemini"],
+  "likes": 420,
+  "comments": 28,
+  "answer": "To get the top 5 highest salaries, sort the table in descending order by the salary column and limit the result to 5 rows. Example: SELECT * FROM employees ORDER BY salary DESC LIMIT 5;"
+},
+{
+  "id": "37",
+  "title": "How to calculate the total salary of all employees?",
+  "tags": ["Aggregate Function", "SUM", "Basic SQL"],
+  "buttons": ["SUM()", "Total Calculation", "Aggregate Function"],
+  "askedAt": ["Infosys", "TCS", "HCL"],
+  "likes": 390,
+  "comments": 21,
+  "answer": "To calculate the total salary paid to all employees, use the SUM() aggregate function on the salary column. Example: SELECT SUM(salary) FROM employees;"
+},
+{
+  "id": "38",
+  "title": "How to find all employees who joined in the year 2020?",
+  "tags": ["Date Functions", "Filtering", "WHERE Clause"],
+  "buttons": ["YEAR()", "WHERE", "JOIN DATE"],
+  "askedAt": ["Wipro", "TCS", "Cognizant"],
+  "likes": 410,
+  "comments": 27,
+  "answer": "Use the YEAR() function on the join_date column to filter employees by the year. Example: SELECT * FROM employees WHERE YEAR(join_date) = 2020;"
+},
+{
+  "id": "39",
+  "title": "Write a query to find employees whose name starts with 'A'.",
+  "tags": ["Pattern Matching", "LIKE", "Filtering"],
+  "buttons": ["LIKE", "WHERE", "'A%'"],
+  "askedAt": ["Infosys", "Accenture", "HCL"],
+  "likes": 430,
+  "comments": 22,
+  "answer": "Use the LIKE operator with 'A%' to match names starting with 'A'. Example: SELECT * FROM employees WHERE name LIKE 'A%';"
+},
+  {
+  "id": "40",
+  "title": "How can you find the employees who do not have a manager?",
+  "tags": ["NULL Checking", "Filtering", "IS NULL"],
+  "buttons": ["IS NULL", "WHERE", "manager_id"],
+  "askedAt": ["TCS", "Infosys", "Wipro"],
+  "likes": 412,
+  "comments": 18,
+  "answer": "Use IS NULL to find rows where manager_id is missing. Example: SELECT * FROM employees WHERE manager_id IS NULL;"
+},
+{
+  "id": "41",
+  "title": "How to find the department with the highest number of employees?",
+  "tags": ["GROUP BY", "Aggregation", "LIMIT", "COUNT", "ORDER BY"],
+  "buttons": ["GROUP BY", "COUNT(*)", "ORDER BY DESC", "LIMIT 1"],
+  "askedAt": ["Accenture", "Cognizant", "Capgemini"],
+  "likes": 508,
+  "comments": 22,
+  "answer": "Group employees by department, count them, then order by count descending and limit to 1. Example: SELECT department_id, COUNT(*) FROM employees GROUP BY department_id ORDER BY COUNT(*) DESC LIMIT 1;"
+},
+{
+  "id": "42",
+  "title": "How to get the count of employees in each department?",
+  "tags": ["GROUP BY", "COUNT", "Aggregation"],
+  "buttons": ["GROUP BY", "COUNT(*)"],
+  "askedAt": ["Infosys", "TCS", "Wipro"],
+  "likes": 472,
+  "comments": 18,
+  "answer": "Group the employees by department_id and count how many employees are in each. Example: SELECT department_id, COUNT(*) FROM employees GROUP BY department_id;"
+},
+{
+    "id": "51",
+    "title": "How to fetch the top 5 employees with the highest salaries?",
+    "tags": ["ORDER BY", "LIMIT", "Salary"],
+    "buttons": ["ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Capgemini", "Accenture", "TCS"],
+    "likes": 624,
+    "comments": 12,
+    "answer": "Sort the employees in descending order of salary and fetch the top 5. Example: SELECT * FROM employees ORDER BY salary DESC LIMIT 5;"
+  },
+  {
+    "id": "52",
+    "title": "How to calculate the total salary of all employees?",
+    "tags": ["SUM", "Aggregation"],
+    "buttons": ["SUM(salary)"],
+    "askedAt": ["Infosys", "HCL", "Mindtree"],
+    "likes": 398,
+    "comments": 6,
+    "answer": "Use SUM() function to calculate the total salary. Example: SELECT SUM(salary) FROM employees;"
+  },
+  {
+    "id": "53",
+    "title": "How to find employees who joined in the year 2020?",
+    "tags": ["WHERE", "YEAR", "Date Filter"],
+    "buttons": ["WHERE", "YEAR()"],
+    "askedAt": ["Wipro", "Oracle", "TCS"],
+    "likes": 456,
+    "comments": 10,
+    "answer": "Use YEAR function to extract year and filter records. Example: SELECT * FROM employees WHERE YEAR(join_date) = 2020;"
+  },
+  {
+    "id": "54",
+    "title": "How to find employees whose names start with 'A'?",
+    "tags": ["LIKE", "Pattern Matching"],
+    "buttons": ["LIKE", "'A%'"],
+    "askedAt": ["IBM", "Accenture", "Cognizant"],
+    "likes": 531,
+    "comments": 9,
+    "answer": "Use LIKE to filter names starting with 'A'. Example: SELECT * FROM employees WHERE name LIKE 'A%';"
+  },
+  {
+    "id": "55",
+    "title": "How to find employees who do not have a manager?",
+    "tags": ["NULL", "IS NULL", "Filtering"],
+    "buttons": ["WHERE", "IS NULL"],
+    "askedAt": ["Infosys", "Wipro", "TCS"],
+    "likes": 502,
+    "comments": 14,
+    "answer": "Check if manager_id is NULL. Example: SELECT * FROM employees WHERE manager_id IS NULL;"
+  },
+  {
+    "id": "56",
+    "title": "How to find the department with the highest number of employees?",
+    "tags": ["GROUP BY", "ORDER BY", "COUNT", "LIMIT"],
+    "buttons": ["GROUP BY", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["HCL", "TCS", "Tech Mahindra"],
+    "likes": 489,
+    "comments": 11,
+    "answer": "Group by department_id and count employees. Example: SELECT department_id, COUNT(*) FROM employees GROUP BY department_id ORDER BY COUNT(*) DESC LIMIT 1;"
+  },
+  {
+    "id": "57",
+    "title": "How to find users who failed to log in more than 3 times?",
+    "tags": ["WHERE", "GROUP BY", "HAVING"],
+    "buttons": ["GROUP BY", "HAVING", "COUNT(*) > 3"],
+    "askedAt": ["TCS", "Capgemini", "Cognizant"],
+    "likes": 470,
+    "comments": 13,
+    "answer": "Group login attempts by user and filter by count. Example: SELECT user_id, COUNT(*) FROM login_attempts WHERE status = 'fail' GROUP BY user_id HAVING COUNT(*) > 3;"
+  },
+  {
+    "id": "58",
+    "title": "How to fetch the latest login timestamp for each user?",
+    "tags": ["GROUP BY", "MAX", "Timestamp"],
+    "buttons": ["MAX()", "GROUP BY"],
+    "askedAt": ["Infosys", "Oracle", "Mindtree"],
+    "likes": 555,
+    "comments": 10,
+    "answer": "Use MAX to get latest login time per user. Example: SELECT user_id, MAX(login_time) FROM login_history GROUP BY user_id;"
+  },
+  {
+    "id": "59",
+    "title": "How to get the number of successful logins today?",
+    "tags": ["WHERE", "DATE", "COUNT"],
+    "buttons": ["WHERE", "DATE()", "COUNT(*)"],
+    "askedAt": ["Wipro", "HCL", "TCS"],
+    "likes": 444,
+    "comments": 8,
+    "answer": "Filter logins by today's date. Example: SELECT COUNT(*) FROM login_history WHERE status = 'success' AND DATE(login_time) = CURDATE();"
+  },
+  {
+    "id": "60",
+    "title": "How to find users who never logged in?",
+    "tags": ["LEFT JOIN", "IS NULL", "NOT EXISTS"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Capgemini", "TCS", "Accenture"],
+    "likes": 490,
+    "comments": 15,
+    "answer": "Use LEFT JOIN to find users without login records. Example: SELECT u.id, u.name FROM users u LEFT JOIN login_history l ON u.id = l.user_id WHERE l.user_id IS NULL;"
+  },
+  {
+    "id": "61",
+    "title": "How to get the total number of orders placed by each user?",
+    "tags": ["GROUP BY", "COUNT", "E-commerce"],
+    "buttons": ["GROUP BY", "user_id", "COUNT(*)"],
+    "askedAt": ["Amazon", "Flipkart", "Myntra"],
+    "likes": 302,
+    "comments": 10,
+    "answer": "SELECT user_id, COUNT(*) AS total_orders FROM orders GROUP BY user_id;"
+  },
+  {
+    "id": "62",
+    "title": "How to find users who never placed any orders?",
+    "tags": ["LEFT JOIN", "IS NULL", "Anti Join"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Amazon", "Snapdeal"],
+    "likes": 289,
+    "comments": 7,
+    "answer": "SELECT u.id, u.name FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE o.id IS NULL;"
+  },
+  {
+    "id": "63",
+    "title": "How to retrieve the top 5 most sold products?",
+    "tags": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["GROUP BY", "COUNT(*)", "LIMIT"],
+    "askedAt": ["Flipkart", "Meesho"],
+    "likes": 351,
+    "comments": 13,
+    "answer": "SELECT product_id, COUNT(*) AS sold_count FROM order_items GROUP BY product_id ORDER BY sold_count DESC LIMIT 5;"
+  },
+  {
+    "id": "64",
+    "title": "How to find total cart value for each user?",
+    "tags": ["SUM", "JOIN", "GROUP BY"],
+    "buttons": ["SUM", "JOIN", "GROUP BY"],
+    "askedAt": ["Myntra", "Nykaa"],
+    "likes": 271,
+    "comments": 6,
+    "answer": "SELECT c.user_id, SUM(p.price * c.quantity) AS total_cart_value FROM carts c JOIN products p ON c.product_id = p.id GROUP BY c.user_id;"
+  },
+  {
+    "id": "65",
+    "title": "How to list users who have items in cart but never ordered?",
+    "tags": ["NOT IN", "Subquery", "E-commerce"],
+    "buttons": ["NOT IN", "Subquery"],
+    "askedAt": ["Ajio", "Amazon"],
+    "likes": 244,
+    "comments": 8,
+    "answer": "SELECT DISTINCT user_id FROM carts WHERE user_id NOT IN (SELECT DISTINCT user_id FROM orders);"
+  },
+  {
+    "id": "66",
+    "title": "How to find the most active users by login count?",
+    "tags": ["GROUP BY", "COUNT", "ORDER BY"],
+    "buttons": ["GROUP BY", "COUNT(*)", "ORDER BY DESC"],
+    "askedAt": ["TCS", "Zoho"],
+    "likes": 398,
+    "comments": 15,
+    "answer": "SELECT user_id, COUNT(*) AS login_count FROM login_sessions GROUP BY user_id ORDER BY login_count DESC;"
+  },
+  {
+    "id": "67",
+    "title": "How to find failed login attempts in the last 7 days?",
+    "tags": ["WHERE", "DATE", "Login"],
+    "buttons": ["WHERE", "status='failed'", "DATE_SUB"],
+    "askedAt": ["Capgemini", "Infosys"],
+    "likes": 311,
+    "comments": 9,
+    "answer": "SELECT * FROM login_sessions WHERE status = 'failed' AND login_time >= CURRENT_DATE - INTERVAL 7 DAY;"
+  },
+  {
+    "id": "68",
+    "title": "How to get order count per day for the last week?",
+    "tags": ["GROUP BY", "DATE", "COUNT"],
+    "buttons": ["GROUP BY DATE", "COUNT(*)"],
+    "askedAt": ["Amazon", "Walmart"],
+    "likes": 333,
+    "comments": 12,
+    "answer": "SELECT DATE(order_date) AS order_day, COUNT(*) AS total_orders FROM orders WHERE order_date >= CURRENT_DATE - INTERVAL 7 DAY GROUP BY DATE(order_date);"
+  },
+  {
+    "id": "69",
+    "title": "How to check which products are never sold?",
+    "tags": ["LEFT JOIN", "IS NULL", "Product Analysis"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Flipkart", "Meesho"],
+    "likes": 278,
+    "comments": 7,
+    "answer": "SELECT p.id, p.name FROM products p LEFT JOIN order_items oi ON p.id = oi.product_id WHERE oi.product_id IS NULL;"
+  },
+  {
+    "id": "70",
+    "title": "How to track user sessions longer than 30 minutes?",
+    "tags": ["TIMESTAMPDIFF", "Login Duration", "WHERE"],
+    "buttons": ["TIMESTAMPDIFF", "WHERE"],
+    "askedAt": ["Zoho", "Infosys"],
+    "likes": 314,
+    "comments": 11,
+    "answer": "SELECT * FROM login_sessions WHERE TIMESTAMPDIFF(MINUTE, login_time, logout_time) > 30;"
+  },
+  {
+    "id": "71",
+    "title": "How to find the number of posts each user has made?",
+    "tags": ["GROUP BY", "COUNT", "Posts"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Meta", "Twitter", "LinkedIn"],
+    "likes": 531,
+    "comments": 29,
+    "answer": "Use GROUP BY on user_id and count the number of posts per user. Example: SELECT user_id, COUNT(*) FROM posts GROUP BY user_id;"
+  },
+  {
+    "id": "72",
+    "title": "How to get the top 5 most liked posts?",
+    "tags": ["JOIN", "GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["JOIN", "COUNT(*)", "ORDER BY", "LIMIT"],
+    "askedAt": ["Instagram", "Snapchat"],
+    "likes": 614,
+    "comments": 37,
+    "answer": "Join posts and likes table, group by post_id and count likes, then order by count descending. Example: SELECT post_id, COUNT(*) AS like_count FROM likes GROUP BY post_id ORDER BY like_count DESC LIMIT 5;"
+  },
+  {
+    "id": "73",
+    "title": "How to find users who have never posted anything?",
+    "tags": ["LEFT JOIN", "IS NULL"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["LinkedIn", "Facebook"],
+    "likes": 428,
+    "comments": 21,
+    "answer": "Use LEFT JOIN between users and posts, filter where post_id is NULL. Example: SELECT u.id, u.name FROM users u LEFT JOIN posts p ON u.id = p.user_id WHERE p.id IS NULL;"
+  },
+  {
+    "id": "74",
+    "title": "How to count total likes received by each user?",
+    "tags": ["JOIN", "GROUP BY", "Posts", "Likes"],
+    "buttons": ["JOIN", "GROUP BY"],
+    "askedAt": ["Meta", "X", "TCS"],
+    "likes": 552,
+    "comments": 16,
+    "answer": "Join posts and likes on post_id, then group by post's user_id. Example: SELECT p.user_id, COUNT(*) AS total_likes FROM posts p JOIN likes l ON p.id = l.post_id GROUP BY p.user_id;"
+  },
+  {
+    "id": "75",
+    "title": "How to find users who liked their own posts?",
+    "tags": ["JOIN", "WHERE"],
+    "buttons": ["JOIN", "WHERE"],
+    "askedAt": ["Infosys", "Meta"],
+    "likes": 488,
+    "comments": 18,
+    "answer": "Join posts and likes on post_id and filter where post.user_id = like.user_id. Example: SELECT l.user_id FROM likes l JOIN posts p ON l.post_id = p.id WHERE l.user_id = p.user_id;"
+  },
+  {
+    "id": "76",
+    "title": "How to fetch the latest post by each user?",
+    "tags": ["GROUP BY", "MAX", "Subquery"],
+    "buttons": ["GROUP BY", "MAX()"],
+    "askedAt": ["Amazon", "Twitter"],
+    "likes": 563,
+    "comments": 23,
+    "answer": "Use a subquery to find the max created_at per user. Example: SELECT * FROM posts WHERE (user_id, created_at) IN (SELECT user_id, MAX(created_at) FROM posts GROUP BY user_id);"
+  },
+  {
+    "id": "77",
+    "title": "How to list users with more than 100 followers?",
+    "tags": ["GROUP BY", "HAVING"],
+    "buttons": ["GROUP BY", "HAVING"],
+    "askedAt": ["Instagram", "TCS"],
+    "likes": 439,
+    "comments": 14,
+    "answer": "Group by followed_user_id and count. Use HAVING for filter. Example: SELECT followed_user_id, COUNT(*) FROM followers GROUP BY followed_user_id HAVING COUNT(*) > 100;"
+  },
+  {
+    "id": "78",
+    "title": "How to find the average number of likes per post?",
+    "tags": ["AVG", "JOIN"],
+    "buttons": ["AVG", "JOIN"],
+    "askedAt": ["Twitter", "Meta"],
+    "likes": 492,
+    "comments": 22,
+    "answer": "Use AVG on a subquery that counts likes per post. Example: SELECT AVG(like_count) FROM (SELECT COUNT(*) AS like_count FROM likes GROUP BY post_id) AS temp;"
+  },
+  {
+    "id": "79",
+    "title": "How to show posts without any likes?",
+    "tags": ["LEFT JOIN", "IS NULL"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Wipro", "Snapchat"],
+    "likes": 421,
+    "comments": 17,
+    "answer": "LEFT JOIN posts with likes, check where like_id is NULL. Example: SELECT p.* FROM posts p LEFT JOIN likes l ON p.id = l.post_id WHERE l.id IS NULL;"
+  },
+  {
+    "id": "80",
+    "title": "How to get the total number of comments each post has received?",
+    "tags": ["GROUP BY", "COUNT", "Comments"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Facebook", "TCS"],
+    "likes": 507,
+    "comments": 19,
+    "answer": "Group by post_id and count number of comments. Example: SELECT post_id, COUNT(*) FROM comments GROUP BY post_id;"
+  },
+  {
+    "id": "81",
+    "title": "How to find customers with account balance over ₹1,00,000?",
+    "tags": ["WHERE", "Comparison"],
+    "buttons": ["SELECT", "WHERE", ">"],
+    "askedAt": ["HDFC", "ICICI", "SBI"],
+    "likes": 376,
+    "comments": 11,
+    "answer": "SELECT customer_id, name, balance FROM accounts WHERE balance > 100000;"
+  },
+  {
+    "id": "82",
+    "title": "How to find all transactions made in the last 7 days?",
+    "tags": ["DATE", "Interval", "NOW()"],
+    "buttons": ["SELECT", "WHERE", "DATE", "INTERVAL"],
+    "askedAt": ["Axis Bank", "Kotak Mahindra", "Yes Bank"],
+    "likes": 328,
+    "comments": 9,
+    "answer": "SELECT * FROM transactions WHERE transaction_date >= NOW() - INTERVAL 7 DAY;"
+  },
+  {
+    "id": "83",
+    "title": "How to calculate the total deposits made by each customer?",
+    "tags": ["GROUP BY", "SUM"],
+    "buttons": ["SELECT", "SUM", "GROUP BY"],
+    "askedAt": ["TCS", "Cognizant", "Infosys"],
+    "likes": 441,
+    "comments": 14,
+    "answer": "SELECT customer_id, SUM(amount) AS total_deposit FROM transactions WHERE type = 'deposit' GROUP BY customer_id;"
+  },
+  {
+    "id": "84",
+    "title": "How to find the customer with the highest balance?",
+    "tags": ["ORDER BY", "LIMIT"],
+    "buttons": ["SELECT", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["SBI", "HDFC", "Wipro"],
+    "likes": 502,
+    "comments": 18,
+    "answer": "SELECT customer_id, name, balance FROM accounts ORDER BY balance DESC LIMIT 1;"
+  },
+  {
+    "id": "85",
+    "title": "How to get the number of transactions for each account?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["SELECT", "COUNT", "GROUP BY"],
+    "askedAt": ["Capgemini", "Infosys", "ICICI"],
+    "likes": 389,
+    "comments": 10,
+    "answer": "SELECT account_id, COUNT(*) AS transaction_count FROM transactions GROUP BY account_id;"
+  },
+  {
+    "id": "86",
+    "title": "How to find customers who have not made any transaction?",
+    "tags": ["LEFT JOIN", "NULL check"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["HCL", "TCS", "Axis Bank"],
+    "likes": 346,
+    "comments": 12,
+    "answer": "SELECT c.customer_id, c.name FROM customers c LEFT JOIN transactions t ON c.customer_id = t.customer_id WHERE t.id IS NULL;"
+  },
+  {
+    "id": "87",
+    "title": "How to find customers who made both deposit and withdrawal?",
+    "tags": ["HAVING", "GROUP BY", "COUNT(DISTINCT)"],
+    "buttons": ["GROUP BY", "HAVING"],
+    "askedAt": ["Infosys", "Accenture", "SBI"],
+    "likes": 465,
+    "comments": 16,
+    "answer": "SELECT customer_id FROM transactions GROUP BY customer_id HAVING COUNT(DISTINCT type) = 2;"
+  },
+  {
+    "id": "88",
+    "title": "How to calculate monthly interest for each savings account?",
+    "tags": ["Calculation", "Multiplication", "JOIN"],
+    "buttons": ["SELECT", "*", "JOIN"],
+    "askedAt": ["ICICI", "Cognizant", "Wipro"],
+    "likes": 411,
+    "comments": 13,
+    "answer": "SELECT account_id, balance * 0.004 AS monthly_interest FROM accounts WHERE account_type = 'savings';"
+  },
+  {
+    "id": "89",
+    "title": "How to get daily total amount withdrawn?",
+    "tags": ["GROUP BY", "DATE", "SUM"],
+    "buttons": ["SELECT", "SUM", "GROUP BY"],
+    "askedAt": ["TCS", "Capgemini", "Yes Bank"],
+    "likes": 382,
+    "comments": 10,
+    "answer": "SELECT DATE(transaction_date) AS date, SUM(amount) AS total_withdrawn FROM transactions WHERE type = 'withdrawal' GROUP BY DATE(transaction_date);"
+  },
+  {
+    "id": "90",
+    "title": "How to find the 5 most recent transactions for a customer?",
+    "tags": ["ORDER BY", "LIMIT", "WHERE"],
+    "buttons": ["SELECT", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Infosys", "HDFC", "Wipro"],
+    "likes": 423,
+    "comments": 15,
+    "answer": "SELECT * FROM transactions WHERE customer_id = 101 ORDER BY transaction_date DESC LIMIT 5;"
+  },
+  {
+    "id": "91",
+    "title": "How to find all patients who visited in the last 30 days?",
+    "tags": ["DATE", "WHERE", "CURRENT_DATE"],
+    "buttons": ["visit_date", "CURRENT_DATE", "INTERVAL"],
+    "askedAt": ["Apollo", "Fortis", "AIIMS"],
+    "likes": 310,
+    "comments": 12,
+    "answer": "Use a WHERE clause to filter records from the last 30 days. Example: SELECT * FROM patients WHERE visit_date >= CURRENT_DATE - INTERVAL 30 DAY;"
+  },
+  {
+    "id": "92",
+    "title": "How to get the number of appointments per doctor?",
+    "tags": ["GROUP BY", "COUNT", "Aggregation"],
+    "buttons": ["doctor_id", "COUNT(*)"],
+    "askedAt": ["Apollo", "Max", "Manipal"],
+    "likes": 420,
+    "comments": 17,
+    "answer": "Group appointments by doctor_id and count them. Example: SELECT doctor_id, COUNT(*) FROM appointments GROUP BY doctor_id;"
+  },
+  {
+    "id": "93",
+    "title": "Find patients who have not visited in the last year",
+    "tags": ["NOT IN", "Subquery", "DATE"],
+    "buttons": ["NOT IN", "CURRENT_DATE", "INTERVAL"],
+    "askedAt": ["AIIMS", "Narayana", "Care Hospitals"],
+    "likes": 385,
+    "comments": 15,
+    "answer": "Use a subquery to filter patients with no recent visits. Example: SELECT * FROM patients WHERE id NOT IN (SELECT patient_id FROM visits WHERE visit_date >= CURRENT_DATE - INTERVAL 1 YEAR);"
+  },
+  {
+    "id": "94",
+    "title": "Get average consultation time per doctor",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG", "GROUP BY", "consultation_time"],
+    "askedAt": ["Fortis", "Medanta", "Apollo"],
+    "likes": 295,
+    "comments": 9,
+    "answer": "Group consultations by doctor and calculate the average. Example: SELECT doctor_id, AVG(consultation_time) FROM consultations GROUP BY doctor_id;"
+  },
+  {
+    "id": "95",
+    "title": "Find the most common diagnosis in the hospital",
+    "tags": ["GROUP BY", "COUNT", "ORDER BY"],
+    "buttons": ["diagnosis", "COUNT(*)", "LIMIT"],
+    "askedAt": ["Apollo", "Max", "Manipal"],
+    "likes": 432,
+    "comments": 21,
+    "answer": "Group by diagnosis and order by count. Example: SELECT diagnosis, COUNT(*) FROM records GROUP BY diagnosis ORDER BY COUNT(*) DESC LIMIT 1;"
+  },
+  {
+    "id": "96",
+    "title": "Get patients assigned to a specific doctor",
+    "tags": ["JOIN", "WHERE"],
+    "buttons": ["JOIN", "WHERE", "doctor_id"],
+    "askedAt": ["Apollo", "Fortis"],
+    "likes": 212,
+    "comments": 8,
+    "answer": "Join patients and doctor_assignment table. Example: SELECT p.* FROM patients p JOIN doctor_assignment d ON p.id = d.patient_id WHERE d.doctor_id = 101;"
+  },
+  {
+    "id": "97",
+    "title": "Count the number of prescriptions given in each department",
+    "tags": ["JOIN", "GROUP BY", "COUNT"],
+    "buttons": ["JOIN", "GROUP BY", "COUNT(*)"],
+    "askedAt": ["Medanta", "AIIMS"],
+    "likes": 328,
+    "comments": 11,
+    "answer": "Join prescriptions and departments, then group. Example: SELECT d.department_name, COUNT(*) FROM prescriptions p JOIN departments d ON p.department_id = d.id GROUP BY d.department_name;"
+  },
+  {
+    "id": "98",
+    "title": "List doctors who have more than 100 appointments",
+    "tags": ["GROUP BY", "HAVING"],
+    "buttons": ["GROUP BY", "HAVING", "COUNT(*)"],
+    "askedAt": ["Apollo", "Fortis", "Max"],
+    "likes": 271,
+    "comments": 13,
+    "answer": "Use HAVING after grouping. Example: SELECT doctor_id, COUNT(*) FROM appointments GROUP BY doctor_id HAVING COUNT(*) > 100;"
+  },
+  {
+    "id": "99",
+    "title": "Get the list of patients with pending lab reports",
+    "tags": ["WHERE", "JOIN"],
+    "buttons": ["WHERE", "status", "JOIN"],
+    "askedAt": ["Pathlabs", "AIIMS"],
+    "likes": 193,
+    "comments": 6,
+    "answer": "Join patients and reports table and filter by status. Example: SELECT p.* FROM patients p JOIN lab_reports l ON p.id = l.patient_id WHERE l.status = 'Pending';"
+  },
+  {
+    "id": "100",
+    "title": "How to check if a patient has been admitted more than once?",
+    "tags": ["GROUP BY", "HAVING", "COUNT"],
+    "buttons": ["GROUP BY", "HAVING", "COUNT(patient_id) > 1"],
+    "askedAt": ["Apollo", "Max", "Manipal"],
+    "likes": 358,
+    "comments": 14,
+    "answer": "Group admissions by patient and check count. Example: SELECT patient_id, COUNT(*) FROM admissions GROUP BY patient_id HAVING COUNT(*) > 1;"
+  },
+  {
+    "id": "101",
+    "title": "How to find the total number of students in each class?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Byjus", "Unacademy", "Vedantu"],
+    "likes": 312,
+    "comments": 10,
+    "answer": "SELECT class_id, COUNT(*) FROM students GROUP BY class_id;"
+  },
+  {
+    "id": "102",
+    "title": "How to get students who scored more than 90 in Maths?",
+    "tags": ["WHERE", "Comparison"],
+    "buttons": ["WHERE", ">"],
+    "askedAt": ["Scaler", "TCS iON"],
+    "likes": 289,
+    "comments": 14,
+    "answer": "SELECT * FROM marks WHERE subject = 'Maths' AND score > 90;"
+  },
+  {
+    "id": "103",
+    "title": "How to find top 5 students with highest average marks?",
+    "tags": ["GROUP BY", "AVG", "ORDER BY", "LIMIT"],
+    "buttons": ["AVG()", "ORDER BY", "LIMIT"],
+    "askedAt": ["Infosys", "NIIT"],
+    "likes": 377,
+    "comments": 20,
+    "answer": "SELECT student_id, AVG(score) AS avg_score FROM marks GROUP BY student_id ORDER BY avg_score DESC LIMIT 5;"
+  },
+  {
+    "id": "104",
+    "title": "How to get the list of students who have not submitted assignments?",
+    "tags": ["NOT IN", "Subquery"],
+    "buttons": ["NOT IN", "SELECT"],
+    "askedAt": ["Wipro", "TCS"],
+    "likes": 201,
+    "comments": 9,
+    "answer": "SELECT * FROM students WHERE student_id NOT IN (SELECT student_id FROM assignments_submitted);"
+  },
+  {
+    "id": "105",
+    "title": "How to count the number of courses offered by each department?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["EdTech"],
+    "likes": 245,
+    "comments": 5,
+    "answer": "SELECT department_id, COUNT(*) FROM courses GROUP BY department_id;"
+  },
+  {
+    "id": "106",
+    "title": "How to find students enrolled in more than 3 courses?",
+    "tags": ["GROUP BY", "HAVING"],
+    "buttons": ["GROUP BY", "HAVING"],
+    "askedAt": ["TCS", "Wipro"],
+    "likes": 302,
+    "comments": 8,
+    "answer": "SELECT student_id, COUNT(*) AS total_courses FROM enrollments GROUP BY student_id HAVING COUNT(*) > 3;"
+  },
+  {
+    "id": "107",
+    "title": "How to retrieve details of students whose name starts with 'K'?",
+    "tags": ["LIKE", "Pattern Matching"],
+    "buttons": ["LIKE", "'K%'"],
+    "askedAt": ["Cognizant"],
+    "likes": 128,
+    "comments": 3,
+    "answer": "SELECT * FROM students WHERE name LIKE 'K%';"
+  },
+  {
+    "id": "108",
+    "title": "How to get the list of teachers who haven't taken any classes?",
+    "tags": ["LEFT JOIN", "IS NULL"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Infosys", "Capgemini"],
+    "likes": 345,
+    "comments": 12,
+    "answer": "SELECT t.* FROM teachers t LEFT JOIN classes c ON t.teacher_id = c.teacher_id WHERE c.teacher_id IS NULL;"
+  },
+  {
+    "id": "109",
+    "title": "How to find the average attendance percentage of each student?",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG()", "GROUP BY"],
+    "askedAt": ["TCS iON", "Wipro"],
+    "likes": 267,
+    "comments": 6,
+    "answer": "SELECT student_id, AVG(attendance_percent) FROM attendance GROUP BY student_id;"
+  },
+  {
+    "id": "110",
+    "title": "How to list all students who passed all subjects?",
+    "tags": ["NOT EXISTS", "Subquery"],
+    "buttons": ["NOT EXISTS", "Subquery"],
+    "askedAt": ["Accenture", "Tech Mahindra"],
+    "likes": 301,
+    "comments": 7,
+    "answer": "SELECT * FROM students s WHERE NOT EXISTS (SELECT * FROM marks m WHERE m.student_id = s.student_id AND m.score < 40);"
+  },
+  {
+    "id": "111",
+    "title": "How to get count of students in each grade?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Wipro", "HCL"],
+    "likes": 193,
+    "comments": 5,
+    "answer": "SELECT grade, COUNT(*) FROM students GROUP BY grade;"
+  },
+  {
+    "id": "112",
+    "title": "How to get students who attended class on a specific date?",
+    "tags": ["JOIN", "WHERE"],
+    "buttons": ["INNER JOIN", "WHERE"],
+    "askedAt": ["TCS", "HCLTech"],
+    "likes": 226,
+    "comments": 4,
+    "answer": "SELECT s.* FROM students s INNER JOIN attendance a ON s.student_id = a.student_id WHERE a.date = '2025-08-01';"
+  },
+  {
+    "id": "113",
+    "title": "How to find courses with no enrollments?",
+    "tags": ["LEFT JOIN", "IS NULL"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["TCS iON"],
+    "likes": 155,
+    "comments": 3,
+    "answer": "SELECT c.* FROM courses c LEFT JOIN enrollments e ON c.course_id = e.course_id WHERE e.course_id IS NULL;"
+  },
+  {
+    "id": "114",
+    "title": "How to list all students who got distinction in all subjects?",
+    "tags": ["NOT EXISTS", "Subquery"],
+    "buttons": ["NOT EXISTS", "Subquery"],
+    "askedAt": ["Infosys"],
+    "likes": 278,
+    "comments": 6,
+    "answer": "SELECT * FROM students s WHERE NOT EXISTS (SELECT * FROM marks m WHERE m.student_id = s.student_id AND m.score < 75);"
+  },
+  {
+    "id": "115",
+    "title": "How to calculate total marks scored by each student?",
+    "tags": ["GROUP BY", "SUM"],
+    "buttons": ["SUM()", "GROUP BY"],
+    "askedAt": ["Unacademy", "Scaler"],
+    "likes": 238,
+    "comments": 8,
+    "answer": "SELECT student_id, SUM(score) AS total_marks FROM marks GROUP BY student_id;"
+  },
+  {
+    "id": "116",
+    "title": "How to get the course with the highest number of enrollments?",
+    "tags": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["COUNT(*)", "ORDER BY DESC"],
+    "askedAt": ["EdTech", "TCS iON"],
+    "likes": 342,
+    "comments": 12,
+    "answer": "SELECT course_id, COUNT(*) AS total FROM enrollments GROUP BY course_id ORDER BY total DESC LIMIT 1;"
+  },
+  {
+    "id": "117",
+    "title": "How to find the number of assignments submitted by each student?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["COUNT(*)", "GROUP BY"],
+    "askedAt": ["NIIT"],
+    "likes": 182,
+    "comments": 4,
+    "answer": "SELECT student_id, COUNT(*) FROM assignments_submitted GROUP BY student_id;"
+  },
+  {
+    "id": "118",
+    "title": "How to fetch all students along with their course names?",
+    "tags": ["JOIN", "SELECT"],
+    "buttons": ["JOIN", "ON"],
+    "askedAt": ["Wipro", "Scaler"],
+    "likes": 210,
+    "comments": 3,
+    "answer": "SELECT s.name, c.course_name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id;"
+  },
+  {
+    "id": "119",
+    "title": "How to find students who failed in any subject?",
+    "tags": ["WHERE", "Subquery"],
+    "buttons": ["<", "SELECT"],
+    "askedAt": ["Infosys", "HCL"],
+    "likes": 198,
+    "comments": 5,
+    "answer": "SELECT DISTINCT student_id FROM marks WHERE score < 40;"
+  },
+  {
+    "id": "120",
+    "title": "How to fetch students and their average score with grade classification?",
+    "tags": ["CASE", "AVG", "GROUP BY"],
+    "buttons": ["CASE", "AVG()", "GROUP BY"],
+    "askedAt": ["Scaler", "Tech Mahindra"],
+    "likes": 315,
+    "comments": 10,
+    "answer": "SELECT student_id, AVG(score) AS avg_score, CASE WHEN AVG(score) >= 75 THEN 'Distinction' WHEN AVG(score) >= 50 THEN 'Pass' ELSE 'Fail' END AS grade FROM marks GROUP BY student_id;"
+  },
+  {
+    "id": "121",
+    "title": "How to fetch all active employees?",
+    "tags": ["SELECT", "WHERE", "Status"],
+    "buttons": ["SELECT", "WHERE"],
+    "askedAt": ["Infosys", "Capgemini"],
+    "likes": 312,
+    "comments": 14,
+    "answer": "Use WHERE clause to filter employees with status = 'Active'. Example: SELECT * FROM employees WHERE status = 'Active';"
+  },
+  {
+    "id": "122",
+    "title": "How to find employees who joined in the last 30 days?",
+    "tags": ["DATE", "INTERVAL", "WHERE"],
+    "buttons": ["WHERE", ">= NOW() - INTERVAL"],
+    "askedAt": ["TCS", "Wipro"],
+    "likes": 398,
+    "comments": 10,
+    "answer": "Compare the join_date with current date minus 30 days. Example: SELECT * FROM employees WHERE join_date >= NOW() - INTERVAL 30 DAY;"
+  },
+  {
+    "id": "123",
+    "title": "How to get the total number of employees by job role?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["IBM", "HCL"],
+    "likes": 287,
+    "comments": 9,
+    "answer": "Group employees by job_role and count each. Example: SELECT job_role, COUNT(*) FROM employees GROUP BY job_role;"
+  },
+  {
+    "id": "124",
+    "title": "How to find employees whose contracts are expiring this month?",
+    "tags": ["DATE", "MONTH", "YEAR"],
+    "buttons": ["MONTH()", "YEAR()"],
+    "askedAt": ["Tech Mahindra", "Mindtree"],
+    "likes": 325,
+    "comments": 12,
+    "answer": "Filter employees based on contract_end_date. Example: SELECT * FROM employees WHERE MONTH(contract_end_date) = MONTH(CURDATE()) AND YEAR(contract_end_date) = YEAR(CURDATE());"
+  },
+  {
+    "id": "125",
+    "title": "How to get a list of employees who report to a specific manager?",
+    "tags": ["WHERE", "Foreign Key"],
+    "buttons": ["WHERE", "manager_id"],
+    "askedAt": ["Infosys", "TCS"],
+    "likes": 370,
+    "comments": 16,
+    "answer": "Use WHERE clause with manager_id. Example: SELECT * FROM employees WHERE manager_id = 104;"
+  },
+  {
+    "id": "126",
+    "title": "How to calculate average salary department-wise?",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG(salary)", "GROUP BY"],
+    "askedAt": ["Cognizant", "TCS"],
+    "likes": 398,
+    "comments": 18,
+    "answer": "Group by department and use AVG(). Example: SELECT department_id, AVG(salary) FROM employees GROUP BY department_id;"
+  },
+  {
+    "id": "127",
+    "title": "How to find the employee with the longest tenure?",
+    "tags": ["ORDER BY", "MIN", "LIMIT"],
+    "buttons": ["ORDER BY", "LIMIT"],
+    "askedAt": ["Wipro", "Tech Mahindra"],
+    "likes": 284,
+    "comments": 8,
+    "answer": "Order by join_date ascending and limit to 1. Example: SELECT * FROM employees ORDER BY join_date ASC LIMIT 1;"
+  },
+  {
+    "id": "128",
+    "title": "How to find the number of employees who left the company this year?",
+    "tags": ["COUNT", "YEAR", "WHERE"],
+    "buttons": ["YEAR()", "WHERE"],
+    "askedAt": ["Accenture", "Capgemini"],
+    "likes": 335,
+    "comments": 11,
+    "answer": "Check leave_date year. Example: SELECT COUNT(*) FROM employees WHERE YEAR(leave_date) = YEAR(CURDATE());"
+  },
+  {
+    "id": "129",
+    "title": "How to retrieve the top 3 highest-paid employees in HR department?",
+    "tags": ["ORDER BY", "LIMIT", "WHERE"],
+    "buttons": ["ORDER BY salary DESC", "LIMIT 3"],
+    "askedAt": ["Infosys", "Oracle"],
+    "likes": 372,
+    "comments": 13,
+    "answer": "Use WHERE + ORDER BY + LIMIT. Example: SELECT * FROM employees WHERE department = 'HR' ORDER BY salary DESC LIMIT 3;"
+  },
+  {
+    "id": "130",
+    "title": "How to get list of departments and count of employees in each?",
+    "tags": ["JOIN", "GROUP BY", "COUNT"],
+    "buttons": ["JOIN", "GROUP BY", "COUNT(*)"],
+    "askedAt": ["Wipro", "TCS"],
+    "likes": 420,
+    "comments": 20,
+    "answer": "Join departments and employees then group by department. Example: SELECT d.name, COUNT(e.id) FROM departments d JOIN employees e ON d.id = e.department_id GROUP BY d.name;"
+  },
+  {
+    "id": "131",
+    "title": "How to find employees eligible for retirement (age > 60)?",
+    "tags": ["WHERE", "Comparison"],
+    "buttons": ["WHERE age > 60"],
+    "askedAt": ["Cognizant", "HCL"],
+    "likes": 270,
+    "comments": 7,
+    "answer": "Use age condition. Example: SELECT * FROM employees WHERE age > 60;"
+  },
+  {
+    "id": "132",
+    "title": "How to list employees with upcoming birthdays this month?",
+    "tags": ["MONTH", "CURDATE", "WHERE"],
+    "buttons": ["MONTH(birth_date)", "CURDATE()"],
+    "askedAt": ["TCS", "Accenture"],
+    "likes": 298,
+    "comments": 10,
+    "answer": "Check birth month. Example: SELECT * FROM employees WHERE MONTH(birth_date) = MONTH(CURDATE());"
+  },
+  {
+    "id": "133",
+    "title": "How to retrieve all job titles and the number of employees per title?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Infosys", "Wipro"],
+    "likes": 314,
+    "comments": 9,
+    "answer": "Group by job_title. Example: SELECT job_title, COUNT(*) FROM employees GROUP BY job_title;"
+  },
+  {
+    "id": "134",
+    "title": "How to calculate the average experience of employees?",
+    "tags": ["AVG", "DATEDIFF", "NOW"],
+    "buttons": ["AVG()", "DATEDIFF()"],
+    "askedAt": ["IBM", "TCS"],
+    "likes": 289,
+    "comments": 11,
+    "answer": "Use AVG with DATEDIFF. Example: SELECT AVG(DATEDIFF(NOW(), join_date)/365) AS avg_experience FROM employees;"
+  },
+  {
+    "id": "135",
+    "title": "How to find duplicate employee records?",
+    "tags": ["GROUP BY", "HAVING", "COUNT > 1"],
+    "buttons": ["GROUP BY", "HAVING COUNT(*) > 1"],
+    "askedAt": ["Capgemini", "HCL"],
+    "likes": 412,
+    "comments": 15,
+    "answer": "Group by columns and use HAVING COUNT > 1. Example: SELECT name, email, COUNT(*) FROM employees GROUP BY name, email HAVING COUNT(*) > 1;"
+  },
+  {
+    "id": "136",
+    "title": "How to list all employees not assigned to any department?",
+    "tags": ["LEFT JOIN", "NULL", "IS NULL"],
+    "buttons": ["LEFT JOIN", "WHERE ... IS NULL"],
+    "askedAt": ["Infosys", "Oracle"],
+    "likes": 265,
+    "comments": 8,
+    "answer": "Use LEFT JOIN and check null. Example: SELECT e.* FROM employees e LEFT JOIN departments d ON e.department_id = d.id WHERE d.id IS NULL;"
+  },
+  {
+    "id": "137",
+    "title": "How to fetch list of employees along with their manager names?",
+    "tags": ["SELF JOIN", "ALIAS"],
+    "buttons": ["JOIN", "ALIAS"],
+    "askedAt": ["TCS", "Tech Mahindra"],
+    "likes": 390,
+    "comments": 13,
+    "answer": "Use self join on employees table. Example: SELECT e.name AS employee, m.name AS manager FROM employees e JOIN employees m ON e.manager_id = m.id;"
+  },
+  {
+    "id": "138",
+    "title": "How to calculate total payroll per department?",
+    "tags": ["SUM", "GROUP BY"],
+    "buttons": ["SUM(salary)", "GROUP BY department_id"],
+    "askedAt": ["Infosys", "Capgemini"],
+    "likes": 341,
+    "comments": 12,
+    "answer": "Use SUM with GROUP BY. Example: SELECT department_id, SUM(salary) AS total_payroll FROM employees GROUP BY department_id;"
+  },
+  {
+    "id": "139",
+    "title": "How to find the department with the lowest headcount?",
+    "tags": ["ORDER BY", "LIMIT"],
+    "buttons": ["GROUP BY", "ORDER BY COUNT ASC"],
+    "askedAt": ["Wipro", "IBM"],
+    "likes": 360,
+    "comments": 14,
+    "answer": "Group by department and order by count. Example: SELECT department_id, COUNT(*) FROM employees GROUP BY department_id ORDER BY COUNT(*) ASC LIMIT 1;"
+  },
+  {
+    "id": "140",
+    "title": "How to get number of employees joined each year?",
+    "tags": ["YEAR", "GROUP BY", "COUNT"],
+    "buttons": ["YEAR(join_date)", "GROUP BY"],
+    "askedAt": ["TCS", "Accenture"],
+    "likes": 407,
+    "comments": 17,
+    "answer": "Extract year from join_date and group by it. Example: SELECT YEAR(join_date) AS year_joined, COUNT(*) FROM employees GROUP BY YEAR(join_date);"
+  },
+  {
+    "id": "141",
+    "title": "Find all flights departing from 'Delhi' today",
+    "tags": ["WHERE", "DATE", "Flights"],
+    "buttons": ["WHERE", "CURRENT_DATE"],
+    "askedAt": ["MakeMyTrip", "GoIbibo"],
+    "likes": 280,
+    "comments": 12,
+    "answer": "SELECT * FROM flights WHERE departure_city = 'Delhi' AND departure_date = CURRENT_DATE;"
+  },
+  {
+    "id": "142",
+    "title": "Get total bookings made in the last 7 days",
+    "tags": ["COUNT", "DATE", "Bookings"],
+    "buttons": ["COUNT(*)", "BETWEEN", "DATE_SUB"],
+    "askedAt": ["EaseMyTrip", "Cleartrip"],
+    "likes": 302,
+    "comments": 10,
+    "answer": "SELECT COUNT(*) FROM bookings WHERE booking_date BETWEEN DATE_SUB(CURDATE(), INTERVAL 7 DAY) AND CURDATE();"
+  },
+  {
+    "id": "143",
+    "title": "List users who booked international flights",
+    "tags": ["JOIN", "WHERE", "Flights"],
+    "buttons": ["JOIN", "WHERE"],
+    "askedAt": ["Yatra", "MakeMyTrip"],
+    "likes": 325,
+    "comments": 15,
+    "answer": "SELECT DISTINCT u.name FROM users u JOIN bookings b ON u.id = b.user_id JOIN flights f ON b.flight_id = f.id WHERE f.is_international = TRUE;"
+  },
+  {
+    "id": "144",
+    "title": "Find the most visited destination",
+    "tags": ["GROUP BY", "ORDER BY", "Flights"],
+    "buttons": ["GROUP BY", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Cleartrip", "GoIbibo"],
+    "likes": 412,
+    "comments": 21,
+    "answer": "SELECT destination_city, COUNT(*) FROM flights GROUP BY destination_city ORDER BY COUNT(*) DESC LIMIT 1;"
+  },
+  {
+    "id": "145",
+    "title": "Get average ticket price for each airline",
+    "tags": ["GROUP BY", "AVG"],
+    "buttons": ["AVG(price)", "GROUP BY"],
+    "askedAt": ["MakeMyTrip"],
+    "likes": 276,
+    "comments": 9,
+    "answer": "SELECT airline, AVG(ticket_price) FROM flights GROUP BY airline;"
+  },
+  {
+    "id": "146",
+    "title": "Retrieve all canceled bookings",
+    "tags": ["WHERE", "Status"],
+    "buttons": ["WHERE", "status = 'Cancelled'"],
+    "askedAt": ["Yatra", "Cleartrip"],
+    "likes": 233,
+    "comments": 11,
+    "answer": "SELECT * FROM bookings WHERE status = 'Cancelled';"
+  },
+  {
+    "id": "147",
+    "title": "List top 3 cities with highest hotel bookings",
+    "tags": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["GROUP BY", "COUNT", "LIMIT"],
+    "askedAt": ["GoIbibo"],
+    "likes": 312,
+    "comments": 18,
+    "answer": "SELECT city, COUNT(*) FROM hotel_bookings GROUP BY city ORDER BY COUNT(*) DESC LIMIT 3;"
+  },
+  {
+    "id": "148",
+    "title": "Count users who made more than 5 bookings",
+    "tags": ["GROUP BY", "HAVING", "COUNT"],
+    "buttons": ["HAVING", "COUNT(*) > 5"],
+    "askedAt": ["EaseMyTrip", "MakeMyTrip"],
+    "likes": 387,
+    "comments": 13,
+    "answer": "SELECT user_id, COUNT(*) FROM bookings GROUP BY user_id HAVING COUNT(*) > 5;"
+  },
+  {
+    "id": "149",
+    "title": "Get hotels with rating above 4.5",
+    "tags": ["WHERE", "Ratings"],
+    "buttons": ["WHERE", "> 4.5"],
+    "askedAt": ["Booking.com", "Airbnb"],
+    "likes": 255,
+    "comments": 7,
+    "answer": "SELECT * FROM hotels WHERE rating > 4.5;"
+  },
+  {
+    "id": "150",
+    "title": "List all bookings made by user 'kishore123'",
+    "tags": ["JOIN", "WHERE"],
+    "buttons": ["JOIN", "WHERE"],
+    "askedAt": ["Yatra"],
+    "likes": 214,
+    "comments": 6,
+    "answer": "SELECT b.* FROM bookings b JOIN users u ON b.user_id = u.id WHERE u.username = 'kishore123';"
+  },
+  {
+    "id": "151",
+    "title": "Show top 5 users who spent the most",
+    "tags": ["GROUP BY", "SUM", "ORDER BY", "LIMIT"],
+    "buttons": ["SUM(amount)", "GROUP BY", "ORDER BY"],
+    "askedAt": ["MakeMyTrip"],
+    "likes": 376,
+    "comments": 19,
+    "answer": "SELECT user_id, SUM(total_amount) AS total_spent FROM bookings GROUP BY user_id ORDER BY total_spent DESC LIMIT 5;"
+  },
+  {
+    "id": "152",
+    "title": "Find all flights delayed more than 2 hours",
+    "tags": ["WHERE", "Time"],
+    "buttons": ["WHERE", "> INTERVAL 2 HOUR"],
+    "askedAt": ["Cleartrip"],
+    "likes": 194,
+    "comments": 8,
+    "answer": "SELECT * FROM flights WHERE delay_duration > INTERVAL 2 HOUR;"
+  },
+  {
+    "id": "153",
+    "title": "Show users who booked both hotel and flight",
+    "tags": ["INTERSECT", "JOIN", "Subquery"],
+    "buttons": ["IN", "Subquery"],
+    "askedAt": ["EaseMyTrip"],
+    "likes": 342,
+    "comments": 16,
+    "answer": "SELECT user_id FROM flight_bookings WHERE user_id IN (SELECT user_id FROM hotel_bookings);"
+  },
+  {
+    "id": "154",
+    "title": "Get the total revenue from all bookings",
+    "tags": ["SUM", "Revenue"],
+    "buttons": ["SUM(total_amount)"],
+    "askedAt": ["MakeMyTrip"],
+    "likes": 267,
+    "comments": 10,
+    "answer": "SELECT SUM(total_amount) AS revenue FROM bookings;"
+  },
+  {
+    "id": "155",
+    "title": "List flights that are overbooked",
+    "tags": ["JOIN", "GROUP BY", "HAVING"],
+    "buttons": ["GROUP BY", "HAVING"],
+    "askedAt": ["Yatra"],
+    "likes": 311,
+    "comments": 17,
+    "answer": "SELECT flight_id, COUNT(*) AS bookings FROM bookings GROUP BY flight_id HAVING bookings > (SELECT capacity FROM flights WHERE id = flight_id);"
+  },
+  {
+    "id": "156",
+    "title": "Find hotels in 'Goa' with pool and free wifi",
+    "tags": ["WHERE", "AND"],
+    "buttons": ["WHERE", "AND"],
+    "askedAt": ["Booking.com"],
+    "likes": 230,
+    "comments": 5,
+    "answer": "SELECT * FROM hotels WHERE city = 'Goa' AND has_pool = TRUE AND has_wifi = TRUE;"
+  },
+  {
+    "id": "157",
+    "title": "Get users who haven’t booked in the last 30 days",
+    "tags": ["NOT IN", "DATE", "Subquery"],
+    "buttons": ["NOT IN", "DATE_SUB"],
+    "askedAt": ["GoIbibo"],
+    "likes": 298,
+    "comments": 13,
+    "answer": "SELECT * FROM users WHERE id NOT IN (SELECT user_id FROM bookings WHERE booking_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY));"
+  },
+  {
+    "id": "158",
+    "title": "Count the number of active trips today",
+    "tags": ["COUNT", "DATE", "WHERE"],
+    "buttons": ["WHERE", "CURRENT_DATE"],
+    "askedAt": ["MakeMyTrip"],
+    "likes": 207,
+    "comments": 9,
+    "answer": "SELECT COUNT(*) FROM trips WHERE start_date <= CURRENT_DATE AND end_date >= CURRENT_DATE;"
+  },
+  {
+    "id": "159",
+    "title": "List all upcoming trips for user ID 1001",
+    "tags": ["WHERE", "DATE"],
+    "buttons": ["WHERE", ">", "CURRENT_DATE"],
+    "askedAt": ["EaseMyTrip"],
+    "likes": 218,
+    "comments": 7,
+    "answer": "SELECT * FROM trips WHERE user_id = 1001 AND start_date > CURRENT_DATE;"
+  },
+  {
+    "id": "160",
+    "title": "Get the most booked hotel in each city",
+    "tags": ["GROUP BY", "MAX", "Subquery"],
+    "buttons": ["GROUP BY", "Subquery"],
+    "askedAt": ["Cleartrip"],
+    "likes": 328,
+    "comments": 14,
+    "answer": "SELECT city, hotel_id, COUNT(*) AS bookings FROM hotel_bookings GROUP BY city, hotel_id HAVING COUNT(*) = (SELECT MAX(cnt) FROM (SELECT COUNT(*) AS cnt FROM hotel_bookings hb WHERE hb.city = hotel_bookings.city GROUP BY hotel_id) AS temp);"
+  },
+  {
+    "id": "161",
+    "title": "How to fetch the top 5 players with the highest scores?",
+    "tags": ["ORDER BY", "LIMIT"],
+    "buttons": ["ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Ubisoft", "Sony", "Activision"],
+    "likes": 395,
+    "comments": 22,
+    "answer": "SELECT player_id, score FROM leaderboard ORDER BY score DESC LIMIT 5;"
+  },
+  {
+    "id": "162",
+    "title": "How to find the total number of active games being played?",
+    "tags": ["COUNT", "WHERE"],
+    "buttons": ["COUNT(*)", "WHERE"],
+    "askedAt": ["EA Sports", "Riot Games"],
+    "likes": 308,
+    "comments": 14,
+    "answer": "SELECT COUNT(*) FROM games WHERE status = 'active';"
+  },
+  {
+    "id": "163",
+    "title": "How to list players who haven't logged in for the past 30 days?",
+    "tags": ["DATEDIFF", "WHERE"],
+    "buttons": ["DATEDIFF", "NOW()"],
+    "askedAt": ["Epic Games", "Valve"],
+    "likes": 437,
+    "comments": 19,
+    "answer": "SELECT player_id, last_login FROM players WHERE DATEDIFF(NOW(), last_login) > 30;"
+  },
+  {
+    "id": "164",
+    "title": "How to count total purchases made in a specific game?",
+    "tags": ["COUNT", "WHERE"],
+    "buttons": ["COUNT(*)", "WHERE"],
+    "askedAt": ["Nintendo", "Rockstar Games"],
+    "likes": 270,
+    "comments": 12,
+    "answer": "SELECT COUNT(*) FROM purchases WHERE game_id = 5;"
+  },
+  {
+    "id": "165",
+    "title": "How to find the most purchased in-game item?",
+    "tags": ["GROUP BY", "ORDER BY", "COUNT"],
+    "buttons": ["GROUP BY", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Sony", "Ubisoft"],
+    "likes": 482,
+    "comments": 20,
+    "answer": "SELECT item_id, COUNT(*) AS purchase_count FROM purchases GROUP BY item_id ORDER BY purchase_count DESC LIMIT 1;"
+  },
+  {
+    "id": "166",
+    "title": "How to get average playtime per player?",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG", "GROUP BY"],
+    "askedAt": ["Riot Games", "Valve"],
+    "likes": 349,
+    "comments": 17,
+    "answer": "SELECT player_id, AVG(session_duration) FROM sessions GROUP BY player_id;"
+  },
+  {
+    "id": "167",
+    "title": "How to fetch all banned players?",
+    "tags": ["WHERE"],
+    "buttons": ["WHERE", "banned"],
+    "askedAt": ["Activision", "Epic Games"],
+    "likes": 396,
+    "comments": 13,
+    "answer": "SELECT * FROM players WHERE status = 'banned';"
+  },
+  {
+    "id": "168",
+    "title": "How to list games with more than 1000 active players?",
+    "tags": ["GROUP BY", "HAVING", "COUNT"],
+    "buttons": ["GROUP BY", "HAVING", "COUNT"],
+    "askedAt": ["Sony", "Nintendo"],
+    "likes": 411,
+    "comments": 21,
+    "answer": "SELECT game_id, COUNT(*) AS active_players FROM sessions WHERE status = 'active' GROUP BY game_id HAVING active_players > 1000;"
+  },
+  {
+    "id": "169",
+    "title": "How to get player details along with their latest game session?",
+    "tags": ["JOIN", "ORDER BY", "LIMIT"],
+    "buttons": ["JOIN", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Ubisoft", "Riot Games"],
+    "likes": 452,
+    "comments": 18,
+    "answer": "SELECT p.player_id, p.name, s.session_id FROM players p JOIN sessions s ON p.player_id = s.player_id ORDER BY s.start_time DESC LIMIT 1;"
+  },
+  {
+    "id": "170",
+    "title": "How to calculate total revenue per game?",
+    "tags": ["SUM", "GROUP BY"],
+    "buttons": ["SUM", "GROUP BY"],
+    "askedAt": ["Rockstar Games", "Sony"],
+    "likes": 478,
+    "comments": 16,
+    "answer": "SELECT game_id, SUM(amount) AS total_revenue FROM purchases GROUP BY game_id;"
+  },
+  {
+    "id": "171",
+    "title": "How to find players who played more than 5 different games?",
+    "tags": ["DISTINCT", "GROUP BY", "HAVING"],
+    "buttons": ["COUNT(DISTINCT game_id)", "HAVING"],
+    "askedAt": ["Epic Games", "EA Sports"],
+    "likes": 421,
+    "comments": 20,
+    "answer": "SELECT player_id, COUNT(DISTINCT game_id) AS games_played FROM sessions GROUP BY player_id HAVING games_played > 5;"
+  },
+  {
+    "id": "172",
+    "title": "How to get the most active session day?",
+    "tags": ["GROUP BY", "ORDER BY", "COUNT"],
+    "buttons": ["GROUP BY", "ORDER BY", "DESC", "LIMIT"],
+    "askedAt": ["Riot Games", "Valve"],
+    "likes": 385,
+    "comments": 14,
+    "answer": "SELECT DATE(start_time) AS session_day, COUNT(*) AS session_count FROM sessions GROUP BY session_day ORDER BY session_count DESC LIMIT 1;"
+  },
+  {
+    "id": "173",
+    "title": "How to get player ranks based on score?",
+    "tags": ["RANK", "WINDOW FUNCTION"],
+    "buttons": ["RANK()", "OVER", "ORDER BY"],
+    "askedAt": ["Sony", "Ubisoft"],
+    "likes": 439,
+    "comments": 19,
+    "answer": "SELECT player_id, score, RANK() OVER (ORDER BY score DESC) AS rank FROM leaderboard;"
+  },
+  {
+    "id": "174",
+    "title": "How to find the most common login hour?",
+    "tags": ["HOUR", "GROUP BY", "ORDER BY"],
+    "buttons": ["HOUR()", "GROUP BY", "ORDER BY"],
+    "askedAt": ["Epic Games", "Valve"],
+    "likes": 467,
+    "comments": 15,
+    "answer": "SELECT HOUR(login_time) AS hour, COUNT(*) FROM logins GROUP BY hour ORDER BY COUNT(*) DESC LIMIT 1;"
+  },
+  {
+    "id": "175",
+    "title": "How to get top 3 regions with most active players?",
+    "tags": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "askedAt": ["Riot Games", "EA Sports"],
+    "likes": 392,
+    "comments": 18,
+    "answer": "SELECT region, COUNT(*) AS players FROM players WHERE status = 'active' GROUP BY region ORDER BY players DESC LIMIT 3;"
+  },
+  {
+    "id": "176",
+    "title": "How to find average session time for each game?",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG()", "GROUP BY"],
+    "askedAt": ["Sony", "Ubisoft"],
+    "likes": 419,
+    "comments": 13,
+    "answer": "SELECT game_id, AVG(session_duration) FROM sessions GROUP BY game_id;"
+  },
+  {
+    "id": "177",
+    "title": "How to get all players who never made a purchase?",
+    "tags": ["LEFT JOIN", "IS NULL"],
+    "buttons": ["LEFT JOIN", "IS NULL"],
+    "askedAt": ["Nintendo", "Activision"],
+    "likes": 457,
+    "comments": 20,
+    "answer": "SELECT p.player_id, p.name FROM players p LEFT JOIN purchases pu ON p.player_id = pu.player_id WHERE pu.player_id IS NULL;"
+  },
+  {
+    "id": "178",
+    "title": "How to list most liked games based on player feedback?",
+    "tags": ["GROUP BY", "ORDER BY", "AVG"],
+    "buttons": ["GROUP BY", "ORDER BY", "DESC", "AVG"],
+    "askedAt": ["EA Sports", "Rockstar Games"],
+    "likes": 426,
+    "comments": 17,
+    "answer": "SELECT game_id, AVG(rating) AS avg_rating FROM feedback GROUP BY game_id ORDER BY avg_rating DESC;"
+  },
+  {
+    "id": "179",
+    "title": "How to find players who logged in more than 10 times this week?",
+    "tags": ["COUNT", "GROUP BY", "WHERE", "DATE"],
+    "buttons": ["WHERE", "WEEK()", "GROUP BY", "HAVING"],
+    "askedAt": ["Epic Games", "Ubisoft"],
+    "likes": 389,
+    "comments": 14,
+    "answer": "SELECT player_id, COUNT(*) AS logins FROM logins WHERE WEEK(login_time) = WEEK(NOW()) GROUP BY player_id HAVING logins > 10;"
+  },
+  {
+    "id": "180",
+    "title": "How to check which players spent the most money in purchases?",
+    "tags": ["SUM", "GROUP BY", "ORDER BY"],
+    "buttons": ["SUM()", "ORDER BY", "DESC"],
+    "askedAt": ["Sony", "Valve"],
+    "likes": 461,
+    "comments": 21,
+    "answer": "SELECT player_id, SUM(amount) AS total_spent FROM purchases GROUP BY player_id ORDER BY total_spent DESC;"
+  },
+  {
+    "id": "181",
+    "title": "How to get the highest scoring player in a specific game?",
+    "tags": ["MAX", "WHERE", "ORDER BY", "LIMIT"],
+    "buttons": ["MAX", "ORDER BY", "LIMIT 1"],
+    "askedAt": ["Ubisoft", "Epic Games", "Sony"],
+    "likes": 421,
+    "comments": 11,
+    "answer": "Use ORDER BY and LIMIT to get the player with the highest score in a specific game. Example: SELECT player_id, score FROM game_scores WHERE game_id = 10 ORDER BY score DESC LIMIT 1;"
+  },
+  {
+    "id": "182",
+    "title": "How to count the number of active players online now?",
+    "tags": ["COUNT", "WHERE", "NOW"],
+    "buttons": ["COUNT", "CURRENT_TIMESTAMP"],
+    "askedAt": ["Tencent", "Activision", "Zynga"],
+    "likes": 487,
+    "comments": 14,
+    "answer": "Check for online status using timestamps. Example: SELECT COUNT(*) FROM players WHERE last_active >= NOW() - INTERVAL 10 MINUTE;"
+  },
+  {
+    "id": "183",
+    "title": "How to list top 5 games based on average rating?",
+    "tags": ["AVG", "GROUP BY", "ORDER BY"],
+    "buttons": ["AVG", "ORDER BY", "LIMIT"],
+    "askedAt": ["Electronic Arts", "Rockstar Games", "Valve"],
+    "likes": 504,
+    "comments": 17,
+    "answer": "Group by game_id and use AVG to calculate average ratings. Example: SELECT game_id, AVG(rating) as avg_rating FROM reviews GROUP BY game_id ORDER BY avg_rating DESC LIMIT 5;"
+  },
+  {
+    "id": "184",
+    "title": "How to find games played by a specific player?",
+    "tags": ["SELECT", "JOIN", "WHERE"],
+    "buttons": ["JOIN", "WHERE"],
+    "askedAt": ["Naughty Dog", "Bandai Namco", "Riot Games"],
+    "likes": 338,
+    "comments": 9,
+    "answer": "Join player_game table with games table. Example: SELECT g.name FROM player_game pg JOIN games g ON pg.game_id = g.id WHERE pg.player_id = 8;"
+  },
+  {
+    "id": "185",
+    "title": "How to track login frequency of each player?",
+    "tags": ["COUNT", "GROUP BY", "LOGIN"],
+    "buttons": ["COUNT", "GROUP BY"],
+    "askedAt": ["Nintendo", "Bethesda", "Supercell"],
+    "likes": 394,
+    "comments": 10,
+    "answer": "Count the number of logins per player. Example: SELECT player_id, COUNT(*) AS login_count FROM player_logins GROUP BY player_id;"
+  },
+  {
+    "id": "186",
+    "title": "How to calculate total playtime per game?",
+    "tags": ["SUM", "GROUP BY"],
+    "buttons": ["SUM", "GROUP BY"],
+    "askedAt": ["Ubisoft", "Epic Games", "Square Enix"],
+    "likes": 371,
+    "comments": 13,
+    "answer": "Use SUM to total playtime per game. Example: SELECT game_id, SUM(duration) AS total_playtime FROM game_sessions GROUP BY game_id;"
+  },
+  {
+    "id": "187",
+    "title": "How to fetch leaderboard of a multiplayer match?",
+    "tags": ["SELECT", "ORDER BY", "LIMIT"],
+    "buttons": ["ORDER BY", "LIMIT"],
+    "askedAt": ["Garena", "NetEase", "King"],
+    "likes": 459,
+    "comments": 15,
+    "answer": "Order players by score for a specific match. Example: SELECT player_id, score FROM match_scores WHERE match_id = 101 ORDER BY score DESC LIMIT 10;"
+  },
+  {
+    "id": "188",
+    "title": "How to get daily login count for past 7 days?",
+    "tags": ["GROUP BY", "DATE", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT"],
+    "askedAt": ["Gameloft", "Sony", "CD Projekt"],
+    "likes": 483,
+    "comments": 12,
+    "answer": "Group logins by date. Example: SELECT DATE(login_time) as date, COUNT(*) FROM player_logins WHERE login_time >= CURDATE() - INTERVAL 7 DAY GROUP BY DATE(login_time);"
+  },
+  {
+    "id": "189",
+    "title": "How to find average score per player across all games?",
+    "tags": ["AVG", "GROUP BY"],
+    "buttons": ["AVG", "GROUP BY"],
+    "askedAt": ["Rockstar", "Valve", "Sony"],
+    "likes": 401,
+    "comments": 10,
+    "answer": "Use AVG and GROUP BY player_id. Example: SELECT player_id, AVG(score) FROM game_scores GROUP BY player_id;"
+  },
+  {
+    "id": "190",
+    "title": "How to check if a player has completed all levels of a game?",
+    "tags": ["NOT EXISTS", "JOIN", "ALL"],
+    "buttons": ["NOT EXISTS", "JOIN"],
+    "askedAt": ["EA", "Activision", "Ubisoft"],
+    "likes": 518,
+    "comments": 19,
+    "answer": "Use NOT EXISTS to find uncompleted levels. Example: SELECT player_id FROM players p WHERE NOT EXISTS (SELECT 1 FROM levels l WHERE NOT EXISTS (SELECT 1 FROM player_levels pl WHERE pl.player_id = p.id AND pl.level_id = l.id));"
+  },
+  {
+    "id": "191",
+    "title": "How to find the total number of deliveries per delivery person?",
+    "tags": ["GROUP BY", "COUNT"],
+    "buttons": ["GROUP BY", "COUNT(*)"],
+    "askedAt": ["Delhivery", "Blue Dart", "FedEx"],
+    "likes": 289,
+    "comments": 10,
+    "answer": "Use GROUP BY to count deliveries by each delivery person. Example: SELECT delivery_person_id, COUNT(*) FROM deliveries GROUP BY delivery_person_id;"
+  },
+  {
+    "id": "192",
+    "title": "How to fetch undelivered shipments from the database?",
+    "tags": ["WHERE", "Filtering"],
+    "buttons": ["WHERE", "status"],
+    "askedAt": ["DHL", "Gati", "XpressBees"],
+    "likes": 251,
+    "comments": 7,
+    "answer": "Use a WHERE clause to filter undelivered shipments. Example: SELECT * FROM shipments WHERE status = 'pending';"
+  },
+  {
+    "id": "193",
+    "title": "How to list the top 5 cities with the most shipments?",
+    "tags": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "buttons": ["GROUP BY", "ORDER BY", "LIMIT"],
+    "askedAt": ["Ecom Express", "Delhivery", "Shadowfax"],
+    "likes": 367,
+    "comments": 12,
+    "answer": "Group by city, count shipments, and order by count. Example: SELECT city, COUNT(*) FROM shipments GROUP BY city ORDER BY COUNT(*) DESC LIMIT 5;"
+  },
+  {
+    "id": "194",
+    "title": "How to calculate the average delivery time?",
+    "tags": ["AVG", "Date functions"],
+    "buttons": ["AVG", "DATEDIFF"],
+    "askedAt": ["DTDC", "FedEx", "Blue Dart"],
+    "likes": 309,
+    "comments": 9,
+    "answer": "Use DATEDIFF and AVG to find the average delivery time. Example: SELECT AVG(DATEDIFF(delivered_at, shipped_at)) AS avg_delivery_days FROM deliveries;"
+  },
+  {
+    "id": "195",
+    "title": "How to get all delayed shipments beyond expected delivery date?",
+    "tags": ["WHERE", "Date Comparison"],
+    "buttons": ["WHERE", "<"],
+    "askedAt": ["Shadowfax", "Blue Dart", "Ecom Express"],
+    "likes": 328,
+    "comments": 8,
+    "answer": "Use WHERE clause to compare delivery and expected dates. Example: SELECT * FROM shipments WHERE delivered_at > expected_delivery_date;"
+  },
+  {
+    "id": "196",
+    "title": "How to check which delivery person is handling the most cities?",
+    "tags": ["GROUP BY", "COUNT", "DISTINCT"],
+    "buttons": ["GROUP BY", "COUNT(DISTINCT)"],
+    "askedAt": ["Delhivery", "DHL", "FedEx"],
+    "likes": 295,
+    "comments": 10,
+    "answer": "Use COUNT(DISTINCT city) with GROUP BY. Example: SELECT delivery_person_id, COUNT(DISTINCT city) FROM deliveries GROUP BY delivery_person_id ORDER BY COUNT(DISTINCT city) DESC;"
+  },
+  {
+    "id": "197",
+    "title": "How to identify vehicles with the highest shipment load?",
+    "tags": ["GROUP BY", "SUM"],
+    "buttons": ["GROUP BY", "SUM"],
+    "askedAt": ["XpressBees", "Delhivery", "Blue Dart"],
+    "likes": 274,
+    "comments": 11,
+    "answer": "Group by vehicle and use SUM for load. Example: SELECT vehicle_id, SUM(load_weight) FROM shipments GROUP BY vehicle_id ORDER BY SUM(load_weight) DESC;"
+  },
+  {
+    "id": "198",
+    "title": "How to list shipments that crossed multiple warehouses?",
+    "tags": ["JOIN", "GROUP BY", "HAVING"],
+    "buttons": ["JOIN", "HAVING"],
+    "askedAt": ["Ecom Express", "FedEx", "Gati"],
+    "likes": 306,
+    "comments": 14,
+    "answer": "Join shipment-warehouse mapping and group by shipment. Example: SELECT shipment_id, COUNT(DISTINCT warehouse_id) AS total_warehouses FROM shipment_warehouse GROUP BY shipment_id HAVING COUNT(DISTINCT warehouse_id) > 1;"
+  },
+  {
+    "id": "199",
+    "title": "How to track the latest status of a shipment?",
+    "tags": ["ORDER BY", "LIMIT"],
+    "buttons": ["ORDER BY", "LIMIT 1"],
+    "askedAt": ["Blue Dart", "DHL", "Delhivery"],
+    "likes": 319,
+    "comments": 6,
+    "answer": "Use ORDER BY timestamp and LIMIT 1. Example: SELECT * FROM shipment_status WHERE shipment_id = 101 ORDER BY updated_at DESC LIMIT 1;"
+  },
+  {
+    "id": "200",
+    "title": "How to find average distance covered per shipment?",
+    "tags": ["AVG", "Aggregation"],
+    "buttons": ["AVG", "distance"],
+    "askedAt": ["Delhivery", "FedEx", "DHL"],
+    "likes": 283,
+    "comments": 7,
+    "answer": "Use AVG on distance column. Example: SELECT AVG(distance_km) FROM shipments;"
   }
 ]
