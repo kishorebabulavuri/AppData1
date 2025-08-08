@@ -420,6 +420,86 @@
   "answer": "Group the employees by department_id and count how many employees are in each. Example: SELECT department_id, COUNT(*) FROM employees GROUP BY department_id;"
 },
 {
+  "id": "43",
+  "title": "What is the difference between HAVING and WHERE in SQL?",
+  "tags": ["Intermediate", "Clauses"],
+  "buttons": ["HAVING", "WHERE", "GROUP BY"],
+  "askedAt": ["Microsoft", "Oracle", "Infosys"],
+  "likes": 346,
+  "comments": 19,
+  "answer": "WHERE filters rows before grouping, while HAVING filters groups after aggregation. WHERE works with individual rows, HAVING works with aggregated results from GROUP BY."
+},
+{
+  "id": "44",
+  "title": "How to use COALESCE in SQL?",
+  "tags": ["Intermediate", "Functions"],
+  "buttons": ["COALESCE", "NULL Handling", "Replacement"],
+  "askedAt": ["IBM", "TCS", "Capgemini"],
+  "likes": 289,
+  "comments": 12,
+  "answer": "COALESCE returns the first non-NULL value in a list. Example: SELECT COALESCE(NULL, NULL, 'Default', 'Value') returns 'Default'. Useful for handling NULL values in results."
+},
+{
+  "id": "45",
+  "title": "What is a trigger in SQL?",
+  "tags": ["Advanced", "Database Objects"],
+  "buttons": ["Trigger", "Event", "Automation"],
+  "askedAt": ["Facebook", "Netflix", "Adobe"],
+  "likes": 412,
+  "comments": 24,
+  "answer": "A trigger is a special stored procedure that automatically executes when specific events occur (INSERT/UPDATE/DELETE). Used for enforcing business rules, auditing, or maintaining data integrity."
+},
+{
+  "id": "46",
+  "title": "How to create an index in SQL?",
+  "tags": ["Intermediate", "Performance"],
+  "buttons": ["CREATE INDEX", "Optimization", "Syntax"],
+  "askedAt": ["Google", "Amazon", "Flipkart"],
+  "likes": 378,
+  "comments": 16,
+  "answer": "Use CREATE INDEX statement: CREATE INDEX idx_name ON table_name (column_name). For unique values: CREATE UNIQUE INDEX idx_name ON table_name (column_name). Indexes speed up data retrieval."
+},
+{
+  "id": "47",
+  "title": "What is the purpose of the GROUP BY clause?",
+  "tags": ["Beginner", "Aggregation"],
+  "buttons": ["GROUP BY", "Aggregation", "Summarize"],
+  "askedAt": ["Wipro", "HCL", "Accenture"],
+  "likes": 267,
+  "comments": 9,
+  "answer": "GROUP BY groups rows sharing a property to apply aggregate functions (COUNT, SUM, AVG). Example: SELECT department, COUNT(*) FROM employees GROUP BY department; shows employee count per department."
+},
+{
+  "id": "48",
+  "title": "How to perform a full outer join in SQL?",
+  "tags": ["Advanced", "Joins"],
+  "buttons": ["FULL OUTER JOIN", "Combine Tables", "All Records"],
+  "askedAt": ["Oracle", "Microsoft", "LinkedIn"],
+  "likes": 395,
+  "comments": 21,
+  "answer": "FULL OUTER JOIN returns all records when there's a match in either table. Syntax: SELECT * FROM table1 FULL OUTER JOIN table2 ON table1.id = table2.id; Combines LEFT and RIGHT JOIN results."
+},
+{
+  "id": "49",
+  "title": "What is the difference between CHAR and VARCHAR?",
+  "tags": ["Beginner", "Data Types"],
+  "buttons": ["CHAR", "VARCHAR", "Fixed vs Variable"],
+  "askedAt": ["Infosys", "TCS", "Cognizant"],
+  "likes": 312,
+  "comments": 14,
+  "answer": "CHAR stores fixed-length strings (padded with spaces), VARCHAR stores variable-length strings. CHAR(10) always uses 10 bytes, VARCHAR(10) uses only actual bytes needed + length overhead."
+},
+{
+  "id": "50",
+  "title": "How to use the EXISTS operator in SQL?",
+  "tags": ["Intermediate", "Subqueries"],
+  "buttons": ["EXISTS", "Subquery", "Check Presence"],
+  "askedAt": ["Amazon", "Google", "Meta"],
+  "likes": 428,
+  "comments": 18,
+  "answer": "EXISTS checks if a subquery returns any rows. Returns TRUE if subquery results exist, FALSE otherwise. Example: SELECT * FROM customers c WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.id);"
+}
+{
     "id": "51",
     "title": "How to fetch the top 5 employees with the highest salaries?",
     "tags": ["ORDER BY", "LIMIT", "Salary"],
