@@ -1,14 +1,14 @@
 [
   {
-    "id": "1",
-    "title": "What is the difference between WHERE and HAVING clauses?",
-    "tags": ["Beginner", "Basic SQL"],
-    "buttons": ["WHERE", "HAVING", "GROUP BY"],
-    "askedAt": ["Google", "Microsoft", "Amazon"],
-    "likes": 324,
-    "comments": 45,
-    "answer": "The WHERE clause is used to filter records before any groupings are made, while the HAVING clause is used to filter values after they have been grouped. WHERE is applied to individual rows, whereas HAVING is applied to groups."
-  },
+  "id": "1",
+  "title": "How to retrieve the second-highest salary of an employee?",
+  "tags": ["Intermediate", "Subqueries"],
+  "buttons": ["MAX", "Subquery", "Salary"],
+  "askedAt": ["Amazon", "Microsoft", "Infosys"],
+  "likes": 391,
+  "comments": 47,
+  "answer": "You can retrieve the second-highest salary by using a subquery to find the maximum salary less than the highest salary. Example: SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);"
+},
   {
     "id": "2",
     "title": "Explain the concept of database normalization",
