@@ -1,1 +1,194 @@
-
+[
+  {
+    "term": "SELECT employees.name, departments.name FROM employees JOIN departments ON employees.dept_id = departments.id;",
+    "definition": "Returns names of employees along with their department names where the department ID matches in both tables. (JOIN)"
+  },
+  {
+    "term": "SELECT employees.name, departments.name FROM employees INNER JOIN departments ON employees.dept_id = departments.id;",
+    "definition": "Returns only the employee and department names where there's a matching department ID in both tables. (INNER JOIN)"
+  },
+  {
+    "term": "SELECT employees.name, departments.name FROM employees LEFT JOIN departments ON employees.dept_id = departments.id;",
+    "definition": "Returns all employee names and their department names if matched. For employees without a matching department, the department name will be NULL. (LEFT JOIN)"
+  },
+  {
+    "term": "SELECT employees.name, departments.name FROM employees RIGHT JOIN departments ON employees.dept_id = departments.id;",
+    "definition": "Returns all department names and matching employee names. For departments with no matching employees, the employee name will be NULL. (RIGHT JOIN)"
+  },
+  {
+    "term": "SELECT employees.name, departments.name FROM employees FULL OUTER JOIN departments ON employees.dept_id = departments.id;",
+    "definition": "Returns all employees and all departments. If there's no match between employee and department, the missing side will contain NULLs. (FULL OUTER JOIN)"
+  },
+  {
+    "term": "SELECT employees.name, projects.name FROM employees CROSS JOIN projects;",
+    "definition": "Returns every possible combination of employee and project by pairing each employee with every project. (CROSS JOIN)"
+  },
+  {
+    "term": "SELECT A.name AS Employee, B.name AS Manager FROM employees A JOIN employees B ON A.manager_id = B.id;",
+    "definition": "Self-join that pairs each employee with their manager using the same table. (SELF JOIN)"
+  },
+  {
+    "term": "SELECT * FROM employees NATURAL JOIN departments;",
+    "definition": "Automatically joins employees and departments on columns with the same names and compatible data types. (NATURAL JOIN)"
+  },
+  {
+    "term": "SELECT name, salary FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);",
+    "definition": "Returns employees whose salary is above the average. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT d.name, (SELECT COUNT(*) FROM employees e WHERE e.dept_id = d.id) AS emp_count FROM departments d;",
+    "definition": "Returns each department's name with employee count. (Correlated Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE EXISTS (SELECT 1 FROM projects WHERE projects.employee_id = employees.id);",
+    "definition": "Returns employees who are assigned to at least one project. (EXISTS Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE id IN (SELECT employee_id FROM projects WHERE status = 'active');",
+    "definition": "Returns employees working on active projects. (IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = ANY (SELECT id FROM departments WHERE budget > 100000);",
+    "definition": "Returns employees in any high-budget department. (ANY Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = ALL (SELECT id FROM departments WHERE active = 1);",
+    "definition": "Returns employees from all active departments. (ALL Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE id = (SELECT MAX(id) FROM employees);",
+    "definition": "Returns the employee with the highest ID. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = (SELECT id FROM departments WHERE name = 'HR');",
+    "definition": "Returns employees who work in the HR department. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE NOT EXISTS (SELECT 1 FROM projects WHERE projects.employee_id = employees.id);",
+    "definition": "Returns employees not assigned to any project. (NOT EXISTS Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary IN (SELECT salary FROM employees WHERE dept_id = 2);",
+    "definition": "Returns employees earning same salary as anyone in dept 2. (IN Subquery)"
+  },
+  {
+    "term": "SELECT * FROM employees WHERE dept_id = (SELECT id FROM departments WHERE location = 'New York');",
+    "definition": "Returns employees who belong to departments located in New York. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);",
+    "definition": "Returns the employee(s) with the highest salary. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT e.name, d.name FROM employees e JOIN departments d ON e.dept_id = d.id WHERE d.name = 'Engineering';",
+    "definition": "Returns employee names in the Engineering department. (JOIN with filter)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id NOT IN (SELECT id FROM departments WHERE active = 1);",
+    "definition": "Returns employees who belong to inactive departments. (NOT IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary < ALL (SELECT salary FROM employees WHERE dept_id = 3);",
+    "definition": "Returns employees who earn less than everyone in dept 3. (ALL Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary > ANY (SELECT salary FROM employees WHERE dept_id = 3);",
+    "definition": "Returns employees who earn more than at least one person in dept 3. (ANY Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = (SELECT dept_id FROM employees WHERE name = 'John');",
+    "definition": "Returns employees in the same department as John. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id IN (SELECT dept_id FROM employees GROUP BY dept_id HAVING COUNT(*) > 5);",
+    "definition": "Returns employees in departments with more than 5 employees. (IN + GROUP BY Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary > (SELECT salary FROM employees WHERE name = 'Alice');",
+    "definition": "Returns employees earning more than Alice. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT e.name FROM employees e WHERE EXISTS (SELECT 1 FROM departments d WHERE d.id = e.dept_id AND d.budget > 50000);",
+    "definition": "Returns employees in departments with a budget over 50000. (EXISTS Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = (SELECT id FROM departments WHERE name = 'Finance');",
+    "definition": "Returns employees working in the Finance department. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary < (SELECT MIN(salary) FROM employees WHERE dept_id = 1);",
+    "definition": "Returns employees who earn less than the lowest salary in department 1. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id NOT IN (SELECT dept_id FROM employees WHERE salary IS NULL);",
+    "definition": "Returns employees who are in departments where no employee has a NULL salary. (NOT IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary >= ALL (SELECT salary FROM employees WHERE dept_id = 5);",
+    "definition": "Returns employees who earn the highest salary in department 5. (ALL Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id IN (SELECT id FROM departments WHERE name LIKE 'S%');",
+    "definition": "Returns employees from departments with names starting with 'S'. (IN Subquery with LIKE)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary BETWEEN (SELECT MIN(salary) FROM employees) AND (SELECT MAX(salary) FROM employees);",
+    "definition": "Returns employees whose salary falls between the overall minimum and maximum. (Scalar Subqueries)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE EXISTS (SELECT 1 FROM leaves WHERE leaves.employee_id = employees.id AND leaves.days > 10);",
+    "definition": "Returns employees who have taken more than 10 leave days. (EXISTS Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id IN (SELECT dept_id FROM employees GROUP BY dept_id HAVING AVG(salary) > 50000);",
+    "definition": "Returns employees from departments where the average salary is above 50000. (IN + GROUP BY Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary NOT IN (SELECT salary FROM employees WHERE dept_id = 4);",
+    "definition": "Returns employees whose salary is not found in department 4. (NOT IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE EXISTS (SELECT 1 FROM departments WHERE departments.id = employees.dept_id AND location = 'Remote');",
+    "definition": "Returns employees who belong to departments located in 'Remote'. (EXISTS Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary = ANY (SELECT salary FROM employees WHERE name LIKE 'A%');",
+    "definition": "Returns employees who earn the same salary as any employee whose name starts with 'A'. (ANY Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = (SELECT dept_id FROM employees WHERE name = 'Emma');",
+    "definition": "Returns employees who are in the same department as Emma. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = (SELECT TOP 1 id FROM departments ORDER BY budget DESC);",
+    "definition": "Returns employees from the department with the highest budget. (Scalar Subquery with TOP)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE id IN (SELECT employee_id FROM salaries WHERE amount > 60000);",
+    "definition": "Returns employees whose salary amount is greater than 60000. (IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id IN (SELECT id FROM departments WHERE id IN (SELECT dept_id FROM employees WHERE salary > 70000));",
+    "definition": "Returns employees in departments where someone earns over 70000. (Nested Subqueries)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees WHERE dept_id = employees.dept_id);",
+    "definition": "Returns employees earning more than the average in their own department. (Correlated Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id = ANY (SELECT id FROM departments WHERE location IN ('New York', 'Boston'));",
+    "definition": "Returns employees from departments located in New York or Boston. (ANY Subquery with IN)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE dept_id NOT IN (SELECT id FROM departments WHERE location IS NULL);",
+    "definition": "Returns employees from departments with known (non-null) locations. (NOT IN Subquery)"
+  },
+  {
+    "term": "SELECT name FROM employees WHERE salary > (SELECT salary FROM employees WHERE name = 'Mark');",
+    "definition": "Returns employees who earn more than Mark. (Scalar Subquery)"
+  },
+  {
+    "term": "SELECT e.name FROM employees e WHERE EXISTS (SELECT 1 FROM departments d WHERE d.id = e.dept_id AND d.name = 'Support');",
+    "definition": "Returns employees who work in the Support department. (EXISTS Subquery)"
+  }
+]
